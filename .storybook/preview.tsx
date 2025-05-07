@@ -85,7 +85,8 @@ const preview: Preview = {
           <ArgTypes />
           <Stories />
         </>
-      )
+      ),
+      disableInjectedStyles: true
     },
     tags: ['autodocs'],
     viewMode: 'docs',
