@@ -1,0 +1,13 @@
+@layer base {
+  body {
+    @apply text-[16px] leading-[18px];
+  }
+
+  html{
+    @apply font-secondary;
+  }
+
+  #app {
+    @apply overflow-hidden min-h-dvh w-full
+  }
+}

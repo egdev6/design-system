@@ -1,0 +1,55 @@
+@theme {
+  /* Global styles */
+  --color-primary: #830213; /* rgba(131, 2, 19, 1); */
+  --color-secondary: #b41520; /* rgba(180, 21, 32, 1); */
+  --color-accent: #d61e2b;  /* rgba(214, 30, 43, 1); */
+  /* Dark mode */
+  --color-dark-background: #161616; /* rgba(22, 22, 22, 1); */
+  --color-dark-text: #f6f6f6; /* rgba(246, 246, 246, 1); */
+  --color-dark-gray-dark: #18191e; /* rgba(24, 25, 30, 1); */
+  --color-dark-gray-medium: #272830; /* rgba(39, 40, 48, 1); */
+  --color-dark-gray-light: #3b3d49; /* rgba(59, 61, 73, 1); */
+  --gradient-dark-background: linear-gradient(130deg,rgba(22, 22, 22, 1) 0%, rgba(39, 40, 48, 1) 50%, rgba(22, 22, 22, 1) 100%);
+  /* Light theme */
+  --color-background: #dddddd; /* rgba(221, 221, 221, 1); */
+  --color-text: #1a1a1a; /* rgba(26, 26, 26, 1); */
+  --color-gray-dark: #cccccc; /* rgba(204, 204, 204, 1); */
+  --color-gray-medium: #dddddd; /* rgba(221, 221, 221, 1); */
+  --color-gray-light: #eeeeee; /* rgba(238, 238, 238, 1); */
+  --gradient-background: linear-gradient(130deg,rgba(221, 221, 221, 1) 0%, rgba(238, 238, 238, 1) 50%, rgba(221, 221, 221, 1) 100%);
+  /* Tipografía */
+  --font-primary: 'WildWolf';
+  --font-secondary: 'Univia';
+  --font-secondary-bold: 'UniviaBold';
+  --text-h1: 3rem;
+  --text-h2: 2.5rem;
+  --text-h3: 2rem;
+  --text-h4: 1.6rem;
+  --text-h5: 1.3rem;
+  --text-h6: 1.2rem;
+  --text-base: 1rem;
+  --text-small: 0.8rem;
+  /* Animations */
+  --animate-fadeIn: fadeIn 400ms ease-in-out;
+  --animate-fadeOut: fadeOut 400ms ease-in-out;
+  --animate-rotation-360-reverse: rotation-360 1s linear infinite reverse;
+  --animate-rotation-360: rotation-360 1s linear infinite;
+  --keyframes-fadeIn: {
+    0%: { opacity: '0' },
+    100%: { opacity: '1' },
+  };
+  --keyframes-fadeOut: {
+    0%: { opacity: '1' },
+    100%: { opacity: '0' },
+  };
+  @keyframes rotation-360 {
+    0% {
+      transform: scale(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
