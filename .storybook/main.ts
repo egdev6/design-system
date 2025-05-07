@@ -3,7 +3,7 @@ import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: ['./*.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  staticDirs: ['../public', '../src/assets'],
+  staticDirs: ['../src/assets'],
   addons: [
     '@storybook/addon-controls',
     '@storybook/addon-links',
@@ -14,10 +14,6 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-a11y'
   ],
-  managerHead: (head) => `
-  ${head}
-    <link href="../src/styles/global.css" rel="stylesheet">
-  `,
   framework: {
     name: '@storybook/react-vite',
     options: {}
@@ -32,13 +28,26 @@ const config: StorybookConfig = {
   },
   viteFinal: async (config) => {
     return mergeConfig(config, {
+      base: './',
       resolve: {
         tsconfig: './tsconfig.json'
       },
       server: {
         hmr: true
       },
-      cache: false
+      cache: false,
+      build: {
+        rollupOptions: {
+          output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name.includes('preview') && assetInfo.name.endsWith('.css')) {
+                return 'assets/preview.css';
+              }
+              return `assets/${assetInfo.name}` || 'assets/[name].[hash][extname]';
+            }
+          }
+        }
+      }
     });
   }
 };

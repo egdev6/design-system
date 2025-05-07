@@ -6,9 +6,9 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["vite-plugin-svgr/client", "node"],
+    "types": ["node"],
     "outDir": "./dist",
     "strict": true
   },
-  "include": ["vite.config.ts", "src/mocks/*.ts", "src/mocks/**/*.json"],
+  "include": ["vite.config.ts"],
 }
