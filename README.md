@@ -27,21 +27,15 @@
 </div>
 <!-- PROJECT LOGO -->
 
-[![react-boilerplate.jpg](https://i.postimg.cc/y8KwK9hF/react-boilerplate.jpg)](https://postimg.cc/ZCffFWMR)
-<br />
+[![design-system.png](https://i.postimg.cc/xTGCRQRK/design-system.png)](https://postimg.cc/QHth8Rvt)
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#next-steps">Next Steps</a></li>
-    <li><a href="#component-creator">Egdev Component creator</a></li>
-		<li><a href="#storybook-watch">Storybook watch</a></li>
-    <li><a href="#scripts">Useful Scripts</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+</br>
+
+<div align="center">
+	
+[![Demo][demo-shield]][demo-url]
+
+</div>
 
 <!-- BUILT IN -->
 
@@ -49,22 +43,9 @@
 
 <div align="center" id='built-with'>
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Zustand](https://img.shields.io/badge/zustand-brown?style=for-the-badge&logo=react&logoColor=white) ![Lefthook](https://img.shields.io/badge/lefthook-c90e14?style=for-the-badge&logo=lefthook&logoColor=white) ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white) ![Biome](https://img.shields.io/badge/Biome-60A5FA?style=for-the-badge&logo=biome&logoColor=white) ![PNPM](https://img.shields.io/badge/Pnpm-gray?style=for-the-badge&logo=pnpm&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Vitest](https://img.shields.io/badge/Vitest-9BBF1F?style=for-the-badge&logo=vitest&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Zustand](https://img.shields.io/badge/zustand-brown?style=for-the-badge&logo=react&logoColor=white) ![Lefthook](https://img.shields.io/badge/lefthook-c90e14?style=for-the-badge&logo=lefthook&logoColor=white) ![Biome](https://img.shields.io/badge/Biome-60A5FA?style=for-the-badge&logo=biome&logoColor=white) ![PNPM](https://img.shields.io/badge/Pnpm-gray?style=for-the-badge&logo=pnpm&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
 </div>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Last Updates
-<div id='next-steps'>
-
-- [X] Storybook integration with automated stories creation and addons (a11y, addon/docs and react-docgen-typescript)
-- [X] Custom tools to component, pages, hooks and service files creation (component-creator)
-- [X] Custom script to refresh Storybook with changes in files (components/**/*.ts,components/**/*.tsx)
-- [X] Dark/Light theme + Storybook switch theme
-
-</div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Compilot CLI
 
@@ -79,6 +60,7 @@ npx compilot-cli
 </div>
 
 ## Storybook watch
+
 <div id='storybook-watch'>
 
 More information here -> https://github.com/egdev6/storybook-watch
@@ -86,28 +68,6 @@ More information here -> https://github.com/egdev6/storybook-watch
 ```
 npx storybook-watch
 ```
-
-</div>
-
-## Useful commands:
-
-<div id='scripts'>
-
-Starts the server in development mode
-
-  ```
-  pnpm run dev
-  ```
-Reinstalls dependencies and clears React’s cache
-
-  ```
-  pnpm run rebuild
-  ```
-Clears Storybook’s cache
-
-  ```
-  pnpm run storybook-clean-cache
-  ```
 
 </div>
 
@@ -134,20 +94,5 @@ Clears Storybook’s cache
 [license-url]: https://github.com/egdev6/egdev-react-boilerplate/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/egdev6
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
+[demo-url]: https://egdev6-design-system.netlify.app/
+[demo-shield]: https://img.shields.io/badge/-Demo-black.svg?style=for-the-badge&colorB=555
