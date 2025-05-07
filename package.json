@@ -9,7 +9,7 @@
     "biome-all": "biome check --write .",
     "biome-staged": "biome check . --write --staged --verbose",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook-build": "storybook build",
     "storybook-clean-cache": "rm -rf node_modules/.cache/storybook",
     "pre-commit": "pnpm run biome-staged && tsc && git add -A"
   },
