@@ -34,6 +34,7 @@
 <div align="center">
 	
 [![Demo][demo-shield]][demo-url]
+[![Wiki][wiki-shield]][wiki-url]
 
 </div>
 
@@ -96,3 +97,5 @@ npx storybook-watch
 [linkedin-url]: https://linkedin.com/in/egdev6
 [demo-url]: https://egdev6-design-system.netlify.app/
 [demo-shield]: https://img.shields.io/badge/-Demo-black.svg?style=for-the-badge&colorB=555
+[wiki-url]: https://deepwiki.com/egdev6/design-system
+[wiki-shield]: https://img.shields.io/badge/-Wiki-black.svg?style=for-the-badge&colorB=555
