@@ -28,7 +28,7 @@ const preview: Preview = {
       light: {
         class: '',
         style: {
-          backgroundColor: '#ffffff'
+          backgroundColor: '#dddddd'
         }
       }
     },
