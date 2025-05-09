@@ -4,19 +4,33 @@
   --color-secondary: #b41520; /* rgba(180, 21, 32, 1); */
   --color-accent: #d61e2b;  /* rgba(214, 30, 43, 1); */
   /* Dark mode */
-  --color-dark-background: #161616; /* rgba(22, 22, 22, 1); */
-  --color-dark-text: #f6f6f6; /* rgba(246, 246, 246, 1); */
-  --color-dark-gray-dark: #18191e; /* rgba(24, 25, 30, 1); */
-  --color-dark-gray-medium: #272830; /* rgba(39, 40, 48, 1); */
-  --color-dark-gray-light: #3b3d49; /* rgba(59, 61, 73, 1); */
-  --gradient-dark-background: linear-gradient(130deg,rgba(22, 22, 22, 1) 0%, rgba(39, 40, 48, 1) 50%, rgba(22, 22, 22, 1) 100%);
+  --color-background-dark: #0E0E0E; /* rgba(14, 14, 14, 1); */
+  --color-text-dark: #ffffff; /* rgba(255, 255, 255, 1); */
+  --gradient-background-dark: linear-gradient(130deg,rgba(24, 25, 30, 1) 0%, rgba(39, 40, 48, 1) 50%, rgba(24, 25, 30, 1) 100%);
   /* Light theme */
-  --color-background: #dddddd; /* rgba(221, 221, 221, 1); */
-  --color-text: #1a1a1a; /* rgba(26, 26, 26, 1); */
-  --color-gray-dark: #cccccc; /* rgba(204, 204, 204, 1); */
-  --color-gray-medium: #dddddd; /* rgba(221, 221, 221, 1); */
-  --color-gray-light: #eeeeee; /* rgba(238, 238, 238, 1); */
-  --gradient-background: linear-gradient(130deg,rgba(221, 221, 221, 1) 0%, rgba(238, 238, 238, 1) 50%, rgba(221, 221, 221, 1) 100%);
+  --color-background-light: #dddddd; /* rgba(221, 221, 221, 1); */
+  --color-text-light: #18191e; /* rgba(24, 25, 30, 1); */
+  --gradient-background-light: linear-gradient(130deg,rgba(204, 204, 204, 1) 0%, rgba(221, 221, 221, 1) 50%, rgba(204, 204, 204, 1) 100%);
+  /* Gray colors */
+  --gray-900: #18191e; /* rgba(24, 25, 30, 1); */
+  --gray-800: #272830; /* rgba(39, 40, 48, 1); */
+  --gray-700: #3b3d49; /* rgba(59, 61, 73, 1); */
+  --gray-600: #4f525e; /* rgba(79, 82, 94, 1); */
+  --gray-500: #636579; /* rgba(99, 101, 121, 1); */
+  --gray-300: #cccccc; /* rgba(204, 204, 204, 1); */
+  --gray-200: #dddddd; /* rgba(221, 221, 221, 1); */
+  /* States*/
+  --color-success: #4CAF50;
+  --color-warning: #FFC107;
+  --color-error: #FF0F34;
+  --color-info: #2196F3;
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
   /* Tipografía */
   --font-primary: 'WildWolf';
   --font-secondary: 'Univia';
@@ -34,22 +48,6 @@
   --animate-fadeOut: fadeOut 400ms ease-in-out;
   --animate-rotation-360-reverse: rotation-360 1s linear infinite reverse;
   --animate-rotation-360: rotation-360 1s linear infinite;
-  --keyframes-fadeIn: {
-    0%: { opacity: '0' },
-    100%: { opacity: '1' },
-  };
-  --keyframes-fadeOut: {
-    0%: { opacity: '1' },
-    100%: { opacity: '0' },
-  };
-  @keyframes rotation-360 {
-    0% {
-      transform: scale(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

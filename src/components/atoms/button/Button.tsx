@@ -1,31 +1,48 @@
 import { cn } from '@/lib/utils';
-import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'class-variance-authority';
+import { DynamicIcon } from 'lucide-react/dynamic';
 import type { ComponentProps } from 'react';
-import { buttonVariants } from './types';
+import { type ButtonProps, buttonVariants } from './types';
 import './style.css';
+import { BeatLoader } from 'react-spinners';
 
 const Button = ({
   className,
-  variant = 'default',
-  size,
-  asChild = false,
-  children,
+  variant = 'primary',
+  size = 'default',
+  width = 'auto',
+  isLoading = false,
+  onClick,
+  icon = undefined,
+  text = 'Lorem ipsum',
+  disabled = false,
+  ariaLabel = '',
+  type = 'button',
   ...props
-}: ComponentProps<'button'> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) => {
-  const Comp = asChild ? Slot : 'button';
-
+}: ButtonProps & VariantProps<typeof buttonVariants> & ComponentProps<'button'>) => {
   return (
-    <Comp data-slot='button' className={cn(buttonVariants({ variant, size, className }))} {...props}>
+    <button
+      type={type}
+      role='button'
+      onClick={(e) => (!isLoading ? onClick?.(e) : undefined)}
+      className={cn(buttonVariants({ variant, size, width, className }))}
+      aria-label={ariaLabel || text}
+      aria-disabled={disabled}
+      disabled={disabled || isLoading}
+      {...props}
+    >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      {children}
-    </Comp>
+      {icon && <DynamicIcon name={icon} />}
+      {text}
+      {isLoading && (
+        <div className='pt-[2px]'>
+          <BeatLoader color={'currentColor'} />
+        </div>
+      )}
+    </button>
   );
 };
 
