@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 
@@ -17,6 +18,56 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    children: 'Lorem ipsum'
+    onClick: action('Clicked')
+  }
+};
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary'
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary'
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: 'outline'
+  }
+};
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    size: 'sm'
+  }
+};
+
+export const WithIcon: Story = {
+  args: {
+    icon: 'view'
+  }
+};
+
+export const Loading: Story = {
+  args: {
+    isLoading: true
+  }
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true
+  }
+};
+
+export const Icon: Story = {
+  args: {
+    text: "",
+    icon: "alarm-check"
   }
 };

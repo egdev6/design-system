@@ -1,34 +1,50 @@
 import { cva } from 'class-variance-authority';
+import type dynamicIconImports from 'lucide-react/dynamicIconImports';
 
 export const buttonVariants = cva(
-  'button  text-dark-text hover:text-accent dark:hover:text-dark-text inline-flex items-center transition-all uppercase tracking-[2px] overflow-hidden justify-center cursor-pointer whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+  'button relative !flex gap-2 font-secondary-bold rounded-lg items-center transition-all tracking-[2px] overflow-hidden justify-center cursor-pointer whitespace-nowrap disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
   {
     variants: {
       variant: {
-        default:
-          'relative inline-block bg-accent shadow-lg hover:shadow-transparent shadow-secondary hover:bg-transparent font-secondary-bold rounded-lg',
-        destructive:
-          'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+        primary:
+          'shadow-lg text-text-dark hover:text-accent dark:hover:text-text-dark bg-accent hover:shadow-transparent shadow-secondary hover:bg-transparent uppercase',
+        secondary:
+          'shadow-lg text-text-dark bg-gray-800 hover:text-text-light dark:hover:text-text-dark hover:shadow-transparent shadow-gray-900 hover:bg-transparent uppercase',
         outline:
-          'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
-        secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-        link: 'text-primary underline-offset-4 hover:underline'
+          'button-outline shadow-lg dark:text-text-dark text-accent hover:text-text-dark bg-gray-200 dark:bg-gray-800 shadow-accent border-2 border-accent hover:bg-accent uppercase',
+        link: 'button-link text-accent dark:text-dark-text underline-offset-4 hover:underline'
       },
       size: {
         default: 'px-6 py-4 has-[>svg]:px-4',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
-        lg: 'px-6 py-4 has-[>svg]:px-4',
-        icon: 'size-9'
+        icon: 'size-10'
+      },
+      width: {
+        full: 'w-full',
+        auto: 'w-auto'
       }
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default'
+      variant: 'primary',
+      size: 'default',
+      width: 'auto'
     }
   }
 );
 
+type DynamicIconName = keyof typeof dynamicIconImports;
+
 export type ButtonProps = {
-  onClick?: () => void;
+  /** @control string */
+  text?: string;
+  /** @control boolean */
+  disabled?: boolean;
+  /** @control boolean */
+  isLoading?: boolean;
+  /** @control select */
+  type?: 'button' | 'submit' | 'reset';
+  /** @control string */
+  icon?: DynamicIconName;
+  /** @control string */
+  ariaLabel?: string;
 };
