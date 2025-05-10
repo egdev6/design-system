@@ -17,7 +17,7 @@ export const textVariants = tv({
       small: 'fs-small'
     },
     color: {
-      default: 'text-[var(--color-text)] dark:text-[var(--color-dark-text)]',
+      default: 'text-text-light dark:text-text-dark',
       primary: 'text-primary',
       secondary: 'text-secondary',
       accent: 'text-accent'
