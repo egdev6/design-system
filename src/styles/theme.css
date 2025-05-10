@@ -12,18 +12,38 @@
   --color-text-light: #18191e; /* rgba(24, 25, 30, 1); */
   --gradient-background-light: linear-gradient(130deg,rgba(204, 204, 204, 1) 0%, rgba(221, 221, 221, 1) 50%, rgba(204, 204, 204, 1) 100%);
   /* Gray colors */
-  --gray-900: #18191e; /* rgba(24, 25, 30, 1); */
-  --gray-800: #272830; /* rgba(39, 40, 48, 1); */
-  --gray-700: #3b3d49; /* rgba(59, 61, 73, 1); */
-  --gray-600: #4f525e; /* rgba(79, 82, 94, 1); */
-  --gray-500: #636579; /* rgba(99, 101, 121, 1); */
-  --gray-300: #cccccc; /* rgba(204, 204, 204, 1); */
-  --gray-200: #dddddd; /* rgba(221, 221, 221, 1); */
-  /* States*/
-  --color-success: #4CAF50;
-  --color-warning: #FFC107;
-  --color-error: #FF0F34;
-  --color-info: #2196F3;
+  --color-gray-900: #18191e; /* rgba(24, 25, 30, 1); */
+  --color-gray-800: #272830; /* rgba(39, 40, 48, 1); */
+  --color-gray-700: #3b3d49; /* rgba(59, 61, 73, 1); */
+  --color-gray-600: #4f525e; /* rgba(79, 82, 94, 1); */
+  --color-gray-500: #636579; /* rgba(99, 101, 121, 1); */
+  --color-gray-300: #cccccc; /* rgba(204, 204, 204, 1); */
+  --color-gray-200: #dddddd; /* rgba(221, 221, 221, 1); */
+  /* Colors */
+  --color-orange: #f97316;
+  --color-orange-light: #fb923c;
+  --color-orange-dark: #ea580c;
+  --color-yellow: #eab308;
+  --color-yellow-light: #facc15;
+  --color-yellow-dark: #ca8a04;
+  --color-green: #22c55e;
+  --color-green-light: #4ade80;
+  --color-green-dark: #16a34a;
+  --color-teal: #14b8a6;
+  --color-teal-light: #2dd4bf;
+  --color-teal-dark: #0d9488;
+  --color-blue: #3b82f6;
+  --color-blue-light: #60a5fa;
+  --color-blue-dark: #2563eb;
+  --color-indigo: #6366f1;
+  --color-indigo-light: #818cf8;
+  --color-indigo-dark: #4f46e5;
+  --color-purple: #8b5cf6;
+  --color-purple-light: #a78bfa;
+  --color-purple-dark: #7c3aed;
+  --color-pink: #ec4899;
+  --color-pink-light: #f472b6;
+  --color-pink-dark: #db2777;
   /* Spacing */
   --spacing-xxs: 0.25rem;
   --spacing-xs: 0.5rem;
@@ -43,6 +63,14 @@
   --text-h6: 1.2rem;
   --text-base: 1rem;
   --text-small: 0.8rem;
+  --text-h1-md: 2.4rem;
+  --text-h2-md: 2rem;
+  --text-h3-md: 1.8rem;
+  --text-h4-md: 1.4rem;
+  --text-h5-md: 1.2rem;
+  --text-h6-md: 1rem;
+  --text-base-md: 0.875rem;
+  --text-small-md: 0.7rem;
   /* Animations */
   --animate-fadeIn: fadeIn 400ms ease-in-out;
   --animate-fadeOut: fadeOut 400ms ease-in-out;

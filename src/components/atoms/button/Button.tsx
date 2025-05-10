@@ -4,7 +4,7 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 import type { ComponentProps } from 'react';
 import { type ButtonProps, buttonVariants } from './types';
 import './style.css';
-import { BeatLoader } from 'react-spinners';
+import { SpinnerCircular } from 'spinners-react';
 
 const Button = ({
   className,
@@ -38,8 +38,8 @@ const Button = ({
       {icon && <DynamicIcon name={icon} />}
       {text}
       {isLoading && (
-        <div className='pt-[2px]'>
-          <BeatLoader color={'currentColor'} />
+        <div className='w-[24px] h-[24px]'>
+          <SpinnerCircular color={'currentColor'} secondaryColor={'transparent'} thickness={300} size='100%' />
         </div>
       )}
     </button>

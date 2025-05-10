@@ -5,17 +5,17 @@
 .button > svg{
     display:inline-flex !important;
 }
-.button:hover:nth-child(1){
+.button:hover:nth-child(1), .button:focus:nth-child(1){
     filter: blur(-30deg);
 }
-.button:hover:nth-child(2){
+.button:hover:nth-child(2), .button:focus:nth-child(2){
     filter: hue-rotate(30deg);
 }
 .button > span{
     position: absolute;
     display: block;
 }
-.button:hover > span:nth-child(1){
+.button:hover > span:nth-child(1), .button:focus > span:nth-child(1){
     top: 0;
     left: 0;
     width: 100%;
@@ -24,11 +24,7 @@
     animation: animate1 1s linear infinite;
 }
 
-.button-link{
-    transition: all 0s linear;
-}
-
-.button-link > span, .button-outline > span{
+.button-outline > span{
     @apply !hidden;
 }
 @keyframes animate1{
