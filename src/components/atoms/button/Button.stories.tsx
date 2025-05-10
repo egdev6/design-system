@@ -24,32 +24,29 @@ export const Default: Story = {
 
 export const Primary: Story = {
   args: {
-    variant: 'primary'
+    variant: 'primary',
+    onClick: action('Clicked')
   }
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary'
+    variant: 'secondary',
+    onClick: action('Clicked')
   }
 };
 
 export const Outlined: Story = {
   args: {
-    variant: 'outline'
-  }
-};
-
-export const Link: Story = {
-  args: {
-    variant: 'link',
-    size: 'sm'
+    variant: 'outline',
+    onClick: action('Clicked')
   }
 };
 
 export const WithIcon: Story = {
   args: {
-    icon: 'view'
+    icon: 'view',
+    onClick: action('Clicked')
   }
 };
 
@@ -62,12 +59,5 @@ export const Loading: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true
-  }
-};
-
-export const Icon: Story = {
-  args: {
-    text: "",
-    icon: "alarm-check"
   }
 };
