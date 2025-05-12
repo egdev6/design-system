@@ -48,6 +48,11 @@ const config: StorybookConfig = {
             }
           }
         }
+      },
+      css: {
+        preprocessorOptions: {
+          postcss: true // Asegúrate de que PostCSS esté habilitado
+        }
       }
     });
   }

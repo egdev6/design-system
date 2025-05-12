@@ -122,3 +122,5 @@ export type BgThemeColors =
   | 'bg-gray-500'
   | 'bg-gray-300'
   | 'bg-gray-200';
+
+export type ThemeRounded = 'rounded-sm' | 'rounded-md' | 'rounded-lg' | 'rounded-full' | 'rounded-none';

@@ -36,8 +36,30 @@ export const textVariants = tv({
 
 export type TextVariant = keyof typeof textVariants.variants.size;
 
-export type TextProps = {
-  children: ReactNode;
+type BaseTextProps = {
+  children?: string;
+  isHtml?: boolean;
   tag?: TextVariant;
+  prominent?: boolean;
   className?: string;
 } & VariantProps<typeof textVariants>;
+
+type TextWithHtml = BaseTextProps & {
+  isHtml: true;
+  children: string;
+  'aria-label': string;
+};
+
+type TextStandard = BaseTextProps & {
+  isHtml?: false;
+  children: ReactNode;
+};
+type AccessibilityProps = {
+  role?: string;
+  'aria-label'?: string;
+  'aria-live'?: 'polite' | 'assertive' | 'off';
+  tabIndex?: number;
+  srOnly?: boolean;
+};
+
+export type TextProps = (TextStandard | TextWithHtml) & AccessibilityProps;
