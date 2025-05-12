@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.2.1",
+    "@radix-ui/react-tooltip": "^1.2.6",
     "@storybook/addon-actions": "8.6.12",
+    "autoprefixer": "^10.4.21",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.507.0",
+    "postcss": "^8.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-spinners": "^0.17.0",

@@ -9,9 +9,9 @@ import { SpinnerCircular } from 'spinners-react';
 const Button = ({
   className,
   variant = 'primary',
-  size = 'default',
-  width = 'auto',
+  size = 'md',
   isLoading = false,
+  isFullWidth = true,
   onClick,
   icon = undefined,
   text = 'Lorem ipsum',
@@ -19,16 +19,17 @@ const Button = ({
   ariaLabel = '',
   type = 'button',
   ...props
-}: ButtonProps & VariantProps<typeof buttonVariants> & ComponentProps<'button'>) => {
+}: VariantProps<typeof buttonVariants> & ButtonProps & ComponentProps<'button'>) => {
+  const width = isFullWidth ? 'w-full ' : 'w-auto ';
   return (
     <button
       type={type}
       role='button'
-      onClick={(e) => (!isLoading ? onClick?.(e) : undefined)}
-      className={cn(buttonVariants({ variant, size, width, className }))}
+      className={width + cn(buttonVariants({ variant, size, className }))}
       aria-label={ariaLabel || text}
       aria-disabled={disabled}
       disabled={disabled || isLoading}
+      onClick={(e) => (!isLoading ? onClick?.(e) : undefined)}
       {...props}
     >
       <span></span>
