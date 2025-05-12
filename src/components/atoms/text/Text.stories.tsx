@@ -23,8 +23,8 @@ export const Default: Story = {
 
 export const PrimaryH1: Story = {
   args: {
-    children: "Lorem ipsum",
-    tag: "h1",
-    className: "font-primary"
+    children: 'Lorem ipsum',
+    tag: 'h1',
+    className: 'font-primary'
   }
 };

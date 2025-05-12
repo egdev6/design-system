@@ -1,7 +1,3 @@
-.button{
-    transition: all 0.3s ease-in;
-}
-
 .button > svg{
     display:inline-flex !important;
 }
