@@ -5,10 +5,12 @@
   --color-accent: #d61e2b;  /* rgba(214, 30, 43, 1); */
   /* Dark mode */
   --color-background-dark: #0E0E0E; /* rgba(14, 14, 14, 1); */
+  --color-hover-dark: #412A2E; /* rgba(65, 42, 46, 1); */
   --color-text-dark: #ffffff; /* rgba(255, 255, 255, 1); */
   --gradient-background-dark: linear-gradient(130deg,rgba(24, 25, 30, 1) 0%, rgba(39, 40, 48, 1) 50%, rgba(24, 25, 30, 1) 100%);
   /* Light theme */
   --color-background-light: #dddddd; /* rgba(221, 221, 221, 1); */
+  --color-hover-ligth: #F9DFE1; /* rgba(249, 223, 225, 1); */
   --color-text-light: #18191e; /* rgba(24, 25, 30, 1); */
   --gradient-background-light: linear-gradient(130deg,rgba(204, 204, 204, 1) 0%, rgba(221, 221, 221, 1) 50%, rgba(204, 204, 204, 1) 100%);
   /* Gray colors */
@@ -17,8 +19,10 @@
   --color-gray-700: #3b3d49; /* rgba(59, 61, 73, 1); */
   --color-gray-600: #4f525e; /* rgba(79, 82, 94, 1); */
   --color-gray-500: #636579; /* rgba(99, 101, 121, 1); */
+  --color-gray-400: #b0b3c1; /* rgba(176, 179, 193, 1); */
   --color-gray-300: #cccccc; /* rgba(204, 204, 204, 1); */
   --color-gray-200: #dddddd; /* rgba(221, 221, 221, 1); */
+  --color-gray-100: #e0e3eb; /* rgba(224, 227, 235, 1); */
   /* Colors */
   --color-orange: #f97316;
   --color-orange-light: #fb923c;
@@ -63,14 +67,14 @@
   --text-h6: 1.2rem;
   --text-base: 1rem;
   --text-small: 0.8rem;
-  --text-h1-md: 2.4rem;
-  --text-h2-md: 2rem;
-  --text-h3-md: 1.8rem;
-  --text-h4-md: 1.4rem;
-  --text-h5-md: 1.2rem;
-  --text-h6-md: 1rem;
-  --text-base-md: 0.875rem;
-  --text-small-md: 0.7rem;
+  --text-h1-tablet: 2.4rem;
+  --text-h2-tablet: 2rem;
+  --text-h3-tablet: 1.8rem;
+  --text-h4-tablet: 1.4rem;
+  --text-h5-tablet: 1.2rem;
+  --text-h6-tablet: 1rem;
+  --text-base-tablet: 0.875rem;
+  --text-small-tablet: 0.7rem;
   /* Animations */
   --animate-fadeIn: fadeIn 400ms ease-in-out;
   --animate-fadeOut: fadeOut 400ms ease-in-out;

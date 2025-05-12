@@ -50,11 +50,11 @@
 
 ## Components
 
-- [ ] DS Documentation - WIP
 - [X] Button
 - [X] Text
 - [X] Icon
-- [ ] Link
+- [X] Link
+- [ ] 
 
 ## Compilot CLI
 
