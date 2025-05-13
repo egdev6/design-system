@@ -54,7 +54,8 @@
 - [X] Text
 - [X] Icon
 - [X] Link
-- [ ] 
+- [X] Skeleton
+- [X] IconButton 
 
 ## Compilot CLI
 
