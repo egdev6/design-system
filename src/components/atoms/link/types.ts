@@ -33,18 +33,18 @@ type LinkSizes = 'sm' | 'md' | 'lg';
 export type LinkProps = {
   /** @control select */
   variant?: ButtonVariants;
-  /** @control string */
+  /** @control text */
   href: string;
-  /**@control string */
+  /**@control text */
   target?: TargetVariants;
-  /** @control string */
+  /** @control text */
   icon?: DynamicIconName;
-  /** @control */
+  /** @control text */
   title?: string;
   /** @control select */
   size: LinkSizes;
-  /** @control string */
+  /** @control text */
   className?: string;
-  /** @control string */
+  /** @control text */
   children: string;
 };

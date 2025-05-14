@@ -41,16 +41,16 @@ export type IconButtonProps = {
   icon?: DynamicIconName;
   /** @control select */
   size?: IconSizes;
-  /** @control string */
+  /** @control text */
   href: string;
   /** @control select */
   target?: TargetVariants;
-  /** @control string */
+  /** @control text */
   title: string;
   /** @control boolean */
   rounded?: boolean;
   /** @control boolean */
   shadow?: boolean;
-  /** @control string */
+  /** @control text */
   className?: string;
 };

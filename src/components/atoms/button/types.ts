@@ -47,11 +47,11 @@ type ButtonSizeVariants = 'md' | 'sm' | 'lg';
 export type ButtonProps = {
   /** @control select */
   variant?: ButtonVariant;
-  /** @control string */
+  /** @control text */
   text?: string;
-  /** @control string */
+  /** @control text */
   icon?: DynamicIconName;
-  /** @control select */
+  /** @control text */
   size?: ButtonSizeVariants;
   /** @control select */
   type?: ButtonTypeVariants;
@@ -67,8 +67,8 @@ export type ButtonProps = {
   isFullWidth?: boolean;
   /** @control boolean */
   isLoading?: boolean;
-  /** @control string */
+  /** @control text */
   ariaLabel?: string;
-  /** @control */
+  /** @control text */
   className?: string;
 };
