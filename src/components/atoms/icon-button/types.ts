@@ -2,7 +2,7 @@ import type { DynamicIconName } from '@/components/types';
 import { cva } from 'class-variance-authority';
 
 export const iconButtonVariants = cva(
-  'link w-auto relative transition-all ease-in duration-300 !flex !gap-1 font-secondary items-center justify-start cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
+  'link px-2 py-2 w-auto relative transition-all ease-in duration-300 !flex !gap-1 font-secondary items-center justify-start cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
   {
     variants: {
       variant: {
@@ -13,29 +13,44 @@ export const iconButtonVariants = cva(
         outlined:
           'text-accent dark:text-text-dark hover:text-text-dark bg-gray-100 dark:bg-gray-800 hover:bg-accent border-2 border-accent shadow-secondary'
       },
-      size: {
-        md: 'px-2 py-2',
-        lg: 'px-4 py-4',
-        sm: 'px-1 py-1'
+      rounded: {
+        true: 'rounded-full',
+        false: 'rounded-md'
+      },
+      shadow: {
+        true: 'shadow-md hover:shadow-transparent',
+        false: ''
       }
     },
     defaultVariants: {
       variant: 'outlined',
-      size: 'md'
+      rounded: false,
+      shadow: false
     }
   }
 );
+
+type ButtonVariants = 'primary' | 'secondary' | 'outlined';
+type TargetVariants = '_blank' | '_self' | '_parent' | '_top';
+type IconSizes = 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40;
+
 export type IconButtonProps = {
-  /** @control string */
+  /** @control select  */
+  variant?: ButtonVariants;
+  /** @control select */
+  icon?: DynamicIconName;
+  /** @control select */
+  size?: IconSizes;
+  /** @control text */
   href: string;
-  /** @control string */
-  icon: DynamicIconName;
-  /**@control string */
-  target?: '_blank' | '_self' | '_parent' | '_top';
-  /** @control */
+  /** @control select */
+  target?: TargetVariants;
+  /** @control text */
   title: string;
-  /**@control boolean */
-  shadow?: boolean;
-  /**@control boolean */
+  /** @control boolean */
   rounded?: boolean;
+  /** @control boolean */
+  shadow?: boolean;
+  /** @control text */
+  className?: string;
 };

@@ -7,16 +7,16 @@ export const linkVariants = cva(
     variants: {
       variant: {
         regular:
-          'text-accent hover:text-text-light dark:text-text-dark dark:hover:text-accent underline-offset-2 underline',
+          'hover:text-accent text-text-light dark:text-text-dark dark:hover:text-accent underline-offset-2 underline',
         button:
-          'px-4 py-2 shadow-lg rounded-lg text-text-dark dark:text-text-dark hover:text-accent hover:underline-offset-2 hover:underline dark:hover:text-text-dark bg-accent shadow-secondary hover:shadow-transparent hover:bg-transparent',
-        outline:
+          'px-4 py-2 shadow-lg rounded-lg text-text-dark dark:text-text-dark hover:text-accent hover:underline-offset-2 hover:underline dark:hover:text-text-dark bg-accent shadow-secondary hover:shadow-transparent hover:bg-gray-100 dark:hover:bg-gray-800 border-2 border-accent hover:border-accent',
+        outlined:
           'px-4 py-2 shadow-lg rounded-lg text-accent dark:text-text-dark hover:text-text-dark bg-gray-100 dark:bg-gray-800 shadow-secondary border-2 border-accent hover:bg-accent'
       },
       size: {
+        sm: 'fs-small tablet:fs-small-tablet',
         md: 'fs-base tablet:fs-base-tablet',
-        lg: 'fs-h5 tabket:fs-base-tablet',
-        sm: 'fs-small tablet:fs-small-tablet'
+        lg: 'fs-h5 tabket:fs-base-tablet'
       }
     },
     defaultVariants: {
@@ -25,15 +25,26 @@ export const linkVariants = cva(
     }
   }
 );
+
+type ButtonVariants = 'regular' | 'button' | 'outlined';
+type TargetVariants = '_blank' | '_self' | '_parent' | '_top';
+type LinkSizes = 'sm' | 'md' | 'lg';
+
 export type LinkProps = {
-  /** @control string */
+  /** @control select */
+  variant?: ButtonVariants;
+  /** @control text */
   href: string;
-  /** @control string */
+  /**@control text */
+  target?: TargetVariants;
+  /** @control text */
   icon?: DynamicIconName;
-  /**@control string */
-  target?: '_blank' | '_self' | '_parent' | '_top';
-  /** @control string */
-  children: string;
-  /** @control */
+  /** @control text */
   title?: string;
+  /** @control select */
+  size: LinkSizes;
+  /** @control text */
+  className?: string;
+  /** @control text */
+  children: string;
 };

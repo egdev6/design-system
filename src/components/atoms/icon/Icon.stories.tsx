@@ -17,6 +17,9 @@ type Story = StoryObj<typeof Icon>;
 
 export const Default: Story = {
   args: {
-    name: 'image-plus'
+    name: 'image-plus',
+    color: "text-accent",
+    colorDark: "dark:text-accent",
+    size: 24
   }
 };

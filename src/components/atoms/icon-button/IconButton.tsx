@@ -6,9 +6,9 @@ import { type IconButtonProps, iconButtonVariants } from './types';
 
 const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> & ComponentProps<'a'>> = ({
   children,
+  variant = 'primary',
   icon = 'menu',
-  variant = 'outlined',
-  size = 'md',
+  size = 20,
   target = '_self',
   className,
   href,
@@ -18,18 +18,6 @@ const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> &
   shadow = false,
   ...props
 }) => {
-  const getIconWidth = () => {
-    switch (size) {
-      case 'sm':
-        return 14;
-      case 'md':
-        return 20;
-      case 'lg':
-        return 28;
-      default:
-        return 22;
-    }
-  };
   return (
     <a
       {...props}
@@ -41,14 +29,9 @@ const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> &
       href={href ? href : undefined}
       onClick={onClick ? (e) => onClick(e) : undefined}
       tabIndex={0}
-      className={cn(
-        iconButtonVariants({ variant, size }),
-        shadow && 'shadow-md hover:shadow-transparent',
-        rounded ? 'rounded-full' : 'rounded-md',
-        className
-      )}
+      className={cn(iconButtonVariants({ variant, shadow, rounded }), className)}
     >
-      <DynamicIcon name={icon} color='currentColor' size={getIconWidth()} />
+      <DynamicIcon name={icon} color='currentColor' size={size} />
     </a>
   );
 };
