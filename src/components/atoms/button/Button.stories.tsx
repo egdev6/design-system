@@ -18,46 +18,82 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    onClick: action('Clicked')
-  }
-};
-
-export const Primary: Story = {
-  args: {
     variant: 'primary',
+    rounded: false,
+    shadow: true,
+    uppercase: true,
+    size: 'md',
+    text: 'Lorem ipsum',
+    type: 'button',
+    disabled: false,
+    isFullWidth: false,
+    isLoading: false,
+    ariaLabel: '',
     onClick: action('Clicked')
   }
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
-    onClick: action('Clicked')
+    variant: "secondary",
+    rounded: false,
+    shadow: true,
+    uppercase: true,
+    size: "md",
+    text: "Lorem ipsum",
+    type: "button",
+    disabled: false,
+    isFullWidth: false,
+    isLoading: false,
+    ariaLabel: ""
   }
 };
 
 export const Outlined: Story = {
   args: {
-    variant: 'outline',
-    onClick: action('Clicked')
-  }
-};
-
-export const WithIcon: Story = {
-  args: {
-    icon: 'view',
-    onClick: action('Clicked')
+    variant: "outline",
+    rounded: false,
+    shadow: true,
+    uppercase: true,
+    size: "md",
+    text: "Lorem ipsum",
+    type: "button",
+    disabled: false,
+    isFullWidth: false,
+    isLoading: false,
+    ariaLabel: ""
   }
 };
 
 export const Loading: Story = {
   args: {
-    isLoading: true
+    variant: "primary",
+    rounded: false,
+    shadow: true,
+    uppercase: true,
+    size: "md",
+    text: "Lorem ipsum",
+    type: "button",
+    disabled: false,
+    isFullWidth: false,
+    isLoading: true,
+    ariaLabel: ""
   }
 };
 
-export const Disabled: Story = {
+export const WithIcon: Story = {
   args: {
-    disabled: true
+    variant: "primary",
+    rounded: false,
+    shadow: true,
+    uppercase: true,
+    size: "md",
+    text: "Lorem ipsum",
+    type: "button",
+    disabled: false,
+    isFullWidth: false,
+    isLoading: false,
+    ariaLabel: "",
+    icon: "image"
   }
 };

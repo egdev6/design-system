@@ -1,5 +1,7 @@
 import type { DynamicIconName, TextDarkThemeColors, TextThemeColors } from '@/components/types';
 
+type IconSizes = 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 60 | 64 | 68 | 72 | 76 | 80;
+
 export type IconProps = {
   /** @control select*/
   name: DynamicIconName;
@@ -8,5 +10,7 @@ export type IconProps = {
   /** @control select */
   colorDark?: TextDarkThemeColors;
   /** @control select */
-  size?: 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 60 | 64 | 68 | 72 | 76 | 80;
+  size?: IconSizes;
+  /** @control text */
+  className?: string;
 };

@@ -17,35 +17,41 @@ type Story = StoryObj<typeof Link>;
 
 export const Default: Story = {
   args: {
-    children: 'Lorem Ipsum'
-  }
-};
-
-export const WithIcon: Story = {
-  args: {
-    children: "Lorem Ipsum",
-    icon: "activity"
+    variant: 'regular',
+    href: 'https://github.com/egdev6',
+    target: '_self',
+    size: "md",
+    children: 'Lorem ipsum'
   }
 };
 
 export const Button: Story = {
   args: {
-    children: "Lorem Ipsum",
-    variant: "button"
+    variant: "button",
+    href: "https://github.com/egdev6",
+    target: "_self",
+    size: "md",
+    children: "Lorem ipsum"
   }
 };
 
 export const Outlined: Story = {
   args: {
-    children: "Lorem Ipsum",
-    variant: "outline"
+    variant: "outlined",
+    href: "https://github.com/egdev6",
+    target: "_self",
+    size: "md",
+    children: "Lorem ipsum"
   }
 };
 
-export const ButtonWithIcon: Story = {
+export const WithIcon: Story = {
   args: {
-    children: "Lorem Ipsum",
-    variant: "button",
-    icon: "badge-euro"
+    variant: "regular",
+    href: "https://github.com/egdev6",
+    target: "_self",
+    size: "md",
+    children: "Lorem ipsum",
+    icon: "code"
   }
 };
