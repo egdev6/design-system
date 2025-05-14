@@ -1,4 +1,4 @@
-import type { ThemeRounded } from '@/components/types';
+type ThemeRounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 export type SkeletonProps = {
   /** @control text */

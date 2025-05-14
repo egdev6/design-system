@@ -18,89 +18,57 @@ type Story = StoryObj<typeof IconButton>;
 
 export const Default: Story = {
   args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
-    icon: 'menu',
-    shadow: false,
-    rounded: false,
-    variant: 'outlined',
-    size: 'md'
-  }
-};
-
-export const Primary: Story = {
-  args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
     variant: 'primary',
     icon: 'menu',
-    shadow: false,
+    size: 20,
     rounded: false,
-    size: 'md'
+    shadow: false,
+    target: '_self'
   }
 };
 
 export const Secondary: Story = {
   args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
-    icon: 'menu',
-    shadow: false,
-    rounded: false,
-    variant: 'secondary',
-    size: 'md'
-  }
-};
-
-export const ShadowRounded: Story = {
-  args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
-    variant: 'primary',
-    icon: 'menu',
-    shadow: true,
-    rounded: true,
-    size: 'md'
-  }
-};
-
-export const Large: Story = {
-  args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
-    variant: 'primary',
-    icon: 'menu',
-    shadow: true,
-    rounded: false,
-    size: 'lg'
-  }
-};
-
-export const SM: Story = {
-  args: {
-    href: 'https://github.com/egdev6',
-    target: '_blank',
-    title: 'Menu',
     variant: 'secondary',
     icon: 'menu',
-    shadow: false,
+    size: 20,
     rounded: false,
-    size: 'sm'
+    shadow: false,
+    target: '_self'
   }
 };
 
-export const OnClick: Story = {
+export const Outlined: Story = {
   args: {
-    icon: 'menu',
-    shadow: false,
-    rounded: false,
     variant: 'outlined',
-    size: 'md',
-    onClick: action('Clicked')
+    icon: 'menu',
+    size: 20,
+    rounded: false,
+    shadow: false,
+    target: '_self'
+  }
+};
+
+export const Button: Story = {
+  args: {
+    variant: 'primary',
+    icon: 'menu',
+    size: 20,
+    rounded: true,
+    shadow: true,
+    target: '_self',
+    onClick: action('clicked'),
+    title: "Menu"
+  }
+};
+
+export const RoundedShadow: Story = {
+  args: {
+    variant: 'primary',
+    icon: 'menu',
+    size: 20,
+    rounded: true,
+    shadow: true,
+    target: '_self'
   }
 };
