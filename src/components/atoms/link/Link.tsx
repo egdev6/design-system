@@ -33,7 +33,7 @@ const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a
       {...props}
       target={target}
       aria-label={children && href ? children : ''}
-      role={variant === 'button' || variant === 'outline' ? 'button' : undefined}
+      role={variant === 'button' || variant === 'outlined' ? 'button' : 'link'}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       title={title ?? children}
       tabIndex={0}

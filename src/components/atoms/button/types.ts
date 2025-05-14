@@ -7,38 +7,68 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'shadow-lg text-text-dark hover:text-accent dark:hover:text-text-dark bg-accent hover:shadow-transparent shadow-secondary hover:bg-transparent uppercase',
+          'text-text-dark hover:text-accent dark:hover:text-text-dark bg-accent shadow-secondary border-2 border-transparent hover:border-accent hover:bg-gray-100 dark:hover:bg-gray-800',
         secondary:
-          'shadow-lg text-text-dark bg-gray-800 hover:text-text-light dark:hover:text-text-dark hover:shadow-transparent shadow-gray-900 hover:bg-transparent uppercase',
+          'text-text-dark bg-gray-500 dark:bg-gray-700 hover:text-accent shadow-gray-900 border-2 hover:bg-hover-ligth hover:border-hover-ligth border-gray-500 dark:border-gray-700 dark:hover:border-hover-dark dark:hover:bg-hover-dark',
         outline:
-          'button-outline shadow-lg dark:text-text-dark text-accent hover:text-text-dark bg-gray-100 dark:bg-gray-800 shadow-accent border-2 border-accent hover:bg-accent uppercase'
+          'button-outline dark:text-text-dark text-accent hover:text-text-dark bg-gray-100 dark:bg-gray-800 shadow-accent border-2 border-accent hover:bg-accent'
+      },
+      rounded: {
+        true: 'rounded-full',
+        false: 'rounded-md'
+      },
+      shadow: {
+        true: 'shadow-lg hover:shadow-transparent',
+        false: ''
+      },
+      uppercase: {
+        true: 'uppercase',
+        false: ''
       },
       size: {
-        md: 'px-4 py-2 fs-base tablet:fs-base-tablet',
+        md: 'h-[44px] px-4 py-2 fs-base tablet:fs-base-tablet',
         lg: 'px-6 py-4 fs-h6 tablet:fs-h6-tablet',
         sm: 'px-4 py-2 fs-small tablet:fs-small-tablet'
       }
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'md'
+      size: 'md',
+      rounded: false,
+      shadow: true
     }
   }
 );
 
+type ButtonVariant = 'primary' | 'secondary' | 'outline';
+type ButtonTypeVariants = 'button' | 'submit' | 'reset';
+type ButtonSizeVariants = 'md' | 'sm' | 'lg';
+
 export type ButtonProps = {
-  /** @control string */
+  /** @control select */
+  variant?: ButtonVariant;
+  /** @control text */
   text?: string;
+  /** @control text */
+  icon?: DynamicIconName;
+  /** @control text */
+  size?: ButtonSizeVariants;
+  /** @control select */
+  type?: ButtonTypeVariants;
+  /** @control boolean */
+  rounded?: boolean;
+  /** @control boolean */
+  shadow?: boolean;
+  /** @control boolean */
+  uppercase?: boolean;
   /** @control boolean */
   disabled?: boolean;
   /** @control boolean */
   isFullWidth?: boolean;
   /** @control boolean */
   isLoading?: boolean;
-  /** @control select */
-  type?: 'button' | 'submit' | 'reset';
-  /** @control string */
-  icon?: DynamicIconName;
-  /** @control string */
+  /** @control text */
   ariaLabel?: string;
+  /** @control text */
+  className?: string;
 };
