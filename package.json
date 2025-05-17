@@ -14,13 +14,16 @@
     "pre-commit": "pnpm run biome-staged && tsc && git add -A"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-slot": "1.2.1",
     "@radix-ui/react-tooltip": "^1.2.6",
     "@storybook/addon-actions": "8.6.12",
+    "@types/react-motion": "^0.0.40",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.507.0",
+    "motion": "^12.12.1",
     "postcss": "^8.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
