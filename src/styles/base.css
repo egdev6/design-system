@@ -26,6 +26,12 @@
   .fs-h4 { font-size: var(--text-h4); line-height: 1.2;}
   .fs-h5 { font-size: var(--text-h5); line-height: 1.2;}
   .fs-h6 { font-size: var(--text-h6); line-height: 1.2;}
+  .fs-h1.font-primary { font-size: 4.5rem; line-height: 1.2;}
+  .fs-h2.font-primary { font-size: 4rem; line-height: 1.2;}
+  .fs-h3.font-primary { font-size: 3.5rem; line-height: 1.2;}
+  .fs-h4.font-primary { font-size: 3rem; line-height: 1.2;}
+  .fs-h5.font-primary { font-size: 2.5rem; line-height: 1.2;}
+  .fs-h6.font-primary { font-size: 2rem; line-height: 1.2;}
   .fs-base { font-size: var(--text-base); line-height: 1.2;}
   .fs-small { font-size: var(--text-small); line-height: 1.2;}
   .font-primary { font-family: var(--font-primary); }

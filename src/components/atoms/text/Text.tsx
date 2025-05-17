@@ -21,23 +21,22 @@ export function sanitizeHtml(html: string): string {
 }
 
 const Text = ({
+  font = 'secondary',
   tag = 'p',
-  size,
-  color,
   prominent,
   className,
   children,
   isHtml = false,
+  ariaLive,
   srOnly,
   ...rest
 }: TextProps) => {
   const Component = tag;
-  const value = size ?? tag;
 
   const sanitizedHtml = isHtml ? sanitizeHtml(children as string) : undefined;
 
   const props = {
-    className: cn(textVariants({ size: value, color, prominent }), srOnly && 'sr-only', className),
+    className: cn(textVariants({ tag, prominent }), className),
     ...rest
   };
 
@@ -47,7 +46,7 @@ const Text = ({
   }
 
   return (
-    <Component {...props} aria-label={children}>
+    <Component {...props} aria-live={ariaLive ?? undefined}>
       {children}
     </Component>
   );

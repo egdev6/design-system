@@ -1,24 +1,60 @@
-import type { DynamicIconName } from '@/components/types';
+import type { DynamicIconName } from '@/components/utils/types';
 import { cva } from 'class-variance-authority';
 
 export const iconButtonVariants = cva(
-  'link px-2 py-2 w-auto relative transition-all ease-in duration-300 !flex !gap-1 font-secondary items-center justify-start cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
+  [
+    'link px-2 py-2 w-auto border-2',
+    '!flex !gap-1 items-center justify-start',
+    'cursor-pointer whitespace-nowrap line-clamp-1 ',
+    'focus-visible:outline-2 focus-visible:outline-offset-2',
+    'dark:focus-visible:outline-white focus-visible:outline-accent'
+  ],
   {
     variants: {
       variant: {
-        primary:
-          'text-text-dark hover:text-accent dark:hover:text-text-dark bg-accent hover:bg-gray-100 dark:hover:bg-gray-800 shadow-secondary border-2 border-accent',
-        secondary:
-          'text-gray-500 hover:text-accent dark:hover:bg-hover-dark hover:bg-hover-ligth hover-bg-transparent shadow-gray-500 dark:shadow-gray-900',
-        outlined:
-          'text-accent dark:text-text-dark hover:text-text-dark bg-gray-100 dark:bg-gray-800 hover:bg-accent border-2 border-accent shadow-secondary'
+        primary: [
+          'text-text-dark',
+          'bg-secondary',
+          'border-secondary',
+          'hover:text-secondary',
+          'hover:border-secondary',
+          'hover:shadow-primary',
+          'dark:hover:bg-gray-800',
+          'dark:hover:text-text-dark',
+          'dark:hover:text-text-dark',
+          'dark:hover:shadow-secondary'
+        ],
+        ghost: ['text-text-light', 'dark:text-text-dark'],
+        light: ['text-text-light', 'dark:text-text-dark'],
+        secondary: [
+          'text-text-dark',
+          'bg-gray-500',
+          'border-gray-500',
+          'dark:bg-gray-700',
+          'dark:border-gray-700',
+          'dark:hover:border-accent',
+          'hover:border-secondary',
+          'hover:shadow-gray-900',
+          'dark:hover:shadow-gray-900'
+        ],
+        outlined: [
+          'text-secondary',
+          'bg-gray-200',
+          'border-secondary',
+          'dark:text-text-dark',
+          'dark:bg-gray-800',
+          'hover:text-text-dark',
+          'hover:bg-secondary',
+          'hover:shadow-primary',
+          'dark:hover:shadow-secondary'
+        ]
       },
       rounded: {
         true: 'rounded-full',
         false: 'rounded-md'
       },
       shadow: {
-        true: 'shadow-md hover:shadow-transparent',
+        true: 'hover:shadow-sm',
         false: ''
       }
     },
