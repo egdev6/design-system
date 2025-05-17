@@ -33,67 +33,112 @@ export const Default: Story = {
   }
 };
 
+export const Primary: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='sm' onClick={action('clicked')} />
+      <Button size='md' onClick={action('clicked')} />
+      <Button size='lg' onClick={action('clicked')} />
+    </div>
+  )
+};
+
 export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-    rounded: false,
-    shadow: true,
-    uppercase: true,
-    size: "md",
-    text: "Lorem ipsum",
-    type: "button",
-    disabled: false,
-    isFullWidth: false,
-    isLoading: false,
-    ariaLabel: ""
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='sm' variant='secondary' onClick={action('clicked')} />
+      <Button size='md' variant='secondary' onClick={action('clicked')} />
+      <Button size='lg' variant='secondary' onClick={action('clicked')} />
+    </div>
+  )
 };
 
 export const Outlined: Story = {
-  args: {
-    variant: "outline",
-    rounded: false,
-    shadow: true,
-    uppercase: true,
-    size: "md",
-    text: "Lorem ipsum",
-    type: "button",
-    disabled: false,
-    isFullWidth: false,
-    isLoading: false,
-    ariaLabel: ""
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='sm' variant='outlined' onClick={action('clicked')} />
+      <Button size='md' variant='outlined' onClick={action('clicked')} />
+      <Button size='lg' variant='outlined' onClick={action('clicked')} />
+    </div>
+  )
+};
+
+export const Ghost: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='sm' variant='ghost' onClick={action('clicked')} />
+      <Button size='md' variant='ghost' onClick={action('clicked')} />
+      <Button size='lg' variant='ghost' onClick={action('clicked')} />
+    </div>
+  )
+};
+
+export const Light: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='sm' variant='light' onClick={action('clicked')} />
+      <Button size='md' variant='light' onClick={action('clicked')} />
+      <Button size='lg' variant='light' onClick={action('clicked')} />
+    </div>
+  )
 };
 
 export const Loading: Story = {
-  args: {
-    variant: "primary",
-    rounded: false,
-    shadow: true,
-    uppercase: true,
-    size: "md",
-    text: "Lorem ipsum",
-    type: "button",
-    disabled: false,
-    isFullWidth: false,
-    isLoading: true,
-    ariaLabel: ""
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Button size='md' variant='primary' isLoading={true} onClick={action('clicked')} />
+      <Button size='md' variant='secondary' isLoading={true} onClick={action('clicked')} />
+      <Button size='md' variant='outlined' isLoading={true} onClick={action('clicked')} />
+    </div>
+  )
 };
 
 export const WithIcon: Story = {
+  render: () => (
+    <>
+      <div className='flex gap-4 items-center justify-center'>
+        <Button size='md' variant='primary' icon='image' onClick={action('clicked')} />
+        <Button size='md' variant='outlined' icon='image' onClick={action('clicked')} />
+        <Button size='md' variant='light' icon='image' onClick={action('clicked')} />
+      </div>
+      <div className='flex gap-4 items-center justify-center pt-4'>
+        <Button size='md' variant='secondary' icon='image' onClick={action('clicked')} />
+        <Button size='md' variant='ghost' icon='image' onClick={action('clicked')} />
+      </div>
+    </>
+  )
+};
+
+export const Rounded: Story = {
+  render: () => (
+    <>
+      <div className='flex gap-4 items-center justify-center'>
+        <Button size='md' variant='primary' rounded={true} onClick={action('clicked')} />
+        <Button size='md' variant='outlined' rounded={true} onClick={action('clicked')} />
+        <Button size='md' variant='light' rounded={true} onClick={action('clicked')} />
+      </div>
+      <div className='flex gap-4 items-center justify-center pt-4'>
+        <Button size='md' variant='secondary' rounded={true} onClick={action('clicked')} />
+        <Button size='md' variant='ghost' rounded={true} onClick={action('clicked')} />
+      </div>
+    </>
+  )
+};
+
+export const CustomStyles: Story = {
   args: {
-    variant: "primary",
+    variant: 'primary',
     rounded: false,
     shadow: true,
     uppercase: true,
-    size: "md",
-    text: "Lorem ipsum",
-    type: "button",
+    size: 'md',
+    text: 'Lorem ipsum',
+    type: 'button',
     disabled: false,
     isFullWidth: false,
     isLoading: false,
-    ariaLabel: "",
-    icon: "image"
+    ariaLabel: '',
+    icon: 'arrow-right',
+    className: '!flex-row-reverse'
   }
 };

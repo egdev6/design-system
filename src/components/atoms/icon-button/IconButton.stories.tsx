@@ -27,48 +27,67 @@ export const Default: Story = {
   }
 };
 
+export const Primary: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} href='#' title='link' />
+      <IconButton size={16} href='#' title='link' />
+      <IconButton size={22} href='#' title='link' />
+      <IconButton size={28} href='#' title='link' />
+      <IconButton size={34} href='#' title='link' />
+      <IconButton size={40} href='#' title='link' />
+    </div>
+  )
+};
+
 export const Secondary: Story = {
-  args: {
-    variant: 'secondary',
-    icon: 'menu',
-    size: 20,
-    rounded: false,
-    shadow: false,
-    target: '_self'
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} href='#' title='link' variant='secondary' />
+      <IconButton size={16} href='#' title='link' variant='secondary' />
+      <IconButton size={22} href='#' title='link' variant='secondary' />
+      <IconButton size={28} href='#' title='link' variant='secondary' />
+      <IconButton size={34} href='#' title='link' variant='secondary' />
+      <IconButton size={40} href='#' title='link' variant='secondary' />
+    </div>
+  )
 };
 
 export const Outlined: Story = {
-  args: {
-    variant: 'outlined',
-    icon: 'menu',
-    size: 20,
-    rounded: false,
-    shadow: false,
-    target: '_self'
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} href='#' title='link' variant='outlined' />
+      <IconButton size={16} href='#' title='link' variant='outlined' />
+      <IconButton size={22} href='#' title='link' variant='outlined' />
+      <IconButton size={28} href='#' title='link' variant='outlined' />
+      <IconButton size={34} href='#' title='link' variant='outlined' />
+      <IconButton size={40} href='#' title='link' variant='outlined' />
+    </div>
+  )
 };
 
 export const Button: Story = {
-  args: {
-    variant: 'primary',
-    icon: 'menu',
-    size: 20,
-    rounded: true,
-    shadow: true,
-    target: '_self',
-    onClick: action('clicked'),
-    title: "Menu"
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={16} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={22} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={28} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={34} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={40} href='#' title='link' onClick={action('clicked')} />
+    </div>
+  )
 };
 
 export const RoundedShadow: Story = {
-  args: {
-    variant: 'primary',
-    icon: 'menu',
-    size: 20,
-    rounded: true,
-    shadow: true,
-    target: '_self'
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={16} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={22} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={28} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={34} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={40} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+    </div>
+  )
 };

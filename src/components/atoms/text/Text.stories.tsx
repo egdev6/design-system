@@ -17,14 +17,34 @@ type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
   args: {
-    children: 'Lorem ipsum'
+    children: 'Lorem ipsum',
+    font: 'secondary',
+    tag: 'p',
+    prominent: false,
+    srOnly: false,
+    isHtml: false
   }
 };
 
-export const PrimaryH1: Story = {
+export const WithHtml: Story = {
+  args: {
+    children: '<i>Lorem ipsum</i>',
+    font: 'secondary',
+    tag: 'p',
+    prominent: false,
+    srOnly: false,
+    isHtml: true
+  }
+};
+
+export const CustomColors: Story = {
   args: {
     children: 'Lorem ipsum',
-    tag: 'h1',
-    className: 'font-primary'
+    font: 'secondary',
+    tag: 'p',
+    prominent: false,
+    srOnly: false,
+    isHtml: false,
+    className: 'text-yellow dark:text-pink'
   }
 };
