@@ -1,24 +1,83 @@
-import type { DynamicIconName } from '@/components/types';
-import { cva } from 'class-variance-authority';
+import type { DynamicIconName } from '@/components/utils/types';
+import { type VariantProps, cva } from 'class-variance-authority';
 
 export const buttonVariants = cva(
-  'button relative transition-all ease-in duration-300 !flex gap-4 font-secondary-bold rounded-lg items-center tracking-[2px] overflow-hidden justify-center cursor-pointer whitespace-nowrap disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
+  [
+    'button relative overflow-hidden border-2 cursor-pointer max-w-full',
+    'flex items-center justify-center',
+    'font-secondary-bold whitespace-nowrap line-clamp-1 leading-[1.2]',
+    'disabled:pointer-events-none disabled:opacity-60',
+    'focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent focus-visible:outline-2'
+  ],
   {
     variants: {
       variant: {
-        primary:
-          'text-text-dark hover:text-accent dark:hover:text-text-dark bg-accent shadow-secondary border-2 border-transparent hover:border-accent hover:bg-gray-100 dark:hover:bg-gray-800',
-        secondary:
-          'text-text-dark bg-gray-500 dark:bg-gray-700 hover:text-accent shadow-gray-900 border-2 hover:bg-hover-ligth hover:border-hover-ligth border-gray-500 dark:border-gray-700 dark:hover:border-hover-dark dark:hover:bg-hover-dark',
-        outline:
-          'button-outline dark:text-text-dark text-accent hover:text-text-dark bg-gray-100 dark:bg-gray-800 shadow-accent border-2 border-accent hover:bg-accent'
+        primary: [
+          'text-text-dark',
+          'bg-secondary',
+          'border-secondary',
+          'hover:border-accent',
+          'hover:bg-accent',
+          'hover:shadow-secondary',
+          'dark:hover:bg-accent',
+          'dark:hover:shadow-secondary'
+        ],
+        ghost: [
+          'text-text-light',
+          'bg-transparent',
+          'border-text-light',
+          'hover:bg-gray-light-600',
+          'hover:border-gray-light-600',
+          'hover:shadow-transparent',
+          'dark:text-text-dark',
+          'dark:border-gray-dark-400',
+          'dark:hover:bg-gray-dark-400',
+          'dark:hover:border-gray-dark-400',
+          'dark:hover:shadow-gray-900'
+        ],
+        light: [
+          'text-secondary',
+          'border-transparent',
+          'bg-transparent',
+          'hover:text-text-dark',
+          'dark:text-text-dark',
+          'hover:border-accent',
+          'hover:bg-accent',
+          'hover:shadow-secondary'
+        ],
+        secondary: [
+          'text-text-light',
+          'bg-gray-light-500',
+          'border-gray-light-500',
+          'hover:bg-gray-light-600',
+          'hover:border-gray-light-600',
+          'hover:shadow-transparent',
+          'dark:text-text-dark',
+          'dark:bg-gray-dark-500',
+          'dark:border-gray-dark-500',
+          'dark:hover:bg-gray-dark-400',
+          'dark:hover:border-gray-dark-400',
+          'dark:hover:shadow-gray-900'
+        ],
+        outlined: [
+          'text-secondary',
+          'border-secondary',
+          'hover:text-text-dark',
+          'bg-transparent',
+          'hover:border-accent',
+          'hover:bg-accent',
+          'hover:shadow-secondary',
+          'dark:hover:bg-accent',
+          'dark:text-text-dark',
+          'dark:hover:shadow-secondary'
+        ]
       },
       rounded: {
         true: 'rounded-full',
         false: 'rounded-md'
       },
       shadow: {
-        true: 'shadow-lg hover:shadow-transparent',
+        true: 'hover:shadow-sm',
         false: ''
       },
       uppercase: {
@@ -26,9 +85,9 @@ export const buttonVariants = cva(
         false: ''
       },
       size: {
-        md: 'h-[44px] px-4 py-2 fs-base tablet:fs-base-tablet',
-        lg: 'px-6 py-4 fs-h6 tablet:fs-h6-tablet',
-        sm: 'px-4 py-2 fs-small tablet:fs-small-tablet'
+        md: 'px-md h-10 fs-base tablet:fs-base-tablet',
+        lg: 'px-lg h-12 fs-h6 tablet:fs-h6-tablet',
+        sm: 'px-sm h-8 fs-small tablet:fs-small-tablet'
       }
     },
     defaultVariants: {
@@ -40,7 +99,7 @@ export const buttonVariants = cva(
   }
 );
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline';
+type ButtonVariant = VariantProps<typeof buttonVariants>['variant'];
 type ButtonTypeVariants = 'button' | 'submit' | 'reset';
 type ButtonSizeVariants = 'md' | 'sm' | 'lg';
 

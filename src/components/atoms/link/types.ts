@@ -1,4 +1,4 @@
-import type { DynamicIconName } from '@/components/types';
+import type { DynamicIconName } from '@/components/utils/types';
 import { cva } from 'class-variance-authority';
 
 export const linkVariants = cva(
