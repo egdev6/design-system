@@ -2,21 +2,59 @@ import type { DynamicIconName } from '@/components/utils/types';
 import { cva } from 'class-variance-authority';
 
 export const linkVariants = cva(
-  'link w-auto relative transition-all ease-in duration-300 !flex !gap-1 font-secondary items-center justify-start cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent line-clamp-1 ',
+  [
+    'link w-auto relative overflow-hidden cursor-pointer',
+    'transition-all duration-200 ease-in-out',
+    'flex gap-1 items-center justify-start',
+    'font-secondary whitespace-nowrapline-clamp-1 leading-[1.2]',
+    'focus-visible:outline-2 focus-visible:outline-offset-2',
+    'dark:focus-visible:outline-white focus-visible:outline-accent'
+  ],
   {
     variants: {
       variant: {
-        regular:
-          'hover:text-accent text-text-light dark:text-text-dark dark:hover:text-accent underline-offset-2 underline',
-        button:
-          'px-4 py-2 shadow-lg rounded-lg text-text-dark dark:text-text-dark hover:text-accent hover:underline-offset-2 hover:underline dark:hover:text-text-dark bg-accent shadow-secondary hover:shadow-transparent hover:bg-gray-100 dark:hover:bg-gray-800 border-2 border-accent hover:border-accent',
-        outlined:
-          'px-4 py-2 shadow-lg rounded-lg text-accent dark:text-text-dark hover:text-text-dark bg-gray-100 dark:bg-gray-800 shadow-secondary border-2 border-accent hover:bg-accent'
+        regular: [
+          'hover:text-secondary',
+          'text-text-light',
+          'dark:text-text-dark',
+          'dark:hover:text-accent',
+          'underline-offset-2 underline'
+        ],
+        button: [
+          'px-4 py-2',
+          'rounded-md',
+          'border-2',
+          'text-text-dark',
+          'bg-secondary',
+          'border-secondary',
+          'hover:border-accent',
+          'hover:bg-accent',
+          'hover:shadow-secondary',
+          'dark:hover:bg-accent',
+          'dark:hover:shadow-secondary',
+          'hover:shadow-custom-md'
+        ],
+        outlined: [
+          'px-4 py-2',
+          'rounded-md',
+          'border-2',
+          'text-secondary',
+          'border-secondary',
+          'hover:text-text-dark',
+          'bg-transparent',
+          'hover:border-accent',
+          'hover:bg-accent',
+          'hover:shadow-secondary',
+          'dark:hover:bg-accent',
+          'dark:text-text-dark',
+          'dark:hover:shadow-secondary',
+          'hover:shadow-custom-sm'
+        ]
       },
       size: {
-        sm: 'fs-small tablet:fs-small-tablet',
-        md: 'fs-base tablet:fs-base-tablet',
-        lg: 'fs-h5 tabket:fs-base-tablet'
+        md: 'px-md fs-base tablet:fs-base-tablet',
+        lg: 'px-lg fs-h6 tablet:fs-h6-tablet',
+        sm: 'px-sm fs-small tablet:fs-small-tablet'
       }
     },
     defaultVariants: {
@@ -34,7 +72,7 @@ export type LinkProps = {
   /** @control select */
   variant?: ButtonVariants;
   /** @control text */
-  href: string;
+  href?: string;
   /**@control text */
   target?: TargetVariants;
   /** @control text */
