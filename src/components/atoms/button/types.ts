@@ -4,10 +4,11 @@ import { type VariantProps, cva } from 'class-variance-authority';
 export const buttonVariants = cva(
   [
     'button relative overflow-hidden border-2 cursor-pointer max-w-full',
+    'transition-all duration-200 ease-in-out',
     'flex items-center justify-center',
     'font-secondary-bold whitespace-nowrap line-clamp-1 leading-[1.2]',
     'disabled:pointer-events-none disabled:opacity-60',
-    'focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-accent focus-visible:outline-2'
+    'focus-visible:outline-offset-2 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-2'
   ],
   {
     variants: {
@@ -77,7 +78,7 @@ export const buttonVariants = cva(
         false: 'rounded-md'
       },
       shadow: {
-        true: 'hover:shadow-sm',
+        true: 'hover:shadow-custom-sm',
         false: ''
       },
       uppercase: {

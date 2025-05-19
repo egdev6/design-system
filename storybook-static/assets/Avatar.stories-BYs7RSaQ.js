@@ -1,0 +1,493 @@
+import { a as H, r as o } from './index-CdUicJsP.js';
+import { j as f } from './jsx-runtime-D_zvdyIk.js';
+import { a as h } from './utils-BaGd3ScT.js';
+import './index-tgq_NGtl.js';
+import './_commonjsHelpers-CqkleIqs.js';
+import './index-PxHYSiC3.js';
+function B(e, t = []) {
+  let s = [];
+  function a(n, l) {
+    const i = o.createContext(l),
+      u = s.length;
+    s = [...s, l];
+    const m = (c) => {
+      var j;
+      const { scope: d, children: g, ...x } = c,
+        p = ((j = d == null ? void 0 : d[e]) == null ? void 0 : j[u]) || i,
+        E = o.useMemo(() => x, Object.values(x));
+      return f.jsx(p.Provider, { value: E, children: g });
+    };
+    m.displayName = n + 'Provider';
+    function v(c, d) {
+      var p;
+      const g = ((p = d == null ? void 0 : d[e]) == null ? void 0 : p[u]) || i,
+        x = o.useContext(g);
+      if (x) return x;
+      if (l !== void 0) return l;
+      throw new Error(`\`${c}\` must be used within \`${n}\``);
+    }
+    return [m, v];
+  }
+  const r = () => {
+    const n = s.map((l) => o.createContext(l));
+    return function (i) {
+      const u = (i == null ? void 0 : i[e]) || n;
+      return o.useMemo(() => ({ [`__scope${e}`]: { ...i, [e]: u } }), [i, u]);
+    };
+  };
+  return (r.scopeName = e), [a, U(r, ...t)];
+}
+function U(...e) {
+  const t = e[0];
+  if (e.length === 1) return t;
+  const s = () => {
+    const a = e.map((r) => ({ useScope: r(), scopeName: r.scopeName }));
+    return function (n) {
+      const l = a.reduce((i, { useScope: u, scopeName: m }) => {
+        const c = u(n)[`__scope${m}`];
+        return { ...i, ...c };
+      }, {});
+      return o.useMemo(() => ({ [`__scope${t.scopeName}`]: l }), [l]);
+    };
+  };
+  return (s.scopeName = t.scopeName), s;
+}
+function K(e) {
+  const t = o.useRef(e);
+  return (
+    o.useEffect(() => {
+      t.current = e;
+    }),
+    o.useMemo(
+      () =>
+        (...s) => {
+          var a;
+          return (a = t.current) == null ? void 0 : a.call(t, ...s);
+        },
+      []
+    )
+  );
+}
+var k = globalThis != null && globalThis.document ? o.useLayoutEffect : () => {};
+function N(e, t) {
+  if (typeof e == 'function') return e(t);
+  e != null && (e.current = t);
+}
+function Z(...e) {
+  return (t) => {
+    let s = !1;
+    const a = e.map((r) => {
+      const n = N(r, t);
+      return !s && typeof n == 'function' && (s = !0), n;
+    });
+    if (s)
+      return () => {
+        for (let r = 0; r < a.length; r++) {
+          const n = a[r];
+          typeof n == 'function' ? n() : N(e[r], null);
+        }
+      };
+  };
+}
+function J(...e) {
+  return o.useCallback(Z(...e), e);
+}
+function Q(e) {
+  const t = X(e),
+    s = o.forwardRef((a, r) => {
+      const { children: n, ...l } = a,
+        i = o.Children.toArray(n),
+        u = i.find(ee);
+      if (u) {
+        const m = u.props.children,
+          v = i.map((c) =>
+            c === u
+              ? o.Children.count(m) > 1
+                ? o.Children.only(null)
+                : o.isValidElement(m)
+                  ? m.props.children
+                  : null
+              : c
+          );
+        return f.jsx(t, { ...l, ref: r, children: o.isValidElement(m) ? o.cloneElement(m, void 0, v) : null });
+      }
+      return f.jsx(t, { ...l, ref: r, children: n });
+    });
+  return (s.displayName = `${e}.Slot`), s;
+}
+function X(e) {
+  const t = o.forwardRef((s, a) => {
+    const { children: r, ...n } = s,
+      l = o.isValidElement(r) ? re(r) : void 0,
+      i = J(l, a);
+    if (o.isValidElement(r)) {
+      const u = te(n, r.props);
+      return r.type !== o.Fragment && (u.ref = i), o.cloneElement(r, u);
+    }
+    return o.Children.count(r) > 1 ? o.Children.only(null) : null;
+  });
+  return (t.displayName = `${e}.SlotClone`), t;
+}
+var Y = Symbol('radix.slottable');
+function ee(e) {
+  return o.isValidElement(e) && typeof e.type == 'function' && '__radixId' in e.type && e.type.__radixId === Y;
+}
+function te(e, t) {
+  const s = { ...t };
+  for (const a in t) {
+    const r = e[a],
+      n = t[a];
+    /^on[A-Z]/.test(a)
+      ? r && n
+        ? (s[a] = (...i) => {
+            const u = n(...i);
+            return r(...i), u;
+          })
+        : r && (s[a] = r)
+      : a === 'style'
+        ? (s[a] = { ...r, ...n })
+        : a === 'className' && (s[a] = [r, n].filter(Boolean).join(' '));
+  }
+  return { ...e, ...s };
+}
+function re(e) {
+  var a, r;
+  let t = (a = Object.getOwnPropertyDescriptor(e.props, 'ref')) == null ? void 0 : a.get,
+    s = t && 'isReactWarning' in t && t.isReactWarning;
+  return s
+    ? e.ref
+    : ((t = (r = Object.getOwnPropertyDescriptor(e, 'ref')) == null ? void 0 : r.get),
+      (s = t && 'isReactWarning' in t && t.isReactWarning),
+      s ? e.props.ref : e.props.ref || e.ref);
+}
+var ne = [
+    'a',
+    'button',
+    'div',
+    'form',
+    'h2',
+    'h3',
+    'img',
+    'input',
+    'label',
+    'li',
+    'nav',
+    'ol',
+    'p',
+    'select',
+    'span',
+    'svg',
+    'ul'
+  ],
+  w = ne.reduce((e, t) => {
+    const s = Q(`Primitive.${t}`),
+      a = o.forwardRef((r, n) => {
+        const { asChild: l, ...i } = r,
+          u = l ? s : t;
+        return typeof window < 'u' && (window[Symbol.for('radix-ui')] = !0), f.jsx(u, { ...i, ref: n });
+      });
+    return (a.displayName = `Primitive.${t}`), { ...e, [t]: a };
+  }, {}),
+  C = { exports: {} },
+  b = {}; /**
+ * @license React
+ * use-sync-external-store-shim.production.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var R;
+function ae() {
+  if (R) return b;
+  R = 1;
+  var e = H();
+  function t(c, d) {
+    return (c === d && (c !== 0 || 1 / c === 1 / d)) || (c !== c && d !== d);
+  }
+  var s = typeof Object.is == 'function' ? Object.is : t,
+    a = e.useState,
+    r = e.useEffect,
+    n = e.useLayoutEffect,
+    l = e.useDebugValue;
+  function i(c, d) {
+    var g = d(),
+      x = a({ inst: { value: g, getSnapshot: d } }),
+      p = x[0].inst,
+      E = x[1];
+    return (
+      n(
+        function () {
+          (p.value = g), (p.getSnapshot = d), u(p) && E({ inst: p });
+        },
+        [c, g, d]
+      ),
+      r(
+        function () {
+          return (
+            u(p) && E({ inst: p }),
+            c(function () {
+              u(p) && E({ inst: p });
+            })
+          );
+        },
+        [c]
+      ),
+      l(g),
+      g
+    );
+  }
+  function u(c) {
+    var d = c.getSnapshot;
+    c = c.value;
+    try {
+      var g = d();
+      return !s(c, g);
+    } catch {
+      return !0;
+    }
+  }
+  function m(c, d) {
+    return d();
+  }
+  var v = typeof window > 'u' || typeof window.document > 'u' || typeof window.document.createElement > 'u' ? m : i;
+  return (b.useSyncExternalStore = e.useSyncExternalStore !== void 0 ? e.useSyncExternalStore : v), b;
+}
+var L;
+function se() {
+  return L || ((L = 1), (C.exports = ae())), C.exports;
+}
+var oe = se();
+function ie() {
+  return oe.useSyncExternalStore(
+    le,
+    () => !0,
+    () => !1
+  );
+}
+function le() {
+  return () => {};
+}
+var _ = 'Avatar',
+  [ue, be] = B(_),
+  [ce, M] = ue(_),
+  O = o.forwardRef((e, t) => {
+    const { __scopeAvatar: s, ...a } = e,
+      [r, n] = o.useState('idle');
+    return f.jsx(ce, {
+      scope: s,
+      imageLoadingStatus: r,
+      onImageLoadingStatusChange: n,
+      children: f.jsx(w.span, { ...a, ref: t })
+    });
+  });
+O.displayName = _;
+var D = 'AvatarImage',
+  F = o.forwardRef((e, t) => {
+    const { __scopeAvatar: s, src: a, onLoadingStatusChange: r = () => {}, ...n } = e,
+      l = M(D, s),
+      i = de(a, n),
+      u = K((m) => {
+        r(m), l.onImageLoadingStatusChange(m);
+      });
+    return (
+      k(() => {
+        i !== 'idle' && u(i);
+      }, [i, u]),
+      i === 'loaded' ? f.jsx(w.img, { ...n, ref: t, src: a }) : null
+    );
+  });
+F.displayName = D;
+var T = 'AvatarFallback',
+  W = o.forwardRef((e, t) => {
+    const { __scopeAvatar: s, delayMs: a, ...r } = e,
+      n = M(T, s),
+      [l, i] = o.useState(a === void 0);
+    return (
+      o.useEffect(() => {
+        if (a !== void 0) {
+          const u = window.setTimeout(() => i(!0), a);
+          return () => window.clearTimeout(u);
+        }
+      }, [a]),
+      l && n.imageLoadingStatus !== 'loaded' ? f.jsx(w.span, { ...r, ref: t }) : null
+    );
+  });
+W.displayName = T;
+function z(e, t) {
+  return e
+    ? t
+      ? (e.src !== t && (e.src = t), e.complete && e.naturalWidth > 0 ? 'loaded' : 'loading')
+      : 'error'
+    : 'idle';
+}
+function de(e, { referrerPolicy: t, crossOrigin: s }) {
+  const a = ie(),
+    r = o.useRef(null),
+    n = a ? (r.current || (r.current = new window.Image()), r.current) : null,
+    [l, i] = o.useState(() => z(n, e));
+  return (
+    k(() => {
+      i(z(n, e));
+    }, [n, e]),
+    k(() => {
+      const u = (c) => () => {
+        i(c);
+      };
+      if (!n) return;
+      const m = u('loaded'),
+        v = u('error');
+      return (
+        n.addEventListener('load', m),
+        n.addEventListener('error', v),
+        t && (n.referrerPolicy = t),
+        typeof s == 'string' && (n.crossOrigin = s),
+        () => {
+          n.removeEventListener('load', m), n.removeEventListener('error', v);
+        }
+      );
+    }, [n, s, t]),
+    l
+  );
+}
+var fe = O,
+  me = F,
+  pe = W;
+function ge({ className: e, ...t }) {
+  return f.jsx(fe, {
+    'data-slot': 'avatar',
+    className: h('relative flex size-8 shrink-0 overflow-hidden rounded-full', e),
+    ...t
+  });
+}
+function ve({ className: e, ...t }) {
+  return f.jsx(me, { 'data-slot': 'avatar-image', className: h('aspect-square size-full', e), ...t });
+}
+function xe({ className: e, ...t }) {
+  return f.jsx(pe, {
+    'data-slot': 'avatar-fallback',
+    className: h('bg-muted flex size-full items-center justify-center rounded-full', e),
+    ...t
+  });
+}
+const S = ({ src: e, alt: t = 'EG', className: s, size: a = 'md' }) => {
+  const r = { sm: '30px', md: '40px', lg: '50px', xl: '60px', '2xl': '70px', '3xl': '80px' },
+    n = {
+      sm: 'text-[0.8em]',
+      md: 'text-[1em]',
+      lg: 'text-[1.2em]',
+      xl: 'text-[1.4em]',
+      '2xl': 'text-[1.6em]',
+      '3xl': 'text-[1.8em]'
+    },
+    l = r[a],
+    i = n[a];
+  return f.jsxs(ge, {
+    className: h(
+      'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
+      s
+    ),
+    style: { width: l, height: l },
+    children: [
+      f.jsx(ve, { src: e, style: { width: l, height: l } }),
+      f.jsx(xe, { className: h('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', i), children: t })
+    ]
+  });
+};
+try {
+  (S.displayName = 'Avatar'),
+    (S.__docgenInfo = {
+      description: '',
+      displayName: 'Avatar',
+      props: {
+        src: { defaultValue: null, description: '@control src', name: 'src', required: !0, type: { name: 'string' } },
+        size: {
+          defaultValue: { value: 'md' },
+          description: '@control select',
+          name: 'size',
+          required: !1,
+          type: {
+            name: 'enum',
+            value: [
+              { value: '"md"' },
+              { value: '"lg"' },
+              { value: '"sm"' },
+              { value: '"xl"' },
+              { value: '"2xl"' },
+              { value: '"3xl"' }
+            ]
+          }
+        },
+        alt: {
+          defaultValue: { value: 'EG' },
+          description: '@control text',
+          name: 'alt',
+          required: !1,
+          type: { name: 'string' }
+        },
+        className: {
+          defaultValue: null,
+          description: '@control text',
+          name: 'className',
+          required: !1,
+          type: { name: 'string' }
+        }
+      }
+    });
+} catch {}
+const ke = { title: 'Atoms/Avatar', component: S, parameters: { docs: { autodocs: !0 } }, tags: ['autodocs'] },
+  y = { args: { size: 'md', alt: 'EG', className: '' } },
+  A = {
+    render: () =>
+      f.jsxs('div', {
+        className: 'flex gap-4 items-center',
+        children: [
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: 'sm' }),
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: 'md' }),
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: 'lg' }),
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: 'xl' }),
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: '2xl' }),
+          f.jsx(S, { src: '/images/logo-dark-background.png', alt: 'EG', size: '3xl' })
+        ]
+      })
+  };
+var I, G, P;
+y.parameters = {
+  ...y.parameters,
+  docs: {
+    ...((I = y.parameters) == null ? void 0 : I.docs),
+    source: {
+      originalSource: `{
+  args: {
+    size: 'md',
+    alt: 'EG',
+    className: ''
+  }
+}`,
+      ...((P = (G = y.parameters) == null ? void 0 : G.docs) == null ? void 0 : P.source)
+    }
+  }
+};
+var V, $, q;
+A.parameters = {
+  ...A.parameters,
+  docs: {
+    ...((V = A.parameters) == null ? void 0 : V.docs),
+    source: {
+      originalSource: `{
+  render: () => <div className='flex gap-4 items-center'>
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='sm' />
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='md' />
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='lg' />
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='xl' />
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='2xl' />
+      <Avatar src='/images/logo-dark-background.png' alt='EG' size='3xl' />
+    </div>
+}`,
+      ...((q = ($ = A.parameters) == null ? void 0 : $.docs) == null ? void 0 : q.source)
+    }
+  }
+};
+const we = ['Default', 'Sizes'];
+export { y as Default, A as Sizes, we as __namedExportsOrder, ke as default };

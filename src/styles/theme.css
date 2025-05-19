@@ -41,9 +41,9 @@
   --color-gray-light-800: #6b6e78;
   --color-gray-light-900: #4f525c;
   /* Shadow */
-  --shadow-md: 0px 0px 16px 4px rgba(180, 21, 32, 1);
-  --shadow-sm: 0px 0px 16px -1px rgba(180, 21, 32, 1);
-  --shadow-lg: 0px 0px 30px 10px rgba(180, 21, 32, 1);
+  --shadow-custom-sm: 0px 0px 16px -1px rgba(180, 21, 32, 1);
+  --shadow-custom-md: 0px 0px 16px 4px rgba(180, 21, 32, 1);
+  --shadow-custom-lg: 0px 0px 30px 10px rgba(180, 21, 32, 1);
   /* Colors */
   --color-orange: #f97316;
   --color-orange-light: #fb923c;

@@ -2,9 +2,6 @@ import { type RefObject, useEffect } from 'react';
 
 export const useRipple = (ref: RefObject<HTMLElement | null>) => {
   useEffect(() => {
-    if (!ref || !ref.current) {
-      return;
-    }
     const createRipple = (event: MouseEvent) => {
       if (!ref.current) {
         return;
