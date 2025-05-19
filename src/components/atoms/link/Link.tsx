@@ -10,7 +10,7 @@ const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a
   icon = undefined,
   variant = 'regular',
   size = 'md',
-  target = '_self',
+  target = '_blank',
   className,
   href,
   title,
@@ -31,6 +31,7 @@ const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a
   return (
     <a
       {...props}
+      href={href}
       target={target}
       aria-label={children && href ? children : ''}
       role={variant === 'button' || variant === 'outlined' ? 'button' : 'link'}

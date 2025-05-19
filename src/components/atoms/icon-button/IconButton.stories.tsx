@@ -23,19 +23,21 @@ export const Default: Story = {
     size: 20,
     rounded: false,
     shadow: false,
-    target: '_self'
+    disabled: false,
+    className: '',
+    title: ''
   }
 };
 
 export const Primary: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <IconButton size={12} href='#' title='link' />
-      <IconButton size={16} href='#' title='link' />
-      <IconButton size={22} href='#' title='link' />
-      <IconButton size={28} href='#' title='link' />
-      <IconButton size={34} href='#' title='link' />
-      <IconButton size={40} href='#' title='link' />
+      <IconButton size={12} title='link' onClick={action('clicked')} />
+      <IconButton size={16} title='link' onClick={action('clicked')} />
+      <IconButton size={22} title='link' onClick={action('clicked')} />
+      <IconButton size={28} title='link' onClick={action('clicked')} />
+      <IconButton size={34} title='link' onClick={action('clicked')} />
+      <IconButton size={40} title='link' onClick={action('clicked')} />
     </div>
   )
 };
@@ -43,12 +45,12 @@ export const Primary: Story = {
 export const Secondary: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <IconButton size={12} href='#' title='link' variant='secondary' />
-      <IconButton size={16} href='#' title='link' variant='secondary' />
-      <IconButton size={22} href='#' title='link' variant='secondary' />
-      <IconButton size={28} href='#' title='link' variant='secondary' />
-      <IconButton size={34} href='#' title='link' variant='secondary' />
-      <IconButton size={40} href='#' title='link' variant='secondary' />
+      <IconButton size={12} title='link' variant='secondary' onClick={action('clicked')} />
+      <IconButton size={16} title='link' variant='secondary' onClick={action('clicked')} />
+      <IconButton size={22} title='link' variant='secondary' onClick={action('clicked')} />
+      <IconButton size={28} title='link' variant='secondary' onClick={action('clicked')} />
+      <IconButton size={34} title='link' variant='secondary' onClick={action('clicked')} />
+      <IconButton size={40} title='link' variant='secondary' onClick={action('clicked')} />
     </div>
   )
 };
@@ -56,25 +58,38 @@ export const Secondary: Story = {
 export const Outlined: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <IconButton size={12} href='#' title='link' variant='outlined' />
-      <IconButton size={16} href='#' title='link' variant='outlined' />
-      <IconButton size={22} href='#' title='link' variant='outlined' />
-      <IconButton size={28} href='#' title='link' variant='outlined' />
-      <IconButton size={34} href='#' title='link' variant='outlined' />
-      <IconButton size={40} href='#' title='link' variant='outlined' />
+      <IconButton size={12} title='link' variant='outlined' onClick={action('clicked')} />
+      <IconButton size={16} title='link' variant='outlined' onClick={action('clicked')} />
+      <IconButton size={22} title='link' variant='outlined' onClick={action('clicked')} />
+      <IconButton size={28} title='link' variant='outlined' onClick={action('clicked')} />
+      <IconButton size={34} title='link' variant='outlined' onClick={action('clicked')} />
+      <IconButton size={40} title='link' variant='outlined' onClick={action('clicked')} />
     </div>
   )
 };
 
-export const Button: Story = {
+export const Ghost: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <IconButton size={12} href='#' title='link' onClick={action('clicked')} />
-      <IconButton size={16} href='#' title='link' onClick={action('clicked')} />
-      <IconButton size={22} href='#' title='link' onClick={action('clicked')} />
-      <IconButton size={28} href='#' title='link' onClick={action('clicked')} />
-      <IconButton size={34} href='#' title='link' onClick={action('clicked')} />
-      <IconButton size={40} href='#' title='link' onClick={action('clicked')} />
+      <IconButton size={12} title='link' variant='ghost' onClick={action('clicked')} />
+      <IconButton size={16} title='link' variant='ghost' onClick={action('clicked')} />
+      <IconButton size={22} title='link' variant='ghost' onClick={action('clicked')} />
+      <IconButton size={28} title='link' variant='ghost' onClick={action('clicked')} />
+      <IconButton size={34} title='link' variant='ghost' onClick={action('clicked')} />
+      <IconButton size={40} title='link' variant='ghost' onClick={action('clicked')} />
+    </div>
+  )
+};
+
+export const Light: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <IconButton size={12} title='link' variant='light' onClick={action('clicked')} />
+      <IconButton size={16} title='link' variant='light' onClick={action('clicked')} />
+      <IconButton size={22} title='link' variant='light' onClick={action('clicked')} />
+      <IconButton size={28} title='link' variant='light' onClick={action('clicked')} />
+      <IconButton size={34} title='link' variant='light' onClick={action('clicked')} />
+      <IconButton size={40} title='link' variant='light' onClick={action('clicked')} />
     </div>
   )
 };
@@ -82,12 +97,12 @@ export const Button: Story = {
 export const RoundedShadow: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <IconButton size={12} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
-      <IconButton size={16} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
-      <IconButton size={22} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
-      <IconButton size={28} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
-      <IconButton size={34} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
-      <IconButton size={40} href='#' title='link' variant='outlined' rounded={true} shadow={true} />
+      <IconButton size={12} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
+      <IconButton size={16} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
+      <IconButton size={22} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
+      <IconButton size={28} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
+      <IconButton size={34} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
+      <IconButton size={40} title='link' variant='outlined' rounded={true} shadow={true} onClick={action('clicked')} />
     </div>
   )
 };

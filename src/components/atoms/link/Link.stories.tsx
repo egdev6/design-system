@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import Link from './Link';
 
@@ -18,40 +19,75 @@ type Story = StoryObj<typeof Link>;
 export const Default: Story = {
   args: {
     variant: 'regular',
-    href: 'https://github.com/egdev6',
-    target: '_self',
-    size: "md",
-    children: 'Lorem ipsum'
+    href: '',
+    target: '_blank',
+    size: 'md',
+    children: 'Lorem ipsum',
+    className: '',
+    title: ''
   }
 };
 
-export const Button: Story = {
-  args: {
-    variant: "button",
-    href: "https://github.com/egdev6",
-    target: "_self",
-    size: "md",
-    children: "Lorem ipsum"
-  }
+export const Regular: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='sm' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='md' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='lg' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+    </div>
+  )
 };
 
 export const Outlined: Story = {
-  args: {
-    variant: "outlined",
-    href: "https://github.com/egdev6",
-    target: "_self",
-    size: "md",
-    children: "Lorem ipsum"
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='sm' variant='outlined' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='md' variant='outlined' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='lg' variant='outlined' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+    </div>
+  )
+};
+
+export const Button: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='sm' variant='button' onClick={action('clicked')}>
+        Lorem Ipsum
+      </Link>
+      <Link size='md' variant='button' onClick={action('clicked')}>
+        Lorem Ipsum
+      </Link>
+      <Link size='lg' variant='button' onClick={action('clicked')}>
+        Lorem Ipsum
+      </Link>
+    </div>
+  )
 };
 
 export const WithIcon: Story = {
-  args: {
-    variant: "regular",
-    href: "https://github.com/egdev6",
-    target: "_self",
-    size: "md",
-    children: "Lorem ipsum",
-    icon: "code"
-  }
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='md' icon='image' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='md' variant='outlined' icon='image' href='https://github.com/egdev6'>
+        Lorem Ipsum
+      </Link>
+      <Link size='md' variant='button' icon='image' onClick={action('clicked')}>
+        Lorem Ipsum
+      </Link>
+    </div>
+  )
 };

@@ -40,9 +40,10 @@ const Button = ({
   };
   return (
     <button
+      {...props}
       ref={buttonRef}
       type={type}
-      role='button'
+      role='link'
       className={cn(
         isFullWidth ? 'w-full' : 'w-auto',
         buttonVariants({ variant, size, rounded, shadow, uppercase }),
@@ -52,7 +53,6 @@ const Button = ({
       aria-disabled={disabled}
       disabled={disabled || isLoading}
       onClick={(e) => (!isLoading ? onClick?.(e) : undefined)}
-      {...props}
     >
       <span className={cn('flex items-center justify-center z-0', size === 'lg' ? 'gap-4' : 'gap-2', className)}>
         {icon && <DynamicIcon className={iconSize()} name={icon} />}
