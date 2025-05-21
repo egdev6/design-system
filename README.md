@@ -55,7 +55,9 @@
 - [X] Icon
 - [X] Link
 - [X] Skeleton
-- [X] IconButton 
+- [X] IconButton
+- [X] Avatar
+- [ ] Input - WIP
 
 ## Compilot CLI
 
