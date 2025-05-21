@@ -51,6 +51,7 @@
 ## Components
 
 - [X] Button
+- [X] Header
 - [X] Text
 - [X] Icon
 - [X] Link
