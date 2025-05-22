@@ -48,6 +48,10 @@
 
 </div>
 
+## Kanban Board
+
+https://github.com/users/egdev6/projects/1/views/1
+
 ## Components
 
 - [X] Button
