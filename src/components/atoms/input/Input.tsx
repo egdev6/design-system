@@ -180,29 +180,28 @@ const Input = ({
           document.activeElement !== ref.current && type !== 'number' && type !== 'password' && ref.current?.focus()
         }
       >
-        {!startContent && !endContent && (
-          <label
-            id={`${id}-label`}
-            htmlFor={id}
-            className={cn(
-              labelVariants({
-                size,
-                state:
-                  isFocused || hasValue || placeholder
-                    ? size === 'sm'
-                      ? 'focusedSm'
-                      : size === 'md'
-                        ? 'focusedMd'
-                        : size === 'lg'
-                          ? 'focusedLg'
-                          : 'default'
-                    : 'default'
-              })
-            )}
-          >
-            {label}
-          </label>
-        )}
+        <label
+          id={`${id}-label`}
+          htmlFor={id}
+          className={cn(
+            labelVariants({
+              size,
+              state:
+                isFocused || hasValue || placeholder
+                  ? size === 'sm'
+                    ? 'focusedSm'
+                    : size === 'md'
+                      ? 'focusedMd'
+                      : size === 'lg'
+                        ? 'focusedLg'
+                        : 'default'
+                  : 'default'
+            }),
+            startContent || (endContent && 'sr-only')
+          )}
+        >
+          {label}
+        </label>
         <div className='flex w-full justify-between gap-4'>
           {startContent && startContent}
           <input
