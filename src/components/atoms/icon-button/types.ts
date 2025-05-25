@@ -101,7 +101,7 @@ export type IconButtonProps = {
    */
   variant?: IconButtonVariant;
   /** @control text */
-  icon: DynamicIconName;
+  icon?: DynamicIconName;
   /**
    * @control text
    * @default 20
