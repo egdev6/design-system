@@ -25,13 +25,12 @@ export const buttonVariants = cva(
         ],
         ghost: [
           'text-text-light',
-          'bg-gray-light-400',
+          'bg-transparent',
           'border-text-light',
           'hover:bg-gray-light-600',
           'hover:border-gray-light-600',
           'hover:!shadow-transparent',
           'dark:text-text-dark',
-          'dark:bg-gray-dark-700',
           'dark:border-gray-dark-400',
           'dark:hover:bg-gray-dark-400',
           'dark:hover:border-gray-dark-400',
@@ -40,10 +39,9 @@ export const buttonVariants = cva(
         light: [
           'text-secondary',
           'border-transparent',
-          'bg-gray-light-400',
+          'bg-transparent',
           'hover:text-text-dark',
           'dark:text-text-dark',
-          'dark:bg-gray-dark-700',
           'hover:border-accent',
           'hover:bg-accent',
           'hover:shadow-secondary'
@@ -66,11 +64,10 @@ export const buttonVariants = cva(
           'text-secondary',
           'border-secondary',
           'hover:text-text-dark',
-          'bg-gray-light-400',
+          'bg-transparent',
           'hover:border-accent',
           'hover:bg-accent',
           'hover:shadow-secondary',
-          'dark:bg-gray-dark-700',
           'dark:hover:bg-accent',
           'dark:text-text-dark',
           'dark:hover:shadow-secondary'
@@ -108,30 +105,62 @@ type ButtonTypeVariants = 'button' | 'submit' | 'reset';
 type ButtonSizeVariants = 'md' | 'sm' | 'lg';
 
 export type ButtonProps = {
-  /** @control select */
+  /**
+   * @control select
+   * @default primary
+   */
   variant?: ButtonVariant;
   /** @control text */
   text?: string;
   /** @control text */
   icon?: DynamicIconName;
-  /** @control text */
+  /**
+   * @control select
+   * @default md
+   */
   size?: ButtonSizeVariants;
-  /** @control select */
+  /**
+   * @control select
+   * @default button
+   */
   type?: ButtonTypeVariants;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   rounded?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default true
+   */
   shadow?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default true
+   */
   uppercase?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   disabled?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   isFullWidth?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   isLoading?: boolean;
   /** @control text */
   ariaLabel?: string;
   /** @control text */
   className?: string;
+  /**
+   * @control boolean
+   * @default false
+   */
+  'aria-pressed'?: boolean; // Nuevo prop para accesibilidad en botones de alternancia
 };

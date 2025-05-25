@@ -16,8 +16,8 @@ import Input from './Input';
  * It can be easily integrated into forms and other UI components, making it a fundamental building block for web applications.
  *
  * ## DEPENDENCIES
- * - Icon: For displaying icons within the input.
- * - Text: For displaying labels and hints.
+ * - Icon: Uses Icon component from `lucide-react` for icons.
+ * - Text: Uses Text component for displaying labels and hints.
  */
 const meta: Meta<typeof Input> = {
   title: 'Atoms/Input',
