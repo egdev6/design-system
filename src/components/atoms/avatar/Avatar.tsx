@@ -65,6 +65,7 @@ const Avatar = ({
           className
         )}
         style={{ width: sizeClass, height: sizeClass }}
+        role="img"
         aria-label={alt}
       >
         <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
