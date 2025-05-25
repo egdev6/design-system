@@ -41,11 +41,12 @@ export const linkVariants = cva(
           'text-secondary',
           'border-secondary',
           'hover:text-text-dark',
-          'bg-transparent',
+          'bg-gray-light-400',
           'hover:border-accent',
           'hover:bg-accent',
           'hover:shadow-secondary',
           'dark:hover:bg-accent',
+          'dark:bg-gray-dark-700',
           'dark:text-text-dark',
           'dark:hover:shadow-secondary',
           'hover:shadow-custom-sm'

@@ -3,7 +3,7 @@ import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
 export const textVariants = tv({
-  base: 'font-normal leading-[1.2] text-text-light dark:text-text-dark',
+  base: 'font-normal leading-[1.2] text-text-light dark:text-text-dark tracking-widest',
   variants: {
     font: {
       primary: 'font-primary',
