@@ -159,7 +159,7 @@ export const Accessibility: Story = {
 
 /**
  * - Custom Class: You can add custom classes to the link for additional styling.
- * - You nedd to override the default classes using `!important` to ensure your styles take precedence.
+ * - You need to override the default classes using `!important` to ensure your styles take precedence.
  */
 
 export const CustomClass: Story = {
