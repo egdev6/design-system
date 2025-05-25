@@ -32,7 +32,7 @@ export const Default: Story = {
 };
 
 /**
- * - Differnt header tags (h1, h2, h3, h4, h5, h6) with primary font.
+ * - Different header tags (h1, h2, h3, h4, h5, h6) with primary font.
  */
 
 export const PrimaryH1: Story = {
