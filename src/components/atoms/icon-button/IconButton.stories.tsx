@@ -25,7 +25,7 @@ export const Default: Story = {
     shadow: false,
     disabled: false,
     className: '',
-    title: ''
+    title: 'Menu'
   }
 };
 
