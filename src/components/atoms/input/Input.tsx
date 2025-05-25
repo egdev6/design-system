@@ -17,7 +17,7 @@ const IncrementDecrementButtons = ({
     <button
       role='button'
       aria-label='Increase value'
-      className='bg-gray-light-500 hover:bg-gray-light-700 dark:bg-gray-dark-500 dark:hover:bg-gray-dark-400 rounded-t-sm px-1 cursor-pointer outline-offset-0 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
+      className='bg-gray-light-500 hover:bg-gray-light-700 dark:bg-gray-dark-600 dark:hover:bg-gray-dark-400 rounded-t-sm px-1 cursor-pointer outline-offset-0 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
       onClick={() => {
         if (ref.current) {
           const currentValue = parseFloat(ref.current.value !== '' ? ref.current.value : '0');
@@ -31,7 +31,7 @@ const IncrementDecrementButtons = ({
     <button
       role='button'
       aria-label='Decrease value'
-      className='bg-gray-light-500 hover:bg-gray-light-700 dark:bg-gray-dark-500 dark:hover:bg-gray-dark-400 rounded-b-sm px-1 cursor-pointer outline-offset-0 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
+      className='bg-gray-light-500 hover:bg-gray-light-700 dark:bg-gray-dark-600 dark:hover:bg-gray-dark-400 rounded-b-sm px-1 cursor-pointer outline-offset-0 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
       onClick={() => {
         if (ref.current) {
           const currentValue = parseFloat(ref.current.value !== '' ? ref.current.value : '0');
@@ -49,14 +49,21 @@ const PasswordToggleButton = ({
   showPassword,
   setShowPassword
 }: { showPassword: boolean; setShowPassword: (value: boolean) => void }) => (
-  <button
-    role='button'
-    aria-label={!showPassword ? 'Show password' : 'Hide password'}
-    className='absolute right-2 top-0 bottom-0 flex items-center justify-center z-10'
-    onClick={() => setShowPassword(!showPassword)}
-  >
-    <Icon name={!showPassword ? 'eye' : 'eye-off'} color='text-text-light' colorDark='dark:text-text-dark' size={20} />
-  </button>
+  <div className='absolute right-2 top-0 bottom-0 flex flex-col justify-center items-center gap-[2px] z-10'>
+    <button
+      role='button'
+      aria-label={!showPassword ? 'Show password' : 'Hide password'}
+      className='cursor-pointer outline-offset-0 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      <Icon
+        name={!showPassword ? 'eye' : 'eye-off'}
+        color='text-text-light'
+        colorDark='dark:text-text-dark'
+        size={20}
+      />
+    </button>
+  </div>
 );
 
 const Input = ({

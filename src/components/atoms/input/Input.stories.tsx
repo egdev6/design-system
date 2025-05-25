@@ -205,7 +205,7 @@ export const Rounded: Story = {
 };
 
 /**
- * - Input fields for different types of data, such as text, email, number, and password.
+ * - Input fields for number inputs, allowing users to enter numeric values.
  */
 
 export const InputNumber: Story = {
@@ -220,7 +220,7 @@ export const InputNumber: Story = {
 };
 
 /**
- * - Input fields specifically for email addresses, ensuring proper validation and formatting.
+ * - Input fields specifically for password entry, which typically include features like masking the input.
  */
 
 export const InputPassword: Story = {
