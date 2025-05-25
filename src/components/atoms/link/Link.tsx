@@ -16,31 +16,24 @@ const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a
   title,
   ...props
 }) => {
-  const getIconWidth = () => {
-    switch (size) {
-      case 'sm':
-        return 18;
-      case 'md':
-        return 20;
-      case 'lg':
-        return 24;
-      default:
-        return 22;
-    }
-  };
+  const iconWidth = { sm: 18, md: 20, lg: 24 }[size] || 22;
+
+  const isExternal = target === '_blank';
+
   return (
     <a
       {...props}
       href={href}
       target={target}
-      aria-label={children && href ? children : ''}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      aria-label={title || children}
+      aria-current={props['aria-current'] || undefined}
       role={variant === 'button' || variant === 'outlined' ? 'button' : 'link'}
-      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       title={title ?? children}
       tabIndex={0}
       className={cn(linkVariants({ variant, size, className }))}
     >
-      {icon && <DynamicIcon name={icon} color='currentColor' size={getIconWidth()} />}
+      {icon && <DynamicIcon name={icon} color='currentColor' size={iconWidth} />}
       {children}
     </a>
   );

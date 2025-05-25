@@ -20,7 +20,7 @@ export const textVariants = tv({
       false: ''
     },
     srOnly: {
-      true: 'srOnly',
+      true: 'sr-only',
       false: ''
     }
   },
@@ -35,18 +35,34 @@ export type TextVariant = keyof typeof textVariants.variants.tag;
 export type TextFont = keyof typeof textVariants.variants.font;
 
 type BaseTextProps = {
-  /** @control select */
+  /**
+   * @control select
+   * @default secondary
+   * */
   font?: TextFont;
-  /** @control select */
+  /**
+   * @control select
+   * @default p
+   */
   tag: TextVariant;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   prominent?: boolean;
-  /** @control text */
-  className?: string;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   * */
   srOnly?: boolean;
   /** @control text */
   ariaLive?: 'polite' | 'assertive' | 'off';
+  /** @control text */
+  className?: string;
+  /** @control select */
+  role?: 'status' | 'alert' | 'log' | 'marquee' | 'none';
+  /** @control text */
+  id?: string;
 } & VariantProps<typeof textVariants>;
 
 type TextWithHtml = BaseTextProps & {

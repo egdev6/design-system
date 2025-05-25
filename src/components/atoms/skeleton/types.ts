@@ -1,11 +1,20 @@
 type ThemeRounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 export type SkeletonProps = {
-  /** @control text */
+  /**
+   * @control text
+   * @default '100px'
+   * */
   width: string;
-  /** @control text */
+  /**
+   * @control text
+   * @default '20px'
+   */
   height: string;
-  /** @control select */
+  /**
+   * @control select
+   * @default 'sm'
+   */
   rounded?: ThemeRounded;
   /** @control text */
   className?: string;

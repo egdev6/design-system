@@ -8,20 +8,18 @@ const Header = ({
   className,
   children,
   srOnly = false,
+  id,
   ...rest
 }: HeaderProps) => {
   const Component = tag;
 
   const props = {
     className: cn(headerVariants({ font, tag, prominent, srOnly }), className),
+    id: id || undefined,
     ...rest
   };
 
-  return (
-    <Component {...props} aria-label={children}>
-      {children}
-    </Component>
-  );
+  return <Component {...props}>{children}</Component>;
 };
 
 export default Header;

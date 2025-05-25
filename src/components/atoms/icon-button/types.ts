@@ -8,6 +8,7 @@ export const iconButtonVariants = cva(
     'flex items-center justify-start',
     'whitespace-nowrap line-clamp-1 ',
     'focus-visible:outline-2 focus-visible:outline-offset-2',
+    'disabled:pointer-events-none disabled:opacity-60',
     'dark:focus-visible:outline-white focus-visible:outline-secondary'
   ],
   {
@@ -94,20 +95,40 @@ type IconButtonVariant = VariantProps<typeof iconButtonVariants>['variant'];
 type IconSizes = 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40;
 
 export type IconButtonProps = {
-  /** @control select */
+  /**
+   * @control select
+   * @default primary
+   */
   variant?: IconButtonVariant;
   /** @control text */
   icon?: DynamicIconName;
-  /** @control text */
+  /**
+   * @control text
+   * @default 20
+   */
   size?: IconSizes;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   rounded?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   shadow?: boolean;
-  /** @control boolean */
+  /**
+   * @control boolean
+   * @default false
+   */
   disabled?: boolean;
   /** @control text */
   title?: string;
   /** @control text */
   className?: string;
+  /**
+   * @control boolean
+   * @default false
+   */
+  'aria-pressed'?: boolean;
 };

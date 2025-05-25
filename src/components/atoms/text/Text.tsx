@@ -29,6 +29,8 @@ const Text = ({
   isHtml = false,
   ariaLive,
   srOnly,
+  role,
+  id,
   ...rest
 }: TextProps) => {
   const Component = tag;
@@ -36,7 +38,10 @@ const Text = ({
   const sanitizedHtml = isHtml ? sanitizeHtml(children as string) : undefined;
 
   const props = {
-    className: cn(textVariants({ tag, prominent }), className),
+    className: cn(textVariants({ tag, prominent, srOnly }), className),
+    'aria-live': ariaLive || undefined,
+    role: role || undefined,
+    id: id || undefined,
     ...rest
   };
 
@@ -45,11 +50,7 @@ const Text = ({
     return <Component {...props} dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
   }
 
-  return (
-    <Component {...props} aria-live={ariaLive ?? undefined}>
-      {children}
-    </Component>
-  );
+  return <Component {...props}>{children}</Component>;
 };
 
 export default Text;
