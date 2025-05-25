@@ -8,7 +8,7 @@ import './style.css';
 
 const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> & ComponentProps<'button'>> = ({
   variant = 'primary',
-  icon = 'menu',
+  icon,
   size = 20,
   className,
   onClick,
@@ -16,6 +16,7 @@ const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> &
   rounded = false,
   shadow = false,
   disabled = false,
+  'aria-pressed': ariaPressed,
   ...props
 }) => {
   const iconButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -26,14 +27,15 @@ const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> &
     <button
       {...props}
       ref={iconButtonRef}
-      type={'button'}
-      role='button'
+      type='button'
+      role={ariaPressed !== undefined ? 'switch' : 'button'}
       className={cn('w-auto', iconButtonVariants({ variant, rounded, shadow }), className)}
       disabled={disabled}
-      aria-disabled={disabled}
-      aria-label={title}
+      aria-disabled={disabled || undefined}
+      aria-label={title || icon}
+      aria-pressed={ariaPressed}
       title={title}
-      onClick={(e) => onClick?.(e)}
+      onClick={(e) => !disabled && onClick?.(e)}
     >
       <DynamicIcon name={icon} color='currentColor' size={size} />
     </button>

@@ -29,7 +29,15 @@ function AvatarFallback({ className, ...props }: ComponentProps<typeof AvatarPri
   );
 }
 
-const Avatar = ({ src, alt = 'EG', className, size = 'md' }: AvatarProps) => {
+const Avatar = ({
+  src,
+  alt = 'EG',
+  className,
+  size = 'md',
+  hasBadge = false,
+  badgeContent,
+  badgeClassName
+}: AvatarProps) => {
   const sizeClasses = {
     sm: '30px',
     md: '40px',
@@ -50,18 +58,32 @@ const Avatar = ({ src, alt = 'EG', className, size = 'md' }: AvatarProps) => {
   const textClass = textClasses[size];
 
   return (
-    <AvatarContainer
-      className={cn(
-        'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
-        className
+    <div className='relative inline-block'>
+      <AvatarContainer
+        className={cn(
+          'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
+          className
+        )}
+        style={{ width: sizeClass, height: sizeClass }}
+        aria-label={alt}
+      >
+        <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
+        <AvatarFallback className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}>
+          {alt}
+        </AvatarFallback>
+      </AvatarContainer>
+      {hasBadge && (
+        <span
+          className={cn(
+            'absolute -top-2 -right-2 flex items-center justify-center rounded-full bg-accent text-white text-xs',
+            badgeClassName
+          )}
+          style={{ width: '20px', height: '20px' }}
+        >
+          {badgeContent}
+        </span>
       )}
-      style={{ width: sizeClass, height: sizeClass }}
-    >
-      <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
-      <AvatarFallback className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}>
-        {alt}
-      </AvatarFallback>
-    </AvatarContainer>
+    </div>
   );
 };
 

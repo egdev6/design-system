@@ -2,6 +2,16 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import Link from './Link';
 
+/**
+ *
+ * ## DESCRIPTION
+ * Link component for navigation and actions.
+ *
+ * ## DEPENDENCIES
+ * - Icon: Uses Icon component from `lucide-react` for icons.
+ *
+ */
+
 const meta: Meta<typeof Link> = {
   title: 'Atoms/Link',
   component: Link,
@@ -28,6 +38,11 @@ export const Default: Story = {
   }
 };
 
+/**
+ * - Regular: Default link style.
+ * - ⚠️ This variant uses a transparent background by default. To ensure proper visibility, place it inside a container with a solid or plain background.
+ */
+
 export const Regular: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
@@ -44,6 +59,11 @@ export const Regular: Story = {
   )
 };
 
+/**
+ * - Outlined: Link with outlined style.
+ * - ⚠️ This variant uses a transparent background by default. To ensure proper visibility, place it inside a container with a solid or plain background.
+ */
+
 export const Outlined: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
@@ -59,6 +79,9 @@ export const Outlined: Story = {
     </div>
   )
 };
+/**
+ * - Button: Link styled as a button.
+ */
 
 export const Button: Story = {
   render: () => (
@@ -76,6 +99,10 @@ export const Button: Story = {
   )
 };
 
+/**
+ * - With Icon: Link with an icon.
+ */
+
 export const WithIcon: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
@@ -87,6 +114,67 @@ export const WithIcon: Story = {
       </Link>
       <Link size='md' variant='button' icon='image' onClick={action('clicked')}>
         Lorem Ipsum
+      </Link>
+    </div>
+  )
+};
+
+/**
+ * - You can change the target of the link to open in a new tab or the same tab.
+ * - Use the `target` prop to specify the link behavior.
+ */
+export const Target: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='md' href='https://github.com/egdev6' target='_blank' title='Open in new tab'>
+        Open in new tab
+      </Link>
+      <Link size='md' href='https://github.com/egdev6' target='_self' title='Open in same tab'>
+        Open in same tab
+      </Link>
+      <Link size='md' href='https://github.com/egdev6' target='_parent' title='Open in parent frame'>
+        Open in parent frame
+      </Link>
+      <Link size='md' href='https://github.com/egdev6' target='_top' title='Open in top frame'>
+        Open in top frame
+      </Link>
+    </div>
+  )
+};
+
+/**
+ * - Accessibility: The `title` prop is used to provide a tooltip or description for the link.
+ * - Use the `title` attribute to provide additional context for screen readers.
+ */
+
+export const Accessibility: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='md' href='https://github.com/egdev6' title='GitHub Profile'>
+        GitHub Profile
+      </Link>
+    </div>
+  )
+};
+
+/**
+ * - Custom Class: You can add custom classes to the link for additional styling.
+ * - You nedd to override the default classes using `!important` to ensure your styles take precedence.
+ */
+
+export const CustomClass: Story = {
+  render: () => (
+    <div className='flex gap-4 items-center'>
+      <Link size='md' href='https://github.com/egdev6' icon='arrow-right' className='!flex-row-reverse'>
+        Custom Class Link
+      </Link>
+      <Link
+        size='md'
+        variant='outlined'
+        href='https://github.com/egdev6'
+        className='!border-blue !bg-blue hover:!bg-blue-dark hover:!border-blue-dark hover:!shadow-blue-dark'
+      >
+        Custom Class Link
       </Link>
     </div>
   )
