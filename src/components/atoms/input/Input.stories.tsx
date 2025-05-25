@@ -112,7 +112,7 @@ const UncontrolledInput = () => {
     <Input
       id='controlled-input'
       label='Controlled Input'
-      defaultValue={value}
+      defaultValue={'Uncontrolled Value'}
       onChange={handleChange}
       variant='regular'
       size='md'
@@ -302,7 +302,7 @@ export const StartAndEnd: Story = {
         }
       />
       <Input
-        id='input36'
+        id='input37'
         type='url'
         placeholder='Placeholder'
         startContent={
