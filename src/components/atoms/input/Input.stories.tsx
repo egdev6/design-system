@@ -37,7 +37,6 @@ export const Default: Story = {
   args: {
     id: 'input',
     label: 'Lorem Ipsum',
-    placeholder: '',
     type: 'text',
     variant: 'regular',
     rounded: false,
