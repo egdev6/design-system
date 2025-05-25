@@ -22,7 +22,7 @@ export const headerVariants = tv({
       false: ''
     },
     srOnly: {
-      true: 'srOnly',
+      true: 'sr-only',
       false: ''
     }
   },
@@ -49,4 +49,6 @@ export type HeaderProps = {
   className?: string;
   /** @control boolean */
   srOnly?: boolean;
+  /** @control text */
+  id?: string; // Nuevo prop opcional para accesibilidad
 } & VariantProps<typeof headerVariants>;

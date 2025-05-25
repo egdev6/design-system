@@ -70,18 +70,27 @@ type TargetVariants = '_blank' | '_self' | '_parent' | '_top';
 type LinkSizes = 'sm' | 'md' | 'lg';
 
 export type LinkProps = {
-  /** @control select */
+  /**
+   * @control select
+   * @default regular
+   * */
   variant?: ButtonVariants;
   /** @control text */
   href?: string;
-  /**@control text */
+  /**
+   * @control text
+   * @default _blank
+   * */
   target?: TargetVariants;
+  /**
+   * @control select
+   * @default md
+   * */
+  size: LinkSizes;
   /** @control text */
   icon?: DynamicIconName;
   /** @control text */
   title?: string;
-  /** @control select */
-  size: LinkSizes;
   /** @control text */
   className?: string;
   /** @control text */
