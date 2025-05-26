@@ -62,7 +62,8 @@ https://github.com/users/egdev6/projects/1/views/1
 - [X] Skeleton
 - [X] IconButton
 - [X] Avatar
-- [ ] Input - WIP
+- [X] Input
+- [ ] Dropdown WIP
 
 ## Compilot CLI
 
