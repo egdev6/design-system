@@ -8,7 +8,7 @@ import './style.css';
 
 const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> & ComponentProps<'button'>> = ({
   variant = 'primary',
-  icon,
+  icon = 'image',
   size = 20,
   className,
   onClick,
