@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { ChevronRightIcon } from 'lucide-react';
+import { useState } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 import type { DropdownElement, DropdownProps } from './types';
 
@@ -98,12 +99,14 @@ const Dropdown = ({
   offset = 1,
   closeOnSelect = true,
   items,
-  loading = false, // New prop
+  loading = false,
   children,
   className,
   ariaLabelledby,
   ariaDescribedby
 }: DropdownProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const marginClasses = {
     top: 'mb-2',
     bottom: 'mt-2',
@@ -118,17 +121,15 @@ const Dropdown = ({
   const accessibleLabelId = firstLabelId || fallbackId;
 
   return (
-    <DropdownMenuPrimitive.Root>
-      {({ open }) => (
-        <DropdownMenuPrimitive.Trigger
-          asChild={true}
-          aria-labelledby={ariaLabelledby || accessibleLabelId}
-          aria-describedby={ariaDescribedby}
-          aria-expanded={open}
-        >
-          <div>{children}</div>
-        </DropdownMenuPrimitive.Trigger>
-      )}
+    <DropdownMenuPrimitive.Root onOpenChange={setIsOpen}>
+      <DropdownMenuPrimitive.Trigger
+        asChild={true}
+        aria-labelledby={ariaLabelledby || accessibleLabelId}
+        aria-describedby={ariaDescribedby}
+        aria-expanded={isOpen}
+      >
+        <div>{children}</div>
+      </DropdownMenuPrimitive.Trigger>
       <DropdownMenuPrimitive.Content
         role='menu'
         aria-labelledby={accessibleLabelId}
