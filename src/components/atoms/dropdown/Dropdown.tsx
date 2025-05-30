@@ -119,14 +119,16 @@ const Dropdown = ({
 
   return (
     <DropdownMenuPrimitive.Root>
-      <DropdownMenuPrimitive.Trigger
-        asChild={true}
-        aria-labelledby={ariaLabelledby || accessibleLabelId}
-        aria-describedby={ariaDescribedby}
-        aria-expanded={false}
-      >
-        <div>{children}</div>
-      </DropdownMenuPrimitive.Trigger>
+      {({ open }) => (
+        <DropdownMenuPrimitive.Trigger
+          asChild={true}
+          aria-labelledby={ariaLabelledby || accessibleLabelId}
+          aria-describedby={ariaDescribedby}
+          aria-expanded={open}
+        >
+          <div>{children}</div>
+        </DropdownMenuPrimitive.Trigger>
+      )}
       <DropdownMenuPrimitive.Content
         role='menu'
         aria-labelledby={accessibleLabelId}
