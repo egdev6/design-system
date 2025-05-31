@@ -58,7 +58,7 @@ const renderDropdownSubmenu = (element: DropdownElement, index: number) => {
             'min-w-[8rem] ml-2 rounded-md border p-1 shadow-lg',
             'transition-opacity duration-300 ease-in-out',
             'focus-visible:outline-offset-1 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1',
-            'bg-gray-light-500 border-gray-light-500',
+            'bg-gray-light-200 border-gray-light-200',
             'text-text-light dark:text-text-dark dark:bg-gray-dark-800 dark:border-gray-dark-800'
           )}
         >
@@ -136,7 +136,7 @@ const Dropdown = ({
         className={cn(
           'min-w-[8rem] rounded-md border p-1 shadow-md',
           'text-text-light dark:text-text-dark',
-          'bg-gray-light-500 border-gray-light-500',
+          'bg-gray-light-200 border-gray-light-200',
           'dark:bg-gray-dark-800 dark:border-gray-dark-800',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
