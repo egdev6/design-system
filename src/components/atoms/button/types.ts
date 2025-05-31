@@ -26,12 +26,12 @@ export const buttonVariants = cva(
         ghost: [
           'text-text-light',
           'bg-transparent',
-          'border-text-light',
+          'border-transparent',
           'hover:bg-gray-light-600',
           'hover:border-gray-light-600',
           'hover:!shadow-transparent',
           'dark:text-text-dark',
-          'dark:border-gray-dark-400',
+          'dark:border-transparent',
           'dark:hover:bg-gray-dark-400',
           'dark:hover:border-gray-dark-400',
           'dark:hover:shadow-gray-900'
