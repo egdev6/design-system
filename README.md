@@ -64,7 +64,8 @@ https://github.com/users/egdev6/projects/1/views/1
 - [X] Avatar
 - [X] Input
 - [X] Dropdown
-- [ ] Modal WIP
+- [X] Modal
+- [ ] Select
 
 ## Compilot CLI
 
