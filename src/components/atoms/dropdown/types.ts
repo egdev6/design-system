@@ -34,11 +34,6 @@ export type DropdownProps = {
   /**
    * @control text
    */
-  ariaLabelledby?: string;
-  /**
-   * @control text
-   */
-  ariaDescribedby?: string;
   children: ReactNode;
   items: DropdownSchema;
   /**

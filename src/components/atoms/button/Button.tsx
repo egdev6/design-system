@@ -21,7 +21,7 @@ const Button = ({
   rounded = false,
   uppercase = true,
   ariaLabel,
-  'aria-pressed': ariaPressed, // Soporte para botones de alternancia
+  'aria-pressed': ariaPressed,
   type = 'button',
   ...props
 }: VariantProps<typeof buttonVariants> & ButtonProps & ComponentProps<'button'>) => {
@@ -44,17 +44,17 @@ const Button = ({
       {...props}
       ref={buttonRef}
       type={type}
-      role={ariaPressed !== undefined ? 'switch' : 'button'} // Cambiar role dinámicamente
+      role={ariaPressed !== undefined ? 'switch' : 'button'}
       className={cn(
         isFullWidth ? 'w-full' : 'w-auto',
         buttonVariants({ variant, size, rounded, shadow, uppercase }),
         className
       )}
-      aria-label={ariaLabel || text} // Asegurar que aria-label sea significativo
-      aria-disabled={disabled || undefined} // Solo agregar si está deshabilitado
-      aria-pressed={ariaPressed} // Agregar si es relevante
+      aria-label={ariaLabel || text}
+      aria-disabled={disabled || undefined}
+      aria-pressed={ariaPressed}
       disabled={disabled || isLoading}
-      onClick={(e) => !isLoading && onClick?.(e)} // Evitar llamadas si está cargando
+      onClick={(e) => !isLoading && onClick?.(e)}
     >
       <span className={cn('flex items-center justify-center z-0', size === 'lg' ? 'gap-4' : 'gap-2', className)}>
         {icon && <DynamicIcon className={iconSize()} name={icon} />}

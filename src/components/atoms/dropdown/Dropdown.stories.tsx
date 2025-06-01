@@ -11,6 +11,11 @@ import type { DropdownSchema } from './types';
  * It supports various configurations, including custom triggers, widths, offsets, alignments, and positions.
  * The component is designed to be accessible and customizable, making it suitable for a wide range of use cases.
  *
+ * ## DEPENDENCIES
+ * - [Radix UI Dropdown Menu](https://www.radix-ui.com/docs/primitives/components/dropdown-menu)
+ * - [React Spinners](https://github.com/davidhu2000/react-spinners)
+ * - Icon - from Lucide React for icons
+ *
  * ## ITEMS STRUCTURE
  * The `items` prop defines the structure of the dropdown menu. It is an array of objects, where each object represents a menu element.
  * The following types of elements are supported:
@@ -162,8 +167,6 @@ export const Default: Story = {
     closeOnSelect: true,
     loading: false,
     className: '',
-    ariaDescribedby: '',
-    ariaLabelledby: '',
     items: schema,
     children: <Button text='Open Menu' />
   }
