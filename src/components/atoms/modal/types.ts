@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 export const modalVariants = cva(
   ['w-full z-50 p-6 shadow-md', 'bg-gray-light-200 dark:bg-gray-dark-800', 'flex flex-col'],
@@ -15,7 +15,7 @@ export const modalVariants = cva(
         '3xl': 'max-w-full sm:max-w-[48rem] m-0 sm:m-1 rounded-lg max-h-[80dvh]',
         '4xl': 'max-w-full sm:max-w-[56rem] m-0 sm:m-1 rounded-lg max-h-[80dvh]',
         '5xl': 'max-w-full sm:max-w-[64rem] m-0 sm:m-1 rounded-lg max-h-[80dvh]',
-        full: 'max-w-full m-0 rounded-none max-h-dvh'
+        full: 'max-w-full m-0 rounded-none h-dvh'
       },
       position: {
         center: 'm-auto',
@@ -53,14 +53,18 @@ export type ModalProps = VariantProps<typeof modalVariants> & {
    * @default 'Modal title'
    */
   title?: string;
-  header?: ReactNode;
+  header?: ReactNode | JSX.Element;
   /**
    * @control text
    * @default 'Modal content goes here.'
    */
   textContent?: string;
-  content?: ReactNode;
-  footer?: ReactNode;
+  content?: ReactNode | JSX.Element;
+  footer?: ReactNode | JSX.Element;
   children?: ReactNode;
-  customBackdrop?: ReactNode;
+  /**
+   * @control custom
+   * @default undefined
+   */
+  customBackdrop?: string;
 };
