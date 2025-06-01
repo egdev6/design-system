@@ -8,7 +8,7 @@ import Avatar from './Avatar';
  * It supports different sizes and can show a fallback text when the image is not available.
  *
  * ## DEPENDENCIES
- * - Radix UI Avatar (@radix-ui/react-avatar)
+ * - [Radix UI Avatar](https://www.radix-ui.com/docs/primitives/components/avatar)
  *
  */
 const meta: Meta<typeof Avatar> = {
