@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { ChevronRightIcon } from 'lucide-react';
-import { useState } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 import type { DropdownElement, DropdownProps } from './types';
 
@@ -58,7 +57,8 @@ const renderDropdownSubmenu = (element: DropdownElement, index: number) => {
             'min-w-[8rem] ml-2 rounded-md border p-1 shadow-lg',
             'transition-opacity duration-300 ease-in-out',
             'focus-visible:outline-offset-1 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1',
-            'bg-gray-light-500 border-gray-light-500',
+            'hover:outline-offset-1 dark:hover:outline-white hover:outline-secondary hover:outline-1',
+            'bg-gray-light-200 border-gray-light-200',
             'text-text-light dark:text-text-dark dark:bg-gray-dark-800 dark:border-gray-dark-800'
           )}
         >
@@ -101,12 +101,8 @@ const Dropdown = ({
   items,
   loading = false,
   children,
-  className,
-  ariaLabelledby,
-  ariaDescribedby
+  className
 }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const marginClasses = {
     top: 'mb-2',
     bottom: 'mt-2',
@@ -121,59 +117,58 @@ const Dropdown = ({
   const accessibleLabelId = firstLabelId || fallbackId;
 
   return (
-    <DropdownMenuPrimitive.Root onOpenChange={setIsOpen}>
-      <DropdownMenuPrimitive.Trigger
-        asChild={true}
-        aria-labelledby={ariaLabelledby || accessibleLabelId}
-        aria-describedby={ariaDescribedby}
-        aria-expanded={isOpen}
-      >
+    <DropdownMenuPrimitive.Root>
+      <DropdownMenuPrimitive.Trigger asChild={true}>
         <div>{children}</div>
       </DropdownMenuPrimitive.Trigger>
-      <DropdownMenuPrimitive.Content
-        role='menu'
-        aria-labelledby={accessibleLabelId}
-        className={cn(
-          'min-w-[8rem] rounded-md border p-1 shadow-md',
-          'text-text-light dark:text-text-dark',
-          'bg-gray-light-500 border-gray-light-500',
-          'dark:bg-gray-dark-800 dark:border-gray-dark-800',
-          'data-[state=open]:animate-in data-[state=closed]:animate-out',
-          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
-          'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
-          marginClasses[position],
-          className
-        )}
-        style={{ width }}
-        side={position}
-        align={align}
-        sideOffset={offset}
-        onCloseAutoFocus={(e) => {
-          if (!closeOnSelect) {
-            e.preventDefault();
-          }
-        }}
-      >
-        {loading ? (
-          <div className='flex justify-center items-center p-4'>
-            <SpinnerCircular
-              color={'currentColor'}
-              secondaryColor={'rgba(45, 6, 9, 0.2)'}
-              thickness={200}
-              size='1.5em'
-            />
-          </div>
-        ) : (
-          <>
-            {!firstLabelId && (
-              <span id={fallbackId} className='sr-only'>
-                Dropdown menu
-              </span>
-            )}
-            {items.map(renderDropdownElement)}
-          </>
-        )}
-      </DropdownMenuPrimitive.Content>
+      <DropdownMenuPrimitive.Portal>
+        <DropdownMenuPrimitive.Content
+          role='menu'
+          aria-labelledby={accessibleLabelId}
+          className={cn(
+            'min-w-[8rem] rounded-md border p-1 shadow-md',
+            'text-text-light dark:text-text-dark',
+            'bg-gray-light-200 border-gray-light-200',
+            'dark:bg-gray-dark-800 dark:border-gray-dark-800',
+            'data-[state=closed]:animate-out data-[state=open]:animate-in',
+            'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+            'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+            marginClasses[position],
+            className
+          )}
+          style={{ width }}
+          side={position}
+          align={align}
+          sideOffset={offset}
+          collisionPadding={8}
+          avoidCollisions={true}
+          onCloseAutoFocus={(e) => {
+            if (!closeOnSelect) {
+              e.preventDefault();
+            }
+          }}
+        >
+          {loading ? (
+            <div className='flex justify-center items-center p-4'>
+              <SpinnerCircular
+                color={'currentColor'}
+                secondaryColor={'rgba(45, 6, 9, 0.2)'}
+                thickness={200}
+                size='1.5em'
+              />
+            </div>
+          ) : (
+            <>
+              {!firstLabelId && (
+                <span id={fallbackId} className='sr-only'>
+                  Dropdown menu
+                </span>
+              )}
+              {items.map(renderDropdownElement)}
+            </>
+          )}
+        </DropdownMenuPrimitive.Content>
+      </DropdownMenuPrimitive.Portal>
     </DropdownMenuPrimitive.Root>
   );
 };
