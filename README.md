@@ -106,12 +106,12 @@ npx storybook-watch
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[stars-shield]: https://img.shields.io/github/stars/egdev6/egdev-react-boilerplate.svg?style=for-the-badge
-[stars-url]: https://github.com/egdev6/egdev-react-boilerplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/egdev6/egdev-react-boilerplate.svg?style=for-the-badge
-[issues-url]: https://github.com/egdev6/egdev-react-boilerplate/issues
-[license-shield]: https://img.shields.io/github/license/egdev6/egdev-react-boilerplate.svg?style=for-the-badge
-[license-url]: https://github.com/egdev6/egdev-react-boilerplate/blob/master/LICENSE.txt
+[stars-shield]: https://img.shields.io/github/stars/egdev6/design-system.svg?style=for-the-badge
+[stars-url]: https://github.com/egdev6/design-system/stargazers
+[issues-shield]: https://img.shields.io/github/issues/egdev6/design-system.svg?style=for-the-badge
+[issues-url]: https://github.com/egdev6/design-system/issues
+[license-shield]: https://img.shields.io/github/license/egdev6/design-system.svg?style=for-the-badge
+[license-url]: https://github.com/egdev6/design-system/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/egdev6
 [demo-url]: https://egdev6-design-system.netlify.app/
