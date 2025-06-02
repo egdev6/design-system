@@ -22,6 +22,7 @@
   
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Closed][closed-shield]][closed-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 </div>
@@ -110,6 +111,7 @@ npx storybook-watch
 [stars-url]: https://github.com/egdev6/design-system/stargazers
 [issues-shield]: https://img.shields.io/github/issues/egdev6/design-system.svg?style=for-the-badge
 [issues-url]: https://github.com/egdev6/design-system/issues
+[closed-url]: https://github.com/egdev6/design-system/issues?q=is%3Aissue%20state%3Aclosed
 [license-shield]: https://img.shields.io/github/license/egdev6/design-system.svg?style=for-the-badge
 [license-url]: https://github.com/egdev6/design-system/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
