@@ -44,7 +44,7 @@ export type HeaderProps = {
   /** @control select */
   tag: HeaderVariant;
   /** @control select */
-  as?: HeaderVariant;
+  fontSize?: HeaderVariant;
   /** @control boolean */
   prominent?: boolean;
   /** @control text */

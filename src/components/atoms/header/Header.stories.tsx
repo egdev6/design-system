@@ -119,17 +119,17 @@ export const SecondaryH1Bold: Story = {
 };
 
 /**
- * - You can use as prop to change the font size of the header not changing the tag.
- *   For example, you can use `as="h1"` to make the header look like an h1 tag but keep it as an h2 tag.
+ * - You can use fontSize prop to change the font size of the header not changing the tag.
+ *   For example, you can use `fontSize="h1"` to make the header look like an h1 tag but keep it as an h2 tag.
  */
 
-export const AsProp: Story = {
+export const FontSize: Story = {
   render: () => (
     <div className='flex flex-col gap-4 items-center justify-center'>
-      <Header tag='h5' as='h1'>
+      <Header tag='h5' fontSize='h1'>
         Lorem Ipsum
       </Header>
-      <Header tag='h1' as='h5'>
+      <Header tag='h1' fontSize='h5'>
         Lorem Ipsum
       </Header>
     </div>
