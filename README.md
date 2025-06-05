@@ -27,7 +27,8 @@
 </div>
 <!-- PROJECT LOGO -->
 
-[![design-system.png](https://i.postimg.cc/xTGCRQRK/design-system.png)](https://postimg.cc/QHth8Rvt)
+![storybook](https://github.com/user-attachments/assets/81874b4d-4a89-4b8f-8054-6bc4a4e4d0fd)
+
 
 </br>
 
