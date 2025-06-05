@@ -66,7 +66,7 @@ const Modal = ({
             )}
           >
             <div className='relative pb-4'>
-              <div className='w-full flex items-start justify-start pr-7'>
+              <div className='w-full flex items-start justify-start pr-8'>
                 {header ?? (
                   <Header tag='h5' id={titleId} className='text-text-light dark:text-text-dark text-lg font-semibold'>
                     {title}
