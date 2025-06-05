@@ -102,7 +102,7 @@ export type InputProps = {
   /** @control text */
   label?: string;
   /**
-   * @control bolean
+   * @control boolean
    * @defaultValue false
    */
   isRequired?: boolean;
