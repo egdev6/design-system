@@ -12,10 +12,24 @@ export default create({
   brandImage: '/images/logo.svg',
 
   // Colors
-  colorPrimary: '#d61e2b',
-  colorSecondary: '#d61e2b',
+  colorPrimary: '#b41520',
+  colorSecondary: '#b41520',
+
+  // UI
+  appBg: '#0e0e10',
+  appContentBg: '#0e0e10',
+  appBorderColor: '#24252f',
+  appBorderRadius: 4,
+  textColor: '#FFFFFF',
+  textInverseColor: '#FFFFFF',
 
   // Toolbar
-  barSelectedColor: '#FFFFFF',
-  barHoverColor: '#d61e2b'
+  barBg: '#15161b',
+  barTextColor: '#FFFFFF',
+  barSelectedColor: '#b41520',
+  barHoverColor: '#b41520',
+
+  // Button
+  buttonBg: '#0e0e10',
+  buttonBorder: '#b41520'
 });

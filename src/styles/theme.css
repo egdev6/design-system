@@ -16,30 +16,30 @@
   --color-background-dark: #0e0e10; /* rgba(14, 14, 16, 1); */
   --color-text-dark: #ffffff; /* rgba(255, 255, 255, 1); */
   --color-secondary-dark:#9fa3ad; /* rgba(159, 163, 173, 1); */
-  --gradient-background-dark: linear-gradient(130deg,rgba(24, 25, 30, 1) 0%, rgba(39, 40, 48, 1) 50%, rgba(24, 25, 30, 1) 100%);
-  --color-gray-dark-100: #e5e7eb;
-  --color-gray-dark-200: #c2c5cc;
-  --color-gray-dark-300: #9fa3ad;
-  --color-gray-dark-400: #7c818f;
-  --color-gray-dark-500: #595f70;
-  --color-gray-dark-600: #3b3f4e;
-  --color-gray-dark-700: #24252f;
-  --color-gray-dark-800: #15161b;
-  --color-gray-dark-900: #0e0e10;
+  --gradient-background-dark: linear-gradient(130deg,rgba(14, 14, 16, 1) 0%, rgba(21, 22, 27, 1) 50%, rgba(14, 14, 16, 1) 100%);
+  --color-gray-dark-100: #e5e7eb; /* rgba(229, 231, 235, 1); */
+  --color-gray-dark-200: #c2c5cc; /* rgba(194, 197, 204, 1); */
+  --color-gray-dark-300: #9fa3ad; /* rgba(159, 163, 173, 1); */
+  --color-gray-dark-400: #7c818f; /* rgba(124, 129, 143, 1); */
+  --color-gray-dark-500: #595f70; /* rgba(89, 95, 112, 1); */
+  --color-gray-dark-600: #3b3f4e; /* rgba(59, 63, 78, 1); */
+  --color-gray-dark-700: #24252f; /* rgba(36, 37, 47, 1); */
+  --color-gray-dark-800: #15161b; /* rgba(21, 22, 27, 1); */
+  --color-gray-dark-900: #0e0e10; /* rgba(14, 14, 16, 1); */
   /* Light theme */
   --color-background-light: #f4f5f7;  /* rgba(244, 245, 247, 1); */
   --color-text-light: #18191e; /* rgba(24, 25, 30, 1); */
   --color-secondary-light: #7c818f ; /* rgba(124, 129, 143, 1); */
-  --gradient-background-light: linear-gradient(130deg,rgba(204, 204, 204, 1) 0%, rgba(221, 221, 221, 1) 50%, rgba(204, 204, 204, 1) 100%);
-  --color-gray-light-100: #f9fafa;
-  --color-gray-light-200: #f1f3f5;
-  --color-gray-light-300: #e5e7eb;
-  --color-gray-light-400: #d4d6dc;
-  --color-gray-light-500: #bfc2ca;
-  --color-gray-light-600: #a3a6af;
-  --color-gray-light-700: #878a94;
-  --color-gray-light-800: #6b6e78;
-  --color-gray-light-900: #4f525c;
+  --gradient-background-light: linear-gradient(130deg,rgba(212, 214, 220, 1) 0%, rgba(229, 231, 235, 1) 50%, rgba(212, 214, 220, 1) 100%);
+  --color-gray-light-100: #f9fafa; /* rgba(249, 250, 250, 1); */
+  --color-gray-light-200: #f1f3f5; /* rgba(241, 243, 245, 1); */
+  --color-gray-light-300: #e5e7eb; /* rgba(229, 231, 235, 1); */
+  --color-gray-light-400: #d4d6dc; /* rgba(212, 214, 220, 1); */
+  --color-gray-light-500: #bfc2ca; /* rgba(191, 194, 202, 1); */
+  --color-gray-light-600: #a3a6af; /* rgba(163, 166, 175, 1); */
+  --color-gray-light-700: #878a94; /* rgba(135, 138, 148, 1); */
+  --color-gray-light-800: #6b6e78; /* rgba(107, 110, 120, 1); */
+  --color-gray-light-900: #4f525c; /* rgba(79, 82, 92, 1); */
   /* Shadow */
   --shadow-custom-sm: 0px 0px 16px -1px rgba(180, 21, 32, 1);
   --shadow-custom-md: 0px 0px 16px 4px rgba(180, 21, 32, 1);
