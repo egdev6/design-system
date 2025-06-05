@@ -43,7 +43,8 @@ export const Default: Story = {
     className: '',
     size: 'md',
     disabled: false,
-    isFullWidth: false
+    isFullWidth: false,
+    isRequired: false
   }
 };
 
@@ -130,6 +131,18 @@ const UncontrolledInput = () => {
   )
 };
 
+/**
+ * - You can use isRequired to indicate that the input field is mandatory.
+ * - This will add an asterisk (*) next to the label to indicate that the field is required.
+ */
+export const Required: Story = {
+  render: () => (
+    <div className='flex items-center gap-4'>
+      <Input id='input38' label='Lorem Ipsum' variant='regular' size='md' isRequired={true} />
+      <Input id='input39' label='Lorem Ipsum' variant='regular' size='lg' isRequired={true} />
+    </div>
+  )
+};
 /**
  * - A standard input field with a solid background.
  */
