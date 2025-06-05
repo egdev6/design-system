@@ -52,7 +52,7 @@ export const inputVariants = cva(
 );
 
 export const labelVariants = cva(
-  ['absolute w-auto transition-all duration-200 text-text-light dark:text-text-dark pt-[2px]'],
+  ['absolute w-auto line-clamp-1 transition-all duration-200 text-text-light dark:text-text-dark pt-[2px]'],
   {
     variants: {
       size: {
@@ -101,6 +101,11 @@ export type InputProps = {
   rounded?: boolean;
   /** @control text */
   label?: string;
+  /**
+   * @control boolean
+   * @defaultValue false
+   */
+  isRequired?: boolean;
   /**
    * @control boolean
    * @defaultValue false

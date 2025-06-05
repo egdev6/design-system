@@ -60,6 +60,7 @@ const PasswordToggleButton = ({
         name={!showPassword ? 'eye' : 'eye-off'}
         color='text-text-light'
         colorDark='dark:text-text-dark'
+        className='hover:opacity-70'
         size={20}
       />
     </button>
@@ -78,6 +79,7 @@ const Input = ({
   startContent,
   endContent,
   isFullWidth = false,
+  isRequired = false,
   hint,
   onFocus,
   onBlur,
@@ -207,7 +209,12 @@ const Input = ({
             startContent || (endContent && 'sr-only')
           )}
         >
-          {label}
+          {label}{' '}
+          {isRequired && (
+            <span className='text-accent' aria-hidden={true}>
+              *
+            </span>
+          )}
         </label>
         <div className='flex w-full justify-between gap-4'>
           {startContent && startContent}
@@ -222,11 +229,16 @@ const Input = ({
             aria-invalid={hint?.type === 'error' ? 'true' : 'false'}
             aria-describedby={formatAriaIds(ariaDescribedBy || (hint?.message ? `${id}-hint` : undefined))}
             aria-labelledby={formatAriaIds(ariaLabelledBy || (label ? `${id}-label` : undefined))}
-            className='flex-1 outline-none text-text-light dark:text-text-dark placeholder:text-secondary-light dark:placeholder:text-secondary-dark border-none'
+            className={cn(
+              'flex-1 outline-none text-text-light dark:text-text-dark placeholder:text-secondary-light dark:placeholder:text-secondary-dark border-none',
+              (type === 'number' || type === 'password') && 'pr-6'
+            )}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
             onChange={handleChange}
+            required={isRequired}
+            aria-required={isRequired}
             value={value}
             defaultValue={defaultValue}
           />
