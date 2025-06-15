@@ -141,21 +141,6 @@ This repository is intended for **educational purposes** and is fully open to **
 
 📩 **Feel free to message me directly** or open an issue. You're more than welcome to join!
 
-## Components
-
-- [X] Button
-- [X] Header
-- [X] Text
-- [X] Icon
-- [X] Link
-- [X] Skeleton
-- [X] IconButton
-- [X] Avatar
-- [X] Input
-- [X] Dropdown
-- [X] Modal
-- [ ] Select WIP
-
 ## Compilot CLI
 
 <div>
@@ -179,6 +164,10 @@ npx storybook-watch
 ```
 
 </div>
+
+## Collaborators
+
+Special thanks you to everyone who has contributed to making this project possible.
 
 ## Contact
 
