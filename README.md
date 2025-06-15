@@ -86,6 +86,38 @@ npx storybook-watch
 
 5 - Let's coding!
 
+## 🛠️ Component Workflow
+
+This project follows a structured workflow to ensure that each component is properly researched, developed, documented, and reviewed before being merged into `main`.
+
+### 🔄 Development Phases
+
+1. **Functionality Research**  
+   Explore similar solutions, design patterns, and real user needs. This phase helps define a component that is useful and aligned with the system.
+
+2. **Define Component Functionality**  
+   Specify props, variants, states, expected behavior, and accessibility requirements.
+
+3. **Component Implementation**  
+   Build the component based on the previous definitions. This includes variants, styles, and required logic.
+
+4. **Component Documentation**  
+   Each component must include proper documentation in Storybook (controls, usage examples, and use cases). Optionally, include JSDoc comments or `.mdx` files.
+
+5. **Code Review and Adjustments**  
+   Functional and visual review of the component. This step may include bug fixes and suggested improvements.
+
+6. **Merge into `main`**  
+   Once approved, the component is merged into the main branch with complete functionality and documentation.
+
+---
+
+## 🤝 Educational and Collaborative Project
+
+This repository is intended for **educational purposes** and is fully open to **collaboration**. If you're interested in contributing to the development, design, or simply want to learn how a Design System is built from scratch:
+
+📩 **Feel free to message me directly** or open an issue. You're more than welcome to join!
+
 ## Components
 
 - [X] Button
