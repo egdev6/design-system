@@ -53,6 +53,38 @@
 
 https://github.com/users/egdev6/projects/1/views/1
 
+## Installation
+
+1 - Clone the repository
+2 - Use node version
+
+```
+nvm use
+```
+
+3 - Install dependencies
+
+NPM
+
+```
+npm install
+```
+
+or
+
+PNPM
+```
+pnpm install
+```
+
+4 - Run storybook watch
+
+```
+npx storybook-watch
+```
+
+5 - Let's coding!
+
 ## Components
 
 - [X] Button
