@@ -110,7 +110,25 @@ This project follows a structured workflow to ensure that each component is prop
 6. **Merge into `main`**  
    Once approved, the component is merged into the main branch with complete functionality and documentation.
 
----
+## ✅ Project Requirements
+
+To keep the project clean, consistent, and easy to maintain, we follow these guidelines:
+
+### 🧱 UI Libraries
+- Use the Guidelines stablished in Storybook's documentation (colors, fonts, spaces, etc)
+- The only allowed UI library is **Radix UI**, using its **unstyled primitives**.
+- You may also use **any existing dependencies already present** in the project.
+- If there is an urgent need to add a new dependency, please **discuss it first with the Project Lead**.
+
+### 🤖 Use of AI
+- The use of **AI tools is allowed** for both component implementation and documentation.
+- However, the **final result must meet the quality and standards of the project**.  
+  (You can refer to already published components as examples.)
+
+### 💡 Suggesting Components or Features
+- If you come up with ideas for **new components** or **feature needs**, feel free to **reach out to the Project Lead** to discuss it.
+
+We aim for clean, maintainable and scalable code. These requirements help ensure that everyone is aligned and contributions remain consistent.
 
 ## 🤝 Educational and Collaborative Project
 
