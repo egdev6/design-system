@@ -130,6 +130,11 @@ To keep the project clean, consistent, and easy to maintain, we follow these gui
 
 We aim for clean, maintainable and scalable code. These requirements help ensure that everyone is aligned and contributions remain consistent.
 
+
+## UI Libraries references
+
+https://github.com/egdev6/ui-libraries
+
 ## 🤝 Educational and Collaborative Project
 
 This repository is intended for **educational purposes** and is fully open to **collaboration**. If you're interested in contributing to the development, design, or simply want to learn how a Design System is built from scratch:
