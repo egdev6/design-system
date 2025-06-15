@@ -49,11 +49,11 @@
 
 </div>
 
-## Kanban Board
+## 🚧 Kanban Board
 
 https://github.com/users/egdev6/projects/1/views/1
 
-## Installation
+## 🔧 Installation
 
 1 - Clone the repository
 
@@ -86,7 +86,7 @@ npx storybook-watch
 
 5 - Let's coding!
 
-## 🛠️ Component Workflow
+## ⚛️ Component Workflow
 
 This project follows a structured workflow to ensure that each component is properly researched, developed, documented, and reviewed before being merged into `main`.
 
@@ -131,7 +131,7 @@ To keep the project clean, consistent, and easy to maintain, we follow these gui
 We aim for clean, maintainable and scalable code. These requirements help ensure that everyone is aligned and contributions remain consistent.
 
 
-## 🎨 UI Libraries references
+## 🎨 References
 
 https://github.com/egdev6/ui-libraries
 
@@ -172,7 +172,7 @@ This repository is intended for **educational purposes** and is fully open to **
 
 Special thanks you to everyone who has contributed to making this project possible.
 
-## Contact
+## 📫 Contact
 
 <div align="center">
 
