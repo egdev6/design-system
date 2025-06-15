@@ -131,17 +131,13 @@ To keep the project clean, consistent, and easy to maintain, we follow these gui
 We aim for clean, maintainable and scalable code. These requirements help ensure that everyone is aligned and contributions remain consistent.
 
 
-## UI Libraries references
+## 🎨 UI Libraries references
 
 https://github.com/egdev6/ui-libraries
 
-## 🤝 Educational and Collaborative Project
+## 🛠️ Tools
 
-This repository is intended for **educational purposes** and is fully open to **collaboration**. If you're interested in contributing to the development, design, or simply want to learn how a Design System is built from scratch:
-
-📩 **Feel free to message me directly** or open an issue. You're more than welcome to join!
-
-## Compilot CLI
+### Compilot CLI
 
 <div>
 
@@ -153,7 +149,7 @@ npx compilot-cli
 
 </div>
 
-## Storybook watch
+### Storybook watch
 
 <div>
 
@@ -165,7 +161,14 @@ npx storybook-watch
 
 </div>
 
-## Collaborators
+
+## 🤝 Educational and Collaborative Project
+
+This repository is intended for **educational purposes** and is fully open to **collaboration**. If you're interested in contributing to the development, design, or simply want to learn how a Design System is built from scratch:
+
+📩 **Feel free to message me directly** or open an issue. You're more than welcome to join!
+
+## 🥇 Collaborators
 
 Special thanks you to everyone who has contributed to making this project possible.
 
