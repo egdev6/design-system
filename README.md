@@ -127,6 +127,7 @@ To keep the project clean, consistent, and easy to maintain, we follow these gui
 
 ### 💡 Suggesting Components or Features
 - If you come up with ideas for **new components** or **feature needs**, feel free to **reach out to the Project Lead** to discuss it.
+- You can use In Review tab in the kanban project to propose new components too.
 
 We aim for clean, maintainable and scalable code. These requirements help ensure that everyone is aligned and contributions remain consistent.
 
