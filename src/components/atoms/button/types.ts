@@ -32,8 +32,8 @@ export const buttonVariants = cva(
           'hover:!shadow-transparent',
           'dark:text-text-dark',
           'dark:border-transparent',
-          'dark:hover:bg-gray-dark-400',
-          'dark:hover:border-gray-dark-400',
+          'dark:hover:bg-gray-dark-500',
+          'dark:hover:border-gray-dark-500',
           'dark:hover:shadow-gray-900'
         ],
         light: [
@@ -54,10 +54,10 @@ export const buttonVariants = cva(
           'hover:border-gray-light-600',
           'hover:!shadow-transparent',
           'dark:text-text-dark',
-          'dark:bg-gray-dark-500',
-          'dark:border-gray-dark-500',
-          'dark:hover:bg-gray-dark-400',
-          'dark:hover:border-gray-dark-400',
+          'dark:bg-gray-dark-600',
+          'dark:border-gray-dark-600',
+          'dark:hover:bg-gray-dark-500',
+          'dark:hover:border-gray-dark-500',
           'dark:hover:shadow-gray-dark-900'
         ],
         outlined: [

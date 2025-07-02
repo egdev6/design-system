@@ -34,19 +34,19 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 const CustomHeader = () => (
-  <div className='w-full flex items-center justify-between bg-gray-100 dark:bg-gray-800 border-1 border-accent border-dashed'>
+  <div className='w-full flex items-center justify-between bg-gray-light-100 dark:bg-gray-dark-800 border-1 border-accent border-dashed'>
     <p className='text-lg text-text-light dark:text-text-dark w-full text-center'>header</p>
   </div>
 );
 
 const CustomContent = () => (
-  <div className='w-full flex items-center justify-between min-h-24 bg-gray-100 dark:bg-gray-800 border-1 border-accent border-dashed'>
+  <div className='w-full flex items-center justify-between min-h-24 bg-gray-light-100 dark:bg-gray-dark-800 border-1 border-accent border-dashed'>
     <p className='text-lg text-text-light dark:text-text-dark w-full text-center'>content</p>
   </div>
 );
 
 const CustomFooter = () => (
-  <div className='w-full flex items-center justify-between bg-gray-100 dark:bg-gray-800 border-1 border-accent border-dashed'>
+  <div className='w-full flex items-center justify-between bg-gray-light-100 dark:bg-gray-dark-800 border-1 border-accent border-dashed'>
     <p className='text-lg text-text-light dark:text-text-dark w-full text-center'>footer</p>
   </div>
 );

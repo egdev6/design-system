@@ -13,7 +13,11 @@ const Skeleton: FC<SkeletonProps & ComponentProps<'div'>> = ({
     <div
       {...props}
       data-slot='skeleton'
-      className={cn('bg-gray-500 dark:bg-gray-700 animate-pulse opacity-20', `rounded-${rounded}`, className)}
+      className={cn(
+        'bg-gray-light-500 dark:bg-gray-dark-600 animate-pulse opacity-20',
+        `rounded-${rounded}`,
+        className
+      )}
       style={{ width: `${width}`, height: `${height}` }}
     />
   );

@@ -61,11 +61,11 @@ const Avatar = ({
     <div className='relative inline-block'>
       <AvatarContainer
         className={cn(
-          'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
+          'dark:bg-gray-dark-600 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
           className
         )}
         style={{ width: sizeClass, height: sizeClass }}
-        role="img"
+        role='img'
         aria-label={alt}
       >
         <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
