@@ -4,7 +4,7 @@ import Text from './Text';
  * ## DESCRIPTION
  *
  * Text component is used to display text content with various styles and options.
- * It supports different fonts, tags, and can render HTML content.
+ * It supports different fonts, tags, and can render HTML content if it's necessary.
  *
  */
 const meta: Meta<typeof Text> = {
