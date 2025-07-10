@@ -1,0 +1,20 @@
+name: Add Contributors to README
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  update-contributors:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Add contributor
+        uses: junaid33/all-contributors-action@v1.0.3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          contributor: ${{ github.event.pull_request.user.login }}
+          contribution-type: "code"
