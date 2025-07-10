@@ -173,6 +173,9 @@ This repository is intended for **educational purposes** and is fully open to **
 
 Special thanks you to everyone who has contributed to making this project possible.
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## 📫 Contact
 
 <div align="center">
