@@ -1,0 +1,10 @@
+{
+  "projectName": "design-system",
+  "projectOwner": "egdev6",
+  "repoType": "github",
+  "contributors": [],
+  "files": ["README.md"],
+  "imageSize": 100,
+  "commit": true,
+  "contributorsPerLine": 7
+}
