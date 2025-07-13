@@ -55,6 +55,9 @@ https://github.com/users/egdev6/projects/1/views/1
 
 ## 🔧 Installation
 
+NOTE: You can install nvm (UNIX - https://github.com/nvm-sh/nvm) or nvm-windows (windows - https://github.com/coreybutler/nvm-windows) to manage multiple node versions.
+If you haven't pnpm installed, you can read how to install on the documentation https://pnpm.io/installation
+
 1 - Clone the repository
 
 2 - Use node version
@@ -64,14 +67,6 @@ nvm use
 ```
 
 3 - Install dependencies
-
-NPM
-
-```
-npm install
-```
-
-or
 
 PNPM
 ```
