@@ -11,7 +11,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-dark-mode',
-    '@storybook/addon-mdx-gfm',
     '@storybook/addon-docs',
     '@storybook/addon-a11y'
   ],
@@ -39,6 +38,7 @@ const config: StorybookConfig = {
       cache: false,
       build: {
         rollupOptions: {
+          treeshake: false,
           output: {
             assetFileNames: (assetInfo) => {
               if (assetInfo.name.includes('preview') && assetInfo.name.endsWith('.css')) {

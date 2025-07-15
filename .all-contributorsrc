@@ -2,9 +2,22 @@
   "projectName": "design-system",
   "projectOwner": "egdev6",
   "repoType": "github",
-  "contributors": [],
-  "files": ["README.md"],
+  "contributors": [
+    {
+      "login": "AmosVelez",
+      "name": "Amos",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179244321?v=4",
+      "profile": "https://github.com/AmosVelez",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "commit": true,
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "commitConvention": "angular"
 }
