@@ -189,7 +189,7 @@ Special thanks you to everyone who has contributed to making this project possib
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[stars-shield]: https://img.shields.io/github/stars/egdev6/design-system.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/egdev6/design-system.svg?style=for-the-badge&cacheBust=1
 [stars-url]: https://github.com/egdev6/design-system/stargazers
 [issues-shield]: https://img.shields.io/github/issues/egdev6/design-system.svg?style=for-the-badge
 [issues-url]: https://github.com/egdev6/design-system/issues
