@@ -1,0 +1,43 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import Breadcrumb from './Breadcrumb';
+import { BreadcrumbItem } from './types';
+
+/**
+ * ## DESCRIPTION
+ * Breadcrumbs display a hierarchy of links to the current page or resource in an application.
+ *
+ * ## SEARCH ICONS
+ * You can search for icons in the [Lucide Icons] library (https://lucide.dev/icons). Use the icon name as the `icon` prop value to apply it as a separator for the elements. If not set, default separators will be applied.
+ *
+ * ## DEPENDENCIES
+ * - Icon: Uses Icon component from `lucide-react` for icons.
+ *
+ */
+
+const meta: Meta<typeof Breadcrumb> = {
+  title: 'Atoms/Breadcrumb',
+  component: Breadcrumb,
+  parameters: {
+    docs: {
+      autodocs: true
+    }
+  },
+  tags: ['autodocs']
+};
+export default meta;
+
+type Story = StoryObj<typeof Breadcrumb>;
+
+const items: BreadcrumbItem[] = [
+  { title: 'Home', href: '/' },
+  { title: 'Library', href: '/library' },
+  { title: 'Data', href:'#', target: '_blank' },
+];
+
+export const Default: Story = {
+  args: {
+    items,
+    variant : 'solid',
+    separator : '/'
+  },
+};
