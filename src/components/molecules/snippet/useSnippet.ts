@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { SnippetProps } from "./types";
+import { snippetBase, SnippetProps } from "./types";
 
 export function useSnippet({
   children,
@@ -26,15 +26,11 @@ export function useSnippet({
   }, [disableCopy, onCopy]);
 
   const slots = {
-    base: () =>
-      `relative rounded-md p-4 font-mono text-sm bg-gray-100 text-gray-800 ${
-        className ?? ""
-      }`,
-    pre: () => "whitespace-pre-wrap break-words",
-    copyButton: () =>
-      `absolute top-2 right-2 text-xs px-2 py-1 rounded ${
-        copied ? "bg-green-500 text-white" : "bg-gray-300 text-black"
-      }`,
+    base: snippetBase({ size, variant, color, className }),
+    pre: "break-words",
+    copyButton: copied
+      ? "absolute top-2 right-2 text-xs px-2 py-1 rounded bg-green-500 text-white"
+      : "absolute top-2 right-2 text-xs px-2 py-1 rounded bg-gray-300 text-black hover:bg-gray-400",
   };
 
   return {
