@@ -16,7 +16,7 @@ export const snippetBase = cva(
       },
       color: {
         default: "bg-red-900",
-        primary: "bg-red-900",
+        primary: "[var(--color-primary)]",
         secondary: "bg-red-700",
         success: "bg-green-500",
         warning: "bg-yellow-500",
