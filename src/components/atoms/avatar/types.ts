@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+type ThemeRounded = 'md' | 'full' | 'none';
 
 export type AvatarProps = {
   /** @control src */
@@ -9,13 +9,6 @@ export type AvatarProps = {
   alt: string;
   /** @control text */
   className?: string;
-  /**
-   * @control boolean
-   * @default false
-   */
-  hasBadge?: boolean;
-  /** @control text */
-  badgeContent?: string | ReactNode;
-  /** @control text */
-  badgeClassName?: string;
+  /** @control select */
+  rounded?: ThemeRounded;
 };
