@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "storybook-build": "storybook build && node scripts/inject-preview-head.js",
     "storybook-clean-cache": "rm -rf node_modules/.cache/storybook",
-    "pre-commit": "pnpm run biome-staged && tsc && git add -A"
+    "pre-commit": "pnpm run biome-staged && tsc && git add -A",
+    "postinstall": "lefthook install"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "1.1.9",

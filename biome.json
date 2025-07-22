@@ -2,7 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
   "files": {
     "ignore": ["node_modules", "dist", ".vscode", "storybook-static"],
-    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+    "include": ["**/*.css", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "*.*"]
   },
   "formatter": {
     "attributePosition": "auto",
