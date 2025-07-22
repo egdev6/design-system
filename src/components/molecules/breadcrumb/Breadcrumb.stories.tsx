@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Breadcrumb from './Breadcrumb';
-import { BreadcrumbItem } from './types';
+import type { BreadcrumbItem } from './types';
 
 /**
  * ## DESCRIPTION
@@ -31,13 +31,24 @@ type Story = StoryObj<typeof Breadcrumb>;
 const items: BreadcrumbItem[] = [
   { title: 'Home', href: '/' },
   { title: 'Library', href: '/library' },
-  { title: 'Data', href:'#', target: '_blank' },
+  { title: 'Data', href: '#', target: '_blank' }
 ];
 
 export const Default: Story = {
   args: {
     items,
-    variant : 'solid',
-    separator : '/'
-  },
+    variant: 'solid',
+    separator: '/',
+    size: 'md',
+    rounded: false,
+    className: 'text-white',
+    shadow: false,
+    startContent: undefined,
+    endContent: undefined,
+    hideSeparator: true,
+    maxItem: 2,
+    itemsBeforeCollapse: 1,
+    itemsAfterCollapse: 1,
+    iconCollapse: undefined
+  }
 };
