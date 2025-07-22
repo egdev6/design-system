@@ -36,7 +36,7 @@ const Avatar: FC<AvatarProps> = ({ ...props }) => {
   return (
     <AvatarContainer
       className={cn(
-        'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
+        'dark:bg-gray-700 flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
         roundedClass,
         className
       )}
