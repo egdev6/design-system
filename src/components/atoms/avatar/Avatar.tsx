@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, FC } from 'react';
 import type { AvatarProps } from './types';
+import { useAvatar } from './useAvatar';
 
 function AvatarContainer({ className, ...props }: ComponentProps<typeof AvatarPrimitive.Root>) {
   return (
@@ -29,62 +30,25 @@ function AvatarFallback({ className, ...props }: ComponentProps<typeof AvatarPri
   );
 }
 
-const Avatar = ({
-  src,
-  alt = 'EG',
-  className,
-  size = 'md',
-  hasBadge = false,
-  badgeContent,
-  badgeClassName
-}: AvatarProps) => {
-  const sizeClasses = {
-    sm: '30px',
-    md: '40px',
-    lg: '50px',
-    xl: '60px',
-    '2xl': '70px',
-    '3xl': '80px'
-  };
-  const textClasses = {
-    sm: 'text-[0.8em]',
-    md: 'text-[1em]',
-    lg: 'text-[1.2em]',
-    xl: 'text-[1.4em]',
-    '2xl': 'text-[1.6em]',
-    '3xl': 'text-[1.8em]'
-  };
-  const sizeClass = sizeClasses[size];
-  const textClass = textClasses[size];
+const Avatar: FC<AvatarProps> = ({ ...props }) => {
+  const { src, alt, sizeClass, className, textClass, roundedClass } = useAvatar({ ...props });
 
   return (
-    <div className='relative inline-block'>
-      <AvatarContainer
-        className={cn(
-          'dark:bg-gray-700 rounded-full flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
-          className
-        )}
-        style={{ width: sizeClass, height: sizeClass }}
-        role="img"
-        aria-label={alt}
-      >
-        <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
-        <AvatarFallback className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}>
-          {alt}
-        </AvatarFallback>
-      </AvatarContainer>
-      {hasBadge && (
-        <span
-          className={cn(
-            'absolute -top-2 -right-2 flex items-center justify-center rounded-full bg-accent text-white text-xs',
-            badgeClassName
-          )}
-          style={{ width: '20px', height: '20px' }}
-        >
-          {badgeContent}
-        </span>
+    <AvatarContainer
+      className={cn(
+        'dark:bg-gray-700 flex items-center justify-center shadow-sm shadow-gray-light-800 dark:shadow-gray-dark-800',
+        roundedClass,
+        className
       )}
-    </div>
+      style={{ width: sizeClass, height: sizeClass }}
+      role='img'
+      aria-label={alt}
+    >
+      <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
+      <AvatarFallback className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}>
+        {alt}
+      </AvatarFallback>
+    </AvatarContainer>
   );
 };
 

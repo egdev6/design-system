@@ -1,14 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/egdev6/online-cv/pull/73 -->
-
 <a name="readme-top"></a>
-
-<!--
-*** Thanks for checking out the online-cv. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -169,6 +159,19 @@ This repository is intended for **educational purposes** and is fully open to **
 Special thanks you to everyone who has contributed to making this project possible.
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AmosVelez"><img src="https://avatars.githubusercontent.com/u/179244321?v=4?s=100" width="100px;" alt="Amos"/><br /><sub><b>Amos</b></sub></a><br /><a href="https://github.com/egdev6/design-system/commits?author=AmosVelez" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## 📫 Contact
@@ -187,7 +190,7 @@ Special thanks you to everyone who has contributed to making this project possib
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[stars-shield]: https://img.shields.io/github/stars/egdev6/design-system.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/egdev6/design-system.svg?style=for-the-badge&cacheBust=1
 [stars-url]: https://github.com/egdev6/design-system/stargazers
 [issues-shield]: https://img.shields.io/github/issues/egdev6/design-system.svg?style=for-the-badge
 [issues-url]: https://github.com/egdev6/design-system/issues
