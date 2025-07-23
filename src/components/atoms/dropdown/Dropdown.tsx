@@ -1,8 +1,10 @@
 import { cn } from '@/lib/utils';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { ChevronRightIcon } from 'lucide-react';
+import type { FC } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 import type { DropdownElement, DropdownProps } from './types';
+import { useDropdown } from './useDropdown';
 
 const renderDropdownItem = (element: DropdownElement, index: number) => {
   if (element.type === 'item') {
@@ -15,6 +17,7 @@ const renderDropdownItem = (element: DropdownElement, index: number) => {
         className={cn(
           'relative flex cursor-default justify-between items-center gap-2 rounded-sm px-2 py-1.5 text-sm',
           'transition-opacity duration-300 ease-in-out',
+          'hover:outline-offset-1 dark:hover:outline-white hover:outline-secondary hover:outline-1',
           'focus-visible:outline-offset-1 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1',
           element.variant === 'destructive' && 'bg-secondary text-text-dark hover:bg-red-secondary-hover'
         )}
@@ -40,6 +43,7 @@ const renderDropdownSubmenu = (element: DropdownElement, index: number) => {
           className={cn(
             'flex items-center rounded-md justify-between px-2 py-1.5 text-sm',
             'transition-opacity duration-300 ease-in-out',
+            'hover:outline-offset-1 dark:hover:outline-white hover:outline-secondary hover:outline-1',
             'focus-visible:outline-offset-1 dark:focus-visible:outline-white focus-visible:outline-secondary focus-visible:outline-1'
           )}
         >
@@ -92,34 +96,26 @@ const renderDropdownElement = (element: DropdownElement, index: number) => {
   }
 };
 
-const Dropdown = ({
-  width = '56px',
-  position = 'bottom',
-  align = 'center',
-  offset = 1,
-  closeOnSelect = true,
-  items,
-  loading = false,
-  children,
-  className
-}: DropdownProps) => {
-  const marginClasses = {
-    top: 'mb-2',
-    bottom: 'mt-2',
-    left: 'mr-2',
-    right: 'ml-2'
-  };
-
-  const firstLabelId = items.find((item) => item.type === 'label')?.label
-    ? `dropdown-label-${items.findIndex((item) => item.type === 'label')}`
-    : undefined;
-  const fallbackId = 'dropdown-fallback-label';
-  const accessibleLabelId = firstLabelId || fallbackId;
+const Dropdown: FC<DropdownProps> = ({ ...props }) => {
+  const {
+    items,
+    loading,
+    closeOnSelect,
+    position,
+    align,
+    offset,
+    width,
+    className,
+    accessibleLabelId,
+    marginClasses,
+    firstLabelId,
+    fallbackId
+  } = useDropdown(props);
 
   return (
     <DropdownMenuPrimitive.Root>
       <DropdownMenuPrimitive.Trigger asChild={true}>
-        <div>{children}</div>
+        <div>{props.children}</div>
       </DropdownMenuPrimitive.Trigger>
       <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content

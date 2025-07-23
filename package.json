@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@egdev6/compilot-cli": "1.0.7",
+    "@egdev6/compilot-cli": "1.0.9",
     "@storybook/addon-a11y": "8.6.12",
     "@storybook/addon-docs": "8.6.12",
     "@storybook/addon-essentials": "8.6.12",
