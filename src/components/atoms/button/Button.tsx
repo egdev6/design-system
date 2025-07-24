@@ -1,44 +1,32 @@
-import { useRipple } from '@/components/utils/hooks/useRipple'; // Import the custom hook
 import { cn } from '@/lib/utils';
 import type { VariantProps } from 'class-variance-authority';
 import { DynamicIcon } from 'lucide-react/dynamic';
-import { type ComponentProps, useRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 import { type ButtonProps, buttonVariants } from './types';
-import './style.css';
+import { useButton } from './useButton';
+import '@/components/utils/styles/index.css';
 
-const Button = ({
-  className,
-  variant = 'primary',
-  size = 'md',
-  isLoading = false,
-  isFullWidth = false,
-  onClick,
-  icon,
-  text,
-  disabled = false,
-  shadow = true,
-  rounded = false,
-  uppercase = true,
-  ariaLabel,
-  'aria-pressed': ariaPressed,
-  type = 'button',
-  ...props
-}: VariantProps<typeof buttonVariants> & ButtonProps & ComponentProps<'button'>) => {
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
-
-  useRipple(buttonRef);
-
-  const iconSize = () => {
-    switch (size) {
-      case 'sm':
-        return 'h-md w-auto';
-      case 'lg':
-        return 'h-xl w-auto';
-      default:
-        return 'h-lg w-auto';
-    }
-  };
+const Button: FC<VariantProps<typeof buttonVariants> & ButtonProps & ComponentProps<'button'>> = ({ ...props }) => {
+  const {
+    buttonRef,
+    type,
+    ariaPressed,
+    isFullWidth,
+    variant,
+    size,
+    rounded,
+    uppercase,
+    ariaLabel,
+    shadow,
+    text,
+    className,
+    disabled,
+    isLoading,
+    onClick,
+    iconSize,
+    icon
+  } = useButton(props);
   return (
     <button
       {...props}
