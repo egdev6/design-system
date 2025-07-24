@@ -3,7 +3,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 
 export const iconButtonVariants = cva(
   [
-    'link relative overflow-hidden border-2 cursor-pointer px-2 py-2 max-w-full',
+    'link relative overflow-hidden border-2 cursor-pointer px-1 py-1 max-w-full',
     'transition-all duration-200 ease-in-out',
     'flex items-center justify-start',
     'whitespace-nowrap line-clamp-1 ',

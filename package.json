@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "storybook-build": "storybook build && node scripts/inject-preview-head.js",
     "storybook-clean-cache": "rm -rf node_modules/.cache/storybook",
-    "pre-commit": "pnpm run biome-staged && tsc && git add -A"
+    "pre-commit": "pnpm run biome-staged && tsc && git add -A",
+    "postinstall": "lefthook install"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "1.1.9",
@@ -35,7 +36,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@egdev6/compilot-cli": "^1.0.7",
+    "@egdev6/compilot-cli": "1.0.9",
     "@storybook/addon-a11y": "8.6.12",
     "@storybook/addon-docs": "8.6.12",
     "@storybook/addon-essentials": "8.6.12",
@@ -57,7 +58,7 @@
     "react-docgen-typescript": "2.2.2",
     "storybook": "8.6.12",
     "storybook-dark-mode": "4.0.2",
-    "storybook-watch": "^1.0.6",
+    "storybook-watch": "1.0.6",
     "tailwindcss": "4.1.5",
     "typescript": "5.8.3",
     "vite": "6.3.4",

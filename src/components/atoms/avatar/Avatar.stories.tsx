@@ -1,4 +1,3 @@
-import Icon from '@atoms/icon';
 import type { Meta, StoryObj } from '@storybook/react';
 import Avatar from './Avatar';
 
@@ -70,61 +69,18 @@ export const WithImage: Story = {
 };
 
 /**
- * - You can add a badge to the avatar by using the `hasBadge` prop.
- * - The `badgeContent` prop allows you to customize the badge text.
+ *  - You can round the avatar using the `rounded` prop.
+ *  - The available options are 'md', 'full', and 'none'.
+ *  - The default value is 'md'.
+ *  - This prop allows for customization of the avatar's appearance.
  */
 
-export const WithBadge: Story = {
+export const Rounded: Story = {
   render: () => (
     <div className='flex gap-4 items-center'>
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='sm'
-        hasBadge={true}
-        badgeContent='1'
-        badgeClassName='bg-red-500 text-white'
-      />
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='md'
-        hasBadge={true}
-        badgeContent='2'
-        badgeClassName='bg-blue-500 text-white'
-      />
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='lg'
-        hasBadge={true}
-        badgeContent='3'
-        badgeClassName='bg-green-500 text-white'
-      />
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='sm'
-        hasBadge={true}
-        badgeContent={<Icon name='eye' size={14} color='text-text-dark' colorDark='dark:text-text-dark' />}
-        badgeClassName='bg-red-500 text-white'
-      />
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='md'
-        hasBadge={true}
-        badgeContent={<Icon name='calendar-clock' size={14} color='text-text-dark' colorDark='dark:text-text-dark' />}
-        badgeClassName='bg-blue-500 text-white'
-      />
-      <Avatar
-        src='/images/logo-dark-background.png'
-        alt='EG'
-        size='lg'
-        hasBadge={true}
-        badgeContent={<Icon name='check' size={14} color='text-text-dark' colorDark='dark:text-text-dark' />}
-        badgeClassName='bg-green-500 text-white'
-      />
+      <Avatar src='' alt='EG' size='md' rounded='md' />
+      <Avatar src='' alt='EG' size='md' rounded='full' />
+      <Avatar src='' alt='EG' size='md' rounded='none' />
     </div>
   )
 };
