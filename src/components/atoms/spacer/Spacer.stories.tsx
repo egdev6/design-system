@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Spacer from './Spacer';
 
+/**
+ * ## DESCRIPTION
+ * The Spacer component is responsible for providing spacing between components on both axes.
+ *
+ *
+ */
+
 const meta: Meta<typeof Spacer> = {
   title: 'Atoms/Spacer',
   component: Spacer,
@@ -20,6 +27,10 @@ export const Default: Story = {
     spaceY: 4
   }
 };
+
+/**
+ *Spacing on the X axis.
+ */
 
 export const Horizontal: Story = {
   render: () => (
