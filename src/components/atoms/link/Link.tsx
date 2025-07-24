@@ -4,25 +4,15 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 import type { FC } from 'react';
 import type { ComponentProps } from 'react';
 import { type LinkProps, linkVariants } from './types';
+import { useLink } from './useLink';
 
-const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a'>> = ({
-  children,
-  icon = undefined,
-  variant = 'regular',
-  size = 'md',
-  target = '_blank',
-  className,
-  href,
-  title,
-  ...props
-}) => {
-  const iconWidth = { sm: 18, md: 20, lg: 24 }[size] || 22;
-
-  const isExternal = target === '_blank';
+const Link: FC<LinkProps & VariantProps<typeof linkVariants> & ComponentProps<'a'>> = ({ ...props }) => {
+  const { href, target, isExternal, title, children, variant, size, className, icon, iconWidth, ...rest } =
+    useLink(props);
 
   return (
     <a
-      {...props}
+      {...rest}
       href={href}
       target={target}
       rel={isExternal ? 'noopener noreferrer' : undefined}
