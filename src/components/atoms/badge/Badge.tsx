@@ -2,18 +2,13 @@ import { cn } from '@/lib/utils';
 import { type FC, useEffect, useState } from 'react';
 import type { BadgeProps } from './types';
 import { badgeVariants } from './types';
+import { useBadge } from './useBadge';
 
-const Badge: FC<BadgeProps> = ({
-  content,
-  className,
-  color,
-  rounded = false,
-  size = 'md',
-  variant = 'solid',
-  placement = 'top-right',
-  visibility = true
-}) => {
-  const badgeClass = badgeVariants({ color, rounded, size, variant, placement });
+const Badge: FC<BadgeProps> = ({ ...props }) => {
+  const { content, className, color, rounded, size, variant, placement, visibility, ariaLabel, animation, children } =
+    useBadge({ ...props });
+
+  const badgeClass = badgeVariants({ color, rounded, size, variant, placement, animation });
 
   const [visibilityClass, setVisibilityClass] = useState(false);
 
@@ -27,8 +22,12 @@ const Badge: FC<BadgeProps> = ({
 
   return (
     <div className='relative inline-flex items-center justify-center'>
-      <img src='https://i.pravatar.cc/300?u=a042581f4e29026709d' alt='Avatar' className='w-12 h-12 rounded-xl' />
-      {visibilityClass && <span className={cn(badgeClass, className)}>{content}</span>}
+      {children}
+      {visibilityClass && (
+        <span className={cn(badgeClass, className)} aria-label={ariaLabel}>
+          {content}
+        </span>
+      )}
     </div>
   );
 };
