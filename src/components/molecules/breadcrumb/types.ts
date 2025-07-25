@@ -109,10 +109,10 @@ export type BreadcrumbProps = {
   className?: string;
 
   /** @control text*/
-  startContent: DynamicIconName;
+  startContent: DynamicIconName | undefined;
 
   /** @control text*/
-  endContent: DynamicIconName;
+  endContent: DynamicIconName | undefined;
 
   /** @control text*/
   maxItem?: number;

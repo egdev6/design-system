@@ -1,96 +1,52 @@
-import type { DynamicIconName } from '@/components/utils/types';
 import { cn } from '@/lib/utils';
-import type { VariantProps } from 'class-variance-authority';
 import { DynamicIcon, type IconName } from 'lucide-react/dynamic';
-import type { ComponentProps, FC, JSX } from 'react';
+import type { FC } from 'react';
 import Link from '../../atoms/link';
-import { type BreadcrumbItem, type BreadcrumbProps, breadcrumbVariants } from './types';
+import { type BreadcrumbProps, breadcrumbVariants } from './types';
+import { useBreadcrumb } from './useBreadcrumb';
 
-type BreadcrumbItemCollapsed = BreadcrumbItem | JSX.Element;
-
-const Breadcrumb: FC<BreadcrumbProps & VariantProps<typeof breadcrumbVariants> & ComponentProps<'nav'>> = ({
-  items,
-  variant = 'solid',
-  separator = '/',
-  size = 'md',
-  rounded = false,
-  className,
-  shadow = false,
-  startContent = undefined,
-  endContent = undefined,
-  hideSeparator = true,
-  maxItem = 2,
-  itemsBeforeCollapse = 1,
-  itemsAfterCollapse = 1,
-  iconCollapse = '...'
-}) => {
-  const renderSeparator = (separator: string | IconName): string | JSX.Element => {
-    const controlString = /[->/|](?![a-zA-Z0-9])/;
-    return controlString.test(separator) ? separator : <DynamicIcon name={separator as IconName} />;
-  };
-
-  const itemsCollapsed = (
-    items: BreadcrumbItem[],
-    maxItemToShow: number,
-    itemsAfterCollapseToShow: number,
-    itemsBeforeCollapseToShow: number,
-    iconCollapsed: string | DynamicIconName = '...'
-  ): BreadcrumbItemCollapsed[] => {
-    if (items.length <= maxItemToShow) {
-      return items;
-    }
-
-    if (maxItemToShow < 2) {
-      return items;
-    }
-    if (itemsBeforeCollapseToShow + itemsAfterCollapseToShow > maxItemToShow) {
-      return items;
-    }
-    if (itemsBeforeCollapseToShow > maxItemToShow - 1) {
-      return items;
-    }
-    if (itemsAfterCollapseToShow > maxItemToShow - 1) {
-      return items;
-    }
-
-    const firstElementBeforeCollapse = items.slice(0, itemsBeforeCollapseToShow);
-
-    const lastElementsAfterCollapse = items.slice(-itemsAfterCollapseToShow);
-
-    const collapsedIconElement: JSX.Element = (
+const Breadcrumb: FC<BreadcrumbProps> = ({ ...props }) => {
+  const {
+    processedItems,
+    renderSeparator,
+    isBreadcrumbItem,
+    className,
+    endContent,
+    hideSeparator,
+    rounded,
+    separator,
+    shadow,
+    size,
+    startContent,
+    variant
+  } = useBreadcrumb({
+    ...props,
+    collapsedElement: (
       <span key='collapsed-icon'>
-        <DynamicIcon name={iconCollapsed as IconName} />
+        <DynamicIcon name={props.iconCollapse as IconName} />
       </span>
-    );
-
-    return [...firstElementBeforeCollapse, collapsedIconElement, ...lastElementsAfterCollapse];
-  };
-
-  const isBreadcrumbItem = (item: BreadcrumbItem | JSX.Element): item is BreadcrumbItem => {
-    return typeof item === 'object' && 'title' in item && 'href' in item;
-  };
-
-  const processedItems = itemsCollapsed(items, maxItem, itemsAfterCollapse, itemsBeforeCollapse, iconCollapse);
+    )
+  });
 
   return (
     <nav>
       <ul className={cn('w-auto', breadcrumbVariants({ variant, size, rounded, shadow }))}>
         {processedItems.map((item, index) => (
-          <li className={cn('flex', className)} key={`${index}`}>
+          <li className={cn('flex', className)} key={`breadcrumb-${index}`}>
             {isBreadcrumbItem(item) ? (
               <>
-                {startContent !== undefined && <DynamicIcon name={startContent as IconName} />}
+                {startContent && <DynamicIcon name={startContent as IconName} />}
                 <Link title={item.title} href={item.href} target={item.target} size={size} className={cn(className)}>
                   {item.title}
                 </Link>
-                {endContent !== undefined && <DynamicIcon name={endContent as IconName} />}
+                {endContent && <DynamicIcon name={endContent as IconName} />}
               </>
             ) : (
-              <p className={cn(className)}>
-                <span>{item}</span>
-              </p>
+              <span>{item}</span>
             )}
-            {!hideSeparator && index < processedItems.length - 1 && <span>{renderSeparator(separator)}</span>}
+            {!hideSeparator && index < processedItems.length - 1 && (
+              <span className='mx-1'>{renderSeparator(separator)}</span>
+            )}
           </li>
         ))}
       </ul>

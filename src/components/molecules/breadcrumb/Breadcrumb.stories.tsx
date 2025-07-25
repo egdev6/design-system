@@ -17,6 +17,17 @@ import type { BreadcrumbItem } from './types';
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Atoms/Breadcrumb',
   component: Breadcrumb,
+  argTypes: {
+    maxItem: {
+      control: { type: 'number', min: 2 }
+    },
+    itemsBeforeCollapse: {
+      control: { type: 'number', min: 1 }
+    },
+    itemsAfterCollapse: {
+      control: { type: 'number', min: 1 }
+    }
+  },
   parameters: {
     docs: {
       autodocs: true
@@ -45,10 +56,10 @@ export const Default: Story = {
     shadow: false,
     startContent: undefined,
     endContent: undefined,
-    hideSeparator: true,
+    hideSeparator: false,
     maxItem: 2,
     itemsBeforeCollapse: 1,
     itemsAfterCollapse: 1,
-    iconCollapse: undefined
+    iconCollapse: 'ellipsis'
   }
 };
