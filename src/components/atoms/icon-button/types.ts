@@ -92,7 +92,7 @@ export const iconButtonVariants = cva(
 );
 
 type IconButtonVariant = VariantProps<typeof iconButtonVariants>['variant'];
-type IconSizes = 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40;
+export type IconSizes = 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 | 28 | 30 | 32 | 34 | 36 | 38 | 40;
 
 export type IconButtonProps = {
   /**
