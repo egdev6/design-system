@@ -1,12 +1,13 @@
-import { useState, useRef, useCallback } from "react";
-import { snippetBase, SnippetProps } from "./types";
+import { useCallback, useRef, useState } from 'react';
+import { type SizeButton, type SnippetProps, snippetBase } from './types';
 
 export function useSnippet({
   children,
-  size = "md",
+  size = 'md',
+  rounded = 'md',
   className,
-  color = "default",
-  variant = "solid",
+  color = 'default',
+  variant = 'solid',
   disableCopy,
   onCopy,
   ...ariaProps
@@ -14,11 +15,13 @@ export function useSnippet({
   const [copied, setCopied] = useState(false);
   const preRef = useRef<HTMLPreElement>(null);
 
-  const handleCopy = useCallback(() => {
-    if (disableCopy || !preRef.current) return;
+  const handleCopy = useCallback(async () => {
+    if (disableCopy || !preRef.current) {
+      return;
+    }
 
-    const text = preRef.current.textContent || "";
-    navigator.clipboard.writeText(text).then(() => {
+    const text = preRef.current.textContent || '';
+    await navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       onCopy?.();
       setTimeout(() => setCopied(false), 2000);
@@ -26,11 +29,14 @@ export function useSnippet({
   }, [disableCopy, onCopy]);
 
   const slots = {
-    base: snippetBase({ size, variant, color, className }),
-    pre: "break-words",
-    copyButton: copied
-      ? "absolute top-2 right-2 text-xs px-2 py-1 rounded bg-green-500 text-white"
-      : "absolute top-2 right-2 text-xs px-2 py-1 rounded bg-gray-300 text-black hover:bg-gray-400",
+    base: snippetBase({ size, variant, color, rounded, className }),
+    pre: 'break-words',
+    sizeButton: {
+      sm: 12,
+      md: 16,
+      lg: 20
+    } as const satisfies SizeButton,
+    copyButtonAnimations: `transition-opacity duration-300 ease-in-out opacity-100`
   };
 
   return {
@@ -42,6 +48,6 @@ export function useSnippet({
     size,
     variant,
     color,
-    ariaProps,
+    ariaProps
   };
 }
