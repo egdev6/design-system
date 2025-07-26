@@ -2,7 +2,11 @@ import type { IconSizes } from '@/components/atoms/icon-button';
 import { type VariantProps, cva } from 'class-variance-authority';
 import type { ReactNode } from 'react';
 
-export const snippetBase = cva('relative font-mono whitespace-pre-wrap text-text-dark text-justify', {
+/**
+ * CVA configuration for the Snippet component.
+ * Controls base styles, variants, and compound variants.
+ */
+export const snippetBase = cva('flex flex-row items-center font-mono whitespace-pre-wrap text-text-dark text-justify', {
   variants: {
     size: {
       sm: 'text-xs p-2',
@@ -110,10 +114,31 @@ export const snippetBase = cva('relative font-mono whitespace-pre-wrap text-text
   }
 });
 
+/**
+ * Snippet component variants generated from CVA.
+ */
 export type SnippetVariants = VariantProps<typeof snippetBase>;
+
 type Size = 'sm' | 'md' | 'lg';
+
+/**
+ * Icon button sizes for each snippet size.
+ */
 export type SizeButton = Record<Size, IconSizes>;
 
+/**
+ * Props for the Snippet component.
+ * @property {ReactNode} children - Content to display inside the snippet.
+ * @property {'sm'|'md'|'lg'} [size] - Size of the snippet.
+ * @property {'xs'|'sm'|'md'|'lg'|'xl'|'full'|'none'} [rounded] - Border radius.
+ * @property {string} [className] - Additional class names.
+ * @property {'default'|'primary'|'secondary'|'success'|'warning'|'danger'|'info'} [color] - Color variant.
+ * @property {'solid'|'outline'|'shadow'} [variant] - Visual style variant.
+ * @property {boolean} [disableCopy] - Disables the copy button.
+ * @property {() => void} [onCopy] - Callback after copying.
+ * @property {string} ['aria-controls'] - ARIA controls attribute.
+ * @property {string} ['aria-label'] - ARIA label attribute.
+ */
 export interface SnippetProps extends SnippetVariants {
   children: ReactNode;
   size?: Size;

@@ -1,6 +1,24 @@
 import { useCallback, useRef, useState } from 'react';
 import { type SizeButton, type SnippetProps, snippetBase } from './types';
 
+/**
+ * Custom hook for Snippet component logic.
+ *
+ * Handles copy-to-clipboard, slot class generation, and accessibility props.
+ *
+ * @param {SnippetProps} props - Props for the Snippet component
+ * @returns {{
+ *   preRef: React.RefObject<HTMLPreElement>,
+ *   copied: boolean,
+ *   handleCopy: () => Promise<void>,
+ *   slots: any,
+ *   children: React.ReactNode,
+ *   size: string,
+ *   variant: string,
+ *   color: string,
+ *   ariaProps: object
+ * }}
+ */
 export function useSnippet({
   children,
   size = 'md',
@@ -15,6 +33,9 @@ export function useSnippet({
   const [copied, setCopied] = useState(false);
   const preRef = useRef<HTMLPreElement>(null);
 
+  /**
+   * Copies the snippet content to clipboard and triggers feedback.
+   */
   const handleCopy = useCallback(async () => {
     if (disableCopy || !preRef.current) {
       return;
@@ -30,7 +51,7 @@ export function useSnippet({
 
   const slots = {
     base: snippetBase({ size, variant, color, rounded, className }),
-    pre: 'break-words',
+    pre: 'break-words flex-1 m-0 bg-transparent border-none',
     sizeButton: {
       sm: 12,
       md: 16,
