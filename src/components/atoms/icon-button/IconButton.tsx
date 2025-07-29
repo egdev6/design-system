@@ -1,27 +1,16 @@
-import { useRipple } from '@/components/utils/hooks/useRipple';
 import { cn } from '@/lib/utils';
 import type { VariantProps } from 'class-variance-authority';
 import { DynamicIcon } from 'lucide-react/dynamic';
-import { type ComponentProps, type FC, useRef } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { type IconButtonProps, iconButtonVariants } from './types';
-import './style.css';
+import { useIconButton } from './useIconButton';
+import '@/components/utils/styles/index.css';
 
 const IconButton: FC<IconButtonProps & VariantProps<typeof iconButtonVariants> & ComponentProps<'button'>> = ({
-  variant = 'primary',
-  icon = 'image',
-  size = 20,
-  className,
-  onClick,
-  title,
-  rounded = false,
-  shadow = false,
-  disabled = false,
-  'aria-pressed': ariaPressed,
   ...props
 }) => {
-  const iconButtonRef = useRef<HTMLButtonElement | null>(null);
-
-  useRipple(iconButtonRef);
+  const { iconButtonRef, ariaPressed, variant, rounded, shadow, className, disabled, title, icon, size, onClick } =
+    useIconButton(props);
 
   return (
     <button
