@@ -21,7 +21,7 @@ const Snippet: FC<SnippetProps> = ({ ...props }) => {
         {children}
       </pre>
       {!props.disableCopy && (
-        <div className='flex items-center justify-center h-full pl-2'>
+        <div className='flex items-center justify-center h-full'>
           <IconButton
             className={slots.copyButtonAnimations}
             icon={copied ? 'check' : 'copy'}
