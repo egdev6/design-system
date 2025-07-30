@@ -161,11 +161,11 @@ Special thanks you to everyone who has contributed to making this project possib
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AmosVelez"><img src="https://avatars.githubusercontent.com/u/179244321?v=4?s=100" width="100px;" alt="Amos"/><br /><sub><b>Amos</b></sub></a><br /><a href="https://github.com/egdev6/design-system/commits?author=AmosVelez" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/jayro_salazar"><img src="https://avatars.githubusercontent.com/u/13789779?v=4?s=100" width="100px;" alt="Jayro_Salazar"/><br /><sub><b>Jayro_Salazar</b></sub></a><br /><a href="https://github.com/egdev6/design-system/commits?author=Megajjks" title="Code">💻</a></td>
+<table width='100%'>
+  <tbody width='100%'>
+    <tr width='100%'>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/AmosVelez"><img src="https://avatars.githubusercontent.com/u/179244321?v=4?s=100" width='100px' height='100px' alt="Amos"/><br /><sub><b>Amos</b></sub></a><br /><a href="https://github.com/egdev6/design-system/commits?author=AmosVelez" title="Code">💻</a></td>
+      <td align="center" valign="top" width="20%"><a href="https://linktr.ee/jayro_salazar"><img src="https://avatars.githubusercontent.com/u/13789779?v=4?s=100" width='100px' height='100px' alt="Jayro_Salazar"/><br /><sub><b>Jayro_Salazar</b></sub></a><br /><a href="https://github.com/egdev6/design-system/commits?author=Megajjks" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
