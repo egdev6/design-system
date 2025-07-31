@@ -44,10 +44,10 @@ const Avatar: FC<AvatarProps> = ({ ...props }) => {
       role='img'
       aria-label={alt}
     >
-      <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} />
-      <AvatarFallback className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}>
-        {alt}
-      </AvatarFallback>
+      <AvatarImage src={src} style={{ width: sizeClass, height: sizeClass }} alt={alt} />
+      <AvatarFallback
+        className={cn('text-text-light dark:text-text-dark leading-[1.2] pt-[0.2em]', textClass)}
+      ></AvatarFallback>
     </AvatarContainer>
   );
 };
