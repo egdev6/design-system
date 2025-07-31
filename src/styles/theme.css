@@ -2,7 +2,7 @@
   /* Global styles */
   --color-primary: #830213; /* rgba(131, 2, 19, 1); */
   --color-secondary: #b41520; /* rgba(180, 21, 32, 1); */
-  --color-accent: #d61e2b;  /* rgba(214, 30, 43, 1); */
+  --color-accent: #d61e2b; /* rgba(214, 30, 43, 1); */
   --color-red-100: #fce9ea; /* rgba(252, 233, 234, 1); */
   --color-red-200: #f6bcc0; /* rgba(246, 188, 192, 1); */
   --color-red-300: #ef8f96; /* rgba(239, 143, 150, 1); */
@@ -15,8 +15,13 @@
   /* Dark mode */
   --color-background-dark: #0e0e10; /* rgba(14, 14, 16, 1); */
   --color-text-dark: #ffffff; /* rgba(255, 255, 255, 1); */
-  --color-secondary-dark:#9fa3ad; /* rgba(159, 163, 173, 1); */
-  --gradient-background-dark: linear-gradient(130deg,rgba(14, 14, 16, 1) 0%, rgba(21, 22, 27, 1) 50%, rgba(14, 14, 16, 1) 100%);
+  --color-secondary-dark: #9fa3ad; /* rgba(159, 163, 173, 1); */
+  --gradient-background-dark: linear-gradient(
+    130deg,
+    rgba(14, 14, 16, 1) 0%,
+    rgba(21, 22, 27, 1) 50%,
+    rgba(14, 14, 16, 1) 100%
+  );
   --color-gray-dark-100: #e5e7eb; /* rgba(229, 231, 235, 1); */
   --color-gray-dark-200: #c2c5cc; /* rgba(194, 197, 204, 1); */
   --color-gray-dark-300: #9fa3ad; /* rgba(159, 163, 173, 1); */
@@ -27,10 +32,15 @@
   --color-gray-dark-800: #15161b; /* rgba(21, 22, 27, 1); */
   --color-gray-dark-900: #0e0e10; /* rgba(14, 14, 16, 1); */
   /* Light theme */
-  --color-background-light: #f4f5f7;  /* rgba(244, 245, 247, 1); */
+  --color-background-light: #f4f5f7; /* rgba(244, 245, 247, 1); */
   --color-text-light: #18191e; /* rgba(24, 25, 30, 1); */
-  --color-secondary-light: #7c818f ; /* rgba(124, 129, 143, 1); */
-  --gradient-background-light: linear-gradient(130deg,rgba(212, 214, 220, 1) 0%, rgba(229, 231, 235, 1) 50%, rgba(212, 214, 220, 1) 100%);
+  --color-secondary-light: #7c818f; /* rgba(124, 129, 143, 1); */
+  --gradient-background-light: linear-gradient(
+    130deg,
+    rgba(212, 214, 220, 1) 0%,
+    rgba(229, 231, 235, 1) 50%,
+    rgba(212, 214, 220, 1) 100%
+  );
   --color-gray-light-100: #f9fafa; /* rgba(249, 250, 250, 1); */
   --color-gray-light-200: #f1f3f5; /* rgba(241, 243, 245, 1); */
   --color-gray-light-300: #e5e7eb; /* rgba(229, 231, 235, 1); */
@@ -45,30 +55,30 @@
   --shadow-custom-md: 0px 0px 16px 4px rgba(180, 21, 32, 1);
   --shadow-custom-lg: 0px 0px 30px 10px rgba(180, 21, 32, 1);
   /* Colors */
-  --color-orange:       #f97316;
+  --color-orange: #f97316;
   --color-orange-light: #fda65c;
-  --color-orange-dark:  #d94e08;
-  --color-yellow:       #eab308;
+  --color-orange-dark: #d94e08;
+  --color-yellow: #eab308;
   --color-yellow-light: #fde047;
-  --color-yellow-dark:  #b58903;
-  --color-green:        #22c55e;
-  --color-green-light:  #5ee78b;
-  --color-green-dark:   #138a3d;
-  --color-teal:         #14b8a6;
-  --color-teal-light:   #40dfcb;
-  --color-teal-dark:    #0a7f74;
-  --color-blue:         #3b82f6;
-  --color-blue-light:   #7bb0fa;
-  --color-blue-dark:    #1e4ed8;
-  --color-indigo:       #6366f1;
+  --color-yellow-dark: #b58903;
+  --color-green: #22c55e;
+  --color-green-light: #5ee78b;
+  --color-green-dark: #138a3d;
+  --color-teal: #14b8a6;
+  --color-teal-light: #40dfcb;
+  --color-teal-dark: #0a7f74;
+  --color-blue: #3b82f6;
+  --color-blue-light: #7bb0fa;
+  --color-blue-dark: #1e4ed8;
+  --color-indigo: #6366f1;
   --color-indigo-light: #9ca3fa;
-  --color-indigo-dark:  #4338ca;
-  --color-purple:       #8b5cf6;
+  --color-indigo-dark: #4338ca;
+  --color-purple: #8b5cf6;
   --color-purple-light: #c4b5fd;
-  --color-purple-dark:  #6d28d9;
-  --color-pink:         #ec4899;
-  --color-pink-light:   #fda4cf;
-  --color-pink-dark:    #be185d;
+  --color-purple-dark: #6d28d9;
+  --color-pink: #ec4899;
+  --color-pink-light: #fda4cf;
+  --color-pink-dark: #be185d;
   /* Spacing */
   --spacing-xxs: 0.25rem;
   --spacing-xs: 0.5rem;
@@ -77,9 +87,9 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   /* Tipografía */
-  --font-primary: 'WildWolf';
-  --font-secondary: 'Univia';
-  --font-secondary-bold: 'UniviaBold';
+  --font-primary: "WildWolf";
+  --font-secondary: "Univia";
+  --font-secondary-bold: "UniviaBold";
   --text-h1: 3rem;
   --text-h2: 2.5rem;
   --text-h3: 2rem;
@@ -101,6 +111,9 @@
   --animate-fadeOut: fadeOut 400ms ease-in-out;
   --animate-rotation-360-reverse: rotation-360 1s linear infinite reverse;
   --animate-rotation-360: rotation-360 1s linear infinite;
+  --animate-badgeIn: badgeIn 0.25s ease-out forwards;
+  --animate-badgeOut: badgeOut 0.3s ease-in-out forwards;
+  --animate-badgePing: badgePing 1.3s cubic-bezier(1, 0, 0.4, 1) infinite;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
