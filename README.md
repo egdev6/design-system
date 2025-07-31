@@ -159,7 +159,7 @@ This repository is intended for **educational purposes** and is fully open to **
 Special thanks you to everyone who has contributed to making this project possible.
 
 <a href="https://github.com/egdev6/design-system/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=egdev6/design-system" />
+  <img src="https://contrib.rocks/image?repo=egdev6/design-system&nocache=1" />
 </a>
 
 ## 📫 Contact
