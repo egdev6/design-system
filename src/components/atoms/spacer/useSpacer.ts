@@ -4,8 +4,8 @@ export const useSpacer = ({ spaceX, spaceY }: SpacerProps) => {
   // Additional logic can be added here if needed
   const baseUnit = 0.25;
 
-  const spacerX = spaceX !== undefined ? `${spaceX * baseUnit}rem` : undefined;
-  const spacerY = spaceY !== undefined ? `${spaceY * baseUnit}rem` : undefined;
+  const spacerX = spaceX ? `${spaceX * baseUnit}rem` : '0rem';
+  const spacerY = spaceY ? `${spaceY * baseUnit}rem` : '0rem';
 
   return {
     width: spacerX,
