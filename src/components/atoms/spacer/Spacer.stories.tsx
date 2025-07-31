@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from '../button/Button.tsx';
 import Spacer from './Spacer';
 
 /**
@@ -40,9 +39,9 @@ export const Default: Story = {
 export const Vertical: Story = {
   render: () => (
     <>
-      <Button />
+      <div className='w-8 h-8 bg-red-500 border-2 border-red-600'></div>
       <Spacer spaceY={8} />
-      <Button />
+      <div className='w-8 h-8 bg-red-500 border-2 border-red-600'></div>
     </>
   )
 };
@@ -55,9 +54,9 @@ export const Horizontal: Story = {
   render: () => (
     <>
       <div className='flex'>
-        <Button />
+        <div className='w-8 h-8 bg-red-500 border-2 border-red-600'></div>
         <Spacer spaceX={8} />
-        <Button />
+        <div className='w-8 h-8 bg-red-500 border-2 border-red-600'></div>
       </div>
     </>
   )
