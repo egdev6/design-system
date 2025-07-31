@@ -162,8 +162,6 @@ Special thanks you to everyone who has contributed to making this project possib
   <img src="https://contrib.rocks/image?repo=egdev6/design-system" />
 </a>
 
-Made with [contrib.rocks](https://contrib.rocks).
-
 ## 📫 Contact
 
 <div align="center">
