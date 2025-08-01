@@ -51,7 +51,7 @@ export function useSnippet({
 
   const slots = {
     base: snippetBase({ size, variant, color, rounded, className }),
-    pre: 'break-words flex-1 m-0 bg-transparent border-none',
+    pre: 'w-full max-w-full overflow-x-auto whitespace-pre break-words box-border scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent flex-1 m-0 bg-transparent border-none',
     sizeButton: {
       sm: 12,
       md: 16,
