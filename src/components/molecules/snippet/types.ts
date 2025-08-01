@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
  * Controls base styles, variants, and compound variants.
  */
 export const snippetBase = cva(
-  'flex flex-row justify-start items-center gap-2 p-2 font-mono whitespace-pre-wrap text-text-light dark:text-text-dark text-justify',
+  'w-full max-w-full box-border overflow-hidden flex flex-row justify-start items-center gap-2 p-2 font-mono whitespace-pre-wrap text-text-light dark:text-text-dark text-justify',
   {
     variants: {
       size: {

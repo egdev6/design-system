@@ -16,8 +16,12 @@ import { useSnippet } from './useSnippet';
 const Snippet: FC<SnippetProps> = ({ ...props }) => {
   const { preRef, size, copied, handleCopy, slots, children, ariaProps } = useSnippet(props);
   return (
-    <div className={slots.base} {...ariaProps}>
-      <pre ref={preRef} className={slots.pre}>
+    <div className={`${slots.base}`} {...ariaProps}>
+      <pre
+        ref={preRef}
+        className={`${slots.pre}`}
+        /* If you use Tailwind Scrollbar plugin, these classes will work. Otherwise, add custom CSS below. */
+      >
         {children}
       </pre>
       {!props.disableCopy && (
